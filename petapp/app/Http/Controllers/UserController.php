@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Store;
 use App\Http\Requests\UserRequest;

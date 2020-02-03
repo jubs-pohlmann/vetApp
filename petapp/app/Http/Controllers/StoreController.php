@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Store;
+use App\Http\Requests\StoreRequest;
 
 class StoreController extends Controller
 {
   //Método responsável por criar nova loja
-  public function createStore(Request $request){
+  public function createStore(StoreRequest $request){
 
     $store = new Store;
 
     $store->name = $request->name;
     $store->email = $request->email;
-    $store->rating = $request->rating;
     $store->photo = $request->photo;
     $store->phone = $request->phone;
     $store->address = $request->address;
@@ -45,7 +44,7 @@ class StoreController extends Controller
   }
 
   //Método para edição de dados da loja
-  public function updateStore(Request $request, $id){
+  public function updateStore(StoreRequest $request, $id){
     $store = Store::find($id);
     if($store){
       if($request->name){
@@ -84,11 +83,9 @@ class StoreController extends Controller
   }
 
   //Método responsavel por estabelecer uma relação entre loja e conta
-  public function addAccount(Request $request, $id){
+  public function addAccount($id, $account_id){
     $store = Store::find($id);
-    if($request->account_id){
-      $store->account_id = $request->account_id;
-    }
+    $store->account_id = $account_id;
     $store->save();
     return response()->json(['Sucesso']);
   }

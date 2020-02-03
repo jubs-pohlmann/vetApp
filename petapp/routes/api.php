@@ -43,7 +43,7 @@ Route::post('criarLoja', 'StoreController@createStore');
 Route::put('atualizarLoja/{id}', 'StoreController@updateStore');
 Route::delete('deletarLoja/{id}', 'StoreController@deleteStore');
 
-Route::put('adicionarConta/{id}', 'StoreController@addAccount');
+Route::put('adicionarConta/{id}/{account_id}', 'StoreController@addAccount');
 Route::put('removerConta/{id}', 'StoreController@removeAccount');
 
 Route::get('listarClienteAv/{id}', 'StoreController@listClients');

@@ -18,15 +18,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-//Rotas Client
-Route::get('listarClientes', 'ClientController@listClient');
-Route::get('mostrarCliente/{id}', 'ClientController@showClient');
-Route::post('criarCliente', 'ClientController@createClient');
-Route::put('atualizarCliente/{id}', 'ClientController@updateClient');
-Route::delete('deletarCliente/{id}', 'ClientController@deleteClient');
+//Rotas User
+Route::get('listarClientes', 'UserController@listUser');
+Route::get('mostrarCliente/{id}', 'UserController@showUser');
+Route::post('criarCliente', 'UserController@createUser');
+Route::put('atualizarCliente/{id}', 'UserController@updateUser');
+Route::delete('deletarCliente/{id}', 'UserController@deleteUser');
 
-Route::put('adicionarCartao/{id}', 'ClientController@addCard');
-Route::put('removerCartao/{id}', 'ClientController@removeCard');
+Route::put('adicionarCartao/{id}', 'UserController@addCard');
+Route::put('removerCartao/{id}', 'UserController@removeCard');
+
+Route::get('listarProdutos/{id}', 'UserController@listProducts');
+
+
 
 //Rotas Store
 Route::get('listarLojas', 'StoreController@listStore');
@@ -47,6 +51,10 @@ Route::delete('deletarProduto/{id}', 'ProductController@deleteProduct');
 
 Route::put('adicionarLoja/{id}', 'ProductController@addStore');
 Route::put('removerLoja/{id}', 'ProductController@removeStore');
+
+Route::get('listarClientes/{id}', 'ProductController@listClients');
+Route::put('compra/{user_id}/{id}', 'ProductController@sale');
+
 
 //Rotas Account
 Route::get('listarContas', 'AccountController@listAccount');

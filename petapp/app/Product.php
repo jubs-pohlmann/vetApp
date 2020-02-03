@@ -9,4 +9,8 @@ class Product extends Model
   public function store(){
     return $this->belongsTo('App\Store');
   }
+
+  public function users(){
+    return $this->belongsToMany('App\User');
+  }
 }

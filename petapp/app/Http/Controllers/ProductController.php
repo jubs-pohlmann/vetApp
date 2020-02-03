@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\User;
 class ProductController extends Controller
 {
   //Método responsável por criar novo produto
@@ -96,4 +97,24 @@ class ProductController extends Controller
     $product->save();
     return response()->json(['Sucesso']);
   }
+
+
+
+
+  // Compra
+
+  //Método responsável por representar a compra de um produto por cliente
+  public function sale($user_id, $id){
+    $product = Product::find($id);
+    $client = User::find($user_id);
+    $product->users()->attach($client->id);
+    return response()->json(['Venda realizada']);
+  }
+
+  //Método responsável por listar os clientes que compraram um produto
+  public function listClients($id){
+    $product = Product::find($id);
+    return response()->json($product->users);
+  }
+
 }

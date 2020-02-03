@@ -83,4 +83,22 @@ class StoreController extends Controller
     }
   }
 
+  //Método responsavel por estabelecer uma relação entre loja e conta
+  public function addAccount(Request $request, $id){
+    $store = Store::find($id);
+    if($request->account_id){
+      $store->account_id = $request->account_id;
+    }
+    $store->save();
+    return response()->json(['Sucesso']);
+  }
+
+  //Método responsavel por remover uma relação entre loja e conta
+  public function removeAccount($id){
+    $store = Store::find($id);
+    $store->account_id = null;
+    $store->save();
+    return response()->json(['Sucesso']);
+  }
+
 }

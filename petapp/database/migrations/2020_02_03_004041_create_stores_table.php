@@ -24,7 +24,13 @@ class CreateStoresTable extends Migration
             $table->string('password');
             $table->string('cnpj');
             $table->boolean('delivery');
+            $table->unsignedBigInteger('account_id')->nullable();
             $table->timestamps();
+        });
+
+        //Foreign key
+        Schema::table('stores', function (Blueprint $table) {
+            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
         });
     }
 

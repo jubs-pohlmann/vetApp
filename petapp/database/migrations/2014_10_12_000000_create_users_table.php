@@ -24,8 +24,13 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('birthdate');
             $table->string('cpf');
+            $table->unsignedBigInteger('card_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
+        });
+        //Foreign key
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('card_id')->references('id')->on('cards')->onDelete('cascade');
         });
     }
 

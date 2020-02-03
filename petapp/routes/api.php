@@ -25,6 +25,9 @@ Route::post('criarCliente', 'ClientController@createClient');
 Route::put('atualizarCliente/{id}', 'ClientController@updateClient');
 Route::delete('deletarCliente/{id}', 'ClientController@deleteClient');
 
+Route::put('adicionarCartao/{id}', 'ClientController@addCard');
+Route::put('removerCartao/{id}', 'ClientController@removeCard');
+
 //Rotas Store
 Route::get('listarLojas', 'StoreController@listStore');
 Route::get('mostrarLoja/{id}', 'StoreController@showStore');

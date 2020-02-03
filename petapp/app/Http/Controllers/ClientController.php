@@ -78,4 +78,22 @@ class ClientController extends Controller
       return response()->json(['Este cliente nao existe']);
     }
   }
+
+  //Método responsavel por estabelecer uma relação entre cliente e cartao
+  public function addCard(Request $request, $id){
+    $cliente = User::find($id);
+    if($request->card_id){
+      $cliente->card_id = $request->card_id;
+    }
+    $cliente->save();
+    return response()->json(['Sucesso']);
+  }
+
+  //Método responsavel por remover uma relação entre cliente e cartao
+  public function removeCard($id){
+    $cliente = User::find($id);
+    $cliente->card_id = null;
+    $cliente->save();
+    return response()->json(['Sucesso']);
+  }
 }

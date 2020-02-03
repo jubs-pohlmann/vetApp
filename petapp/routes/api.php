@@ -55,7 +55,7 @@ Route::post('criarProduto', 'ProductController@createProduct');
 Route::put('atualizarProduto/{id}', 'ProductController@updateProduct');
 Route::delete('deletarProduto/{id}', 'ProductController@deleteProduct');
 
-Route::put('adicionarLoja/{id}', 'ProductController@addStore');
+Route::put('adicionarLoja/{id}/{store_id}', 'ProductController@addStore');
 Route::put('removerLoja/{id}', 'ProductController@removeStore');
 
 Route::get('listarClientes/{id}', 'ProductController@listClients');

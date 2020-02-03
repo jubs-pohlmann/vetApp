@@ -81,11 +81,9 @@ class ProductController extends Controller
 
 
   //Método responsavel por estabelecer uma relação entre produto e loja
-  public function addStore(Request $request, $id){
+  public function addStore($id, $store_id){
     $product = Product::find($id);
-    if($request->store_id){
-      $product->store_id = $request->store_id;
-    }
+    $product->store_id = store_id;
     $product->save();
     return response()->json(['Sucesso']);
   }

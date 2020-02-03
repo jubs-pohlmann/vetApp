@@ -82,9 +82,9 @@ class UserController extends Controller
   }
 
   //Método responsavel por estabelecer uma relação entre user e cartao
-  public function addCard($request, $id){
+  public function addCard($id, $card_id){
     $user = User::find($id);
-    $user->card_id = $request;
+    $user->card_id = $card_id;
     $user->save();
     return response()->json(['Sucesso']);
   }

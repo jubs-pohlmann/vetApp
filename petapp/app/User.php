@@ -43,4 +43,9 @@ class User extends Authenticatable
     public function products(){
       return $this->belongsToMany('App\Product');
     }
+
+    public function stores(){
+      return $this->belongsToMany('App\Store')
+        ->withPivot('grade');
+    }
 }

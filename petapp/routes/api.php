@@ -30,6 +30,10 @@ Route::put('removerCartao/{id}', 'UserController@removeCard');
 
 Route::get('listarProdutos/{id}', 'UserController@listProducts');
 
+Route::put('avaliar/{id}/{store_id}', 'UserController@rate');
+Route::get('listarLojaAv/{id}', 'UserController@listRate');
+
+
 
 
 //Rotas Store
@@ -41,6 +45,8 @@ Route::delete('deletarLoja/{id}', 'StoreController@deleteStore');
 
 Route::put('adicionarConta/{id}', 'StoreController@addAccount');
 Route::put('removerConta/{id}', 'StoreController@removeAccount');
+
+Route::get('listarClienteAv/{id}', 'StoreController@listClients');
 
 //Rotas Product
 Route::get('listarProdutos', 'ProductController@listProduct');

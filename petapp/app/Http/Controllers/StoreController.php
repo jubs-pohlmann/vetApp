@@ -101,4 +101,10 @@ class StoreController extends Controller
     return response()->json(['Sucesso']);
   }
 
+  //Método responsável por listar os clientes que avaliaram uma loja
+  public function listClients($id){
+    $store = Store::find($id);
+    return response()->json($store->users);
+  }
+
 }

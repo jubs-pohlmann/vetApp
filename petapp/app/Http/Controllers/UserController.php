@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Store;
 
 class UserController extends Controller
 {
-  //Método responsável por criar um novo usere
+  //Método responsável por criar um novo user
   public function createUser(Request $request){
 
     $user = new User;
@@ -25,25 +26,25 @@ class UserController extends Controller
     return response()->json([$user]);
   }
 
-  //Método que retorna lista com todos os useres
+  //Método que retorna lista com todos os users
   public function listUser(){
     $user = User::all();
     return response()->json($user);
   }
 
-  //Método responsavel por exibir o usere com o id informado
+  //Método responsavel por exibir o user com o id informado
   public function showUser($id){
     $user = User::findOrFail($id);
     return response()->json([$user]);
   }
 
-  //Método usado para deletar um usere
+  //Método usado para deletar um user
   public function deleteUser($id){
     User::destroy($id);
-    return response()->json(['usere deletado']);
+    return response()->json(['user deletado']);
   }
 
-  //Método para edição de dados do usere
+  //Método para edição de dados do user
   public function updateUser(Request $request, $id){
     $user = User::find($id);
     if($user){
@@ -75,34 +76,51 @@ class UserController extends Controller
       return response()->json([$user]);
     }
     else{
-      return response()->json(['Este usere nao existe']);
+      return response()->json(['Este user nao existe']);
     }
   }
 
-  //Método responsavel por estabelecer uma relação entre usere e cartao
+  //Método responsavel por estabelecer uma relação entre user e cartao
   public function addCard(Request $request, $id){
-    $usere = User::find($id);
+    $user = User::find($id);
     if($request->card_id){
-      $usere->card_id = $request->card_id;
+      $user->card_id = $request->card_id;
     }
-    $usere->save();
+    $user->save();
     return response()->json(['Sucesso']);
   }
 
-  //Método responsavel por remover uma relação entre usere e cartao
+  //Método responsavel por remover uma relação entre user e cartao
   public function removeCard($id){
-    $usere = User::find($id);
-    $usere->card_id = null;
-    $usere->save();
+    $user = User::find($id);
+    $user->card_id = null;
+    $user->save();
     return response()->json(['Sucesso']);
   }
 
-  //Método responsável por listar os produtos comprados pelo usere
+  //Método responsável por listar os produtos comprados pelo user
   public function listProducts($id){
     $user = User::find($id);
     return response()->json($user->products);
   }
 
+  //Método responsável por represnetar a avaliação do cliente a uma loja
+  public function rate(Request $request, $id, $store_id){
+    $user = User::find($id);
+    $store = Store::find($store_id);
 
+    if($request->grade){
+      $grade = $request->grade;
+    }
+
+    $user->stores()->attach($store->id,['grade' => $grade]);
+    return response()->json(['Avaliacao realizada']);
+  }
+
+  //Método responsável por listar as lojas avaliadas pelo user
+  public function listRate($id){
+    $user = User::find($id);
+    return response()->json($user->stores);
+  }
 
 }

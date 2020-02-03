@@ -23,7 +23,13 @@ class CreateProductsTable extends Migration
             $table->string('animal');
             $table->integer('stock');
             $table->boolean('status_stock');
+            $table->unsignedBigInteger('store_id')->nullable();
             $table->timestamps();
+        });
+
+        //Foreign key
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
         });
     }
 

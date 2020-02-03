@@ -45,6 +45,9 @@ Route::post('criarProduto', 'ProductController@createProduct');
 Route::put('atualizarProduto/{id}', 'ProductController@updateProduct');
 Route::delete('deletarProduto/{id}', 'ProductController@deleteProduct');
 
+Route::put('adicionarLoja/{id}', 'ProductController@addStore');
+Route::put('removerLoja/{id}', 'ProductController@removeStore');
+
 //Rotas Account
 Route::get('listarContas', 'AccountController@listAccount');
 Route::get('mostrarConta/{id}', 'AccountController@showAccount');

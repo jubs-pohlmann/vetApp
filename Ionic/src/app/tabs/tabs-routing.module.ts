@@ -37,6 +37,16 @@ const routes: Routes = [
           }
         ]
       },
+       {
+         path: 'cadastro',
+         children: [
+           {
+             path: '',
+             loadChildren: () =>
+               import('../cadastro/cadastro.module').then(m => m.CadastroPageModule)
+           }
+        ]
+      },
       {
         path: '',
         redirectTo: '/tabs/tab1',

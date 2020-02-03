@@ -25,12 +25,12 @@ Route::post('criarCliente', 'UserController@createUser');
 Route::put('atualizarCliente/{id}', 'UserController@updateUser');
 Route::delete('deletarCliente/{id}', 'UserController@deleteUser');
 
-Route::put('adicionarCartao/{id}', 'UserController@addCard');
+Route::put('adicionarCartao/{id}/{card_id}', 'UserController@addCard');
 Route::put('removerCartao/{id}', 'UserController@removeCard');
 
 Route::get('listarProdutos/{id}', 'UserController@listProducts');
 
-Route::put('avaliar/{id}/{store_id}', 'UserController@rate');
+Route::put('avaliar/{id}/{store_id}/{grade}', 'UserController@rate');
 Route::get('listarLojaAv/{id}', 'UserController@listRate');
 
 

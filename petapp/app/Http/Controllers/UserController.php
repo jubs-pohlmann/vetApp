@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Store;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
   //Método responsável por criar um novo user
-  public function createUser(Request $request){
+  public function createUser(UserRequest $request){
 
     $user = new User;
 
@@ -17,10 +19,10 @@ class UserController extends Controller
     $user->email = $request->email;
     $user->password = $request->password;
     $user->birthdate = $request->birthdate;
-    $user->photo = $request->photo;
     $user->phone = $request->phone;
-    $user->address = $request->address;
     $user->cpf = $request->cpf;
+    $user->photo = $request->photo;
+    $user->address = $request->address;
     $user->save();
 
     return response()->json([$user]);
@@ -45,7 +47,7 @@ class UserController extends Controller
   }
 
   //Método para edição de dados do user
-  public function updateUser(Request $request, $id){
+  public function updateUser(UserRequest $request, $id){
     $user = User::find($id);
     if($user){
       if($request->name){
@@ -81,11 +83,9 @@ class UserController extends Controller
   }
 
   //Método responsavel por estabelecer uma relação entre user e cartao
-  public function addCard(Request $request, $id){
+  public function addCard($request, $id){
     $user = User::find($id);
-    if($request->card_id){
-      $user->card_id = $request->card_id;
-    }
+    $user->card_id = $request;
     $user->save();
     return response()->json(['Sucesso']);
   }
@@ -105,13 +105,9 @@ class UserController extends Controller
   }
 
   //Método responsável por represnetar a avaliação do cliente a uma loja
-  public function rate(Request $request, $id, $store_id){
+  public function rate($id, $store_id, $grade){
     $user = User::find($id);
     $store = Store::find($store_id);
-
-    if($request->grade){
-      $grade = $request->grade;
-    }
 
     $user->stores()->attach($store->id,['grade' => $grade]);
     return response()->json(['Avaliacao realizada']);

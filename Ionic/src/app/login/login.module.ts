@@ -1,7 +1,7 @@
 import { NgModule,Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormControl } from '@angular/forms';
-
+import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -15,7 +15,10 @@ import { LoginPage } from './login.page';
     CommonModule,
     ReactiveFormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    ReactiveFormsModule,
+    RouterModule.forChild([{ path: '', component: LoginPage }]),
+  
   ],
   declarations: [LoginPage]
 })

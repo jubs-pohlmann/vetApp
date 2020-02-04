@@ -44,6 +44,7 @@
   text-align: center;
   color:#222222;
   font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .formButton1{
@@ -67,6 +68,15 @@
   margin-left:72px;
   
 }
-.navBar{
-  slot:'absoluted';
+.invalid{
+  ion-label{
+    --color:red;
+  }
+  ion-input{
+    border-bottom:1px solid red;
+  }
+}
+
+ion-label{
+  --font-family:'Josefin Sans', sans-serif; ;
 }

@@ -1,10 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 <ion-content>
- <ion-item>
- 	<ion-input>Digite seu e-mail</ion-input>
- </ion-item>
+
+  <ion-item lines="none">
+
+  <ion-icon name="arrow-back"></ion-icon>
+  </ion-item>
+
+  <ion-item class='input'>
+    <ion-label class='title' position='stacked'>E-mail</ion-label>
+    <ion-input class='placeholder' required=true clear-input=true placeholder='ex.:joao@gmail.com'></ion-input>
+  </ion-item>
+
+  <ion-item class='input'>
+    <ion-label class='title' position='stacked'>Senha</ion-label>
+    <ion-input class='placeholder' required=true clear-input=true placeholder='ex.:********'></ion-input>
+  </ion-item>
+  <p class="forgot">Esqueci minha senha</p>
+  <ion-button class="formButton" fill='small'>Login</ion-button>
+  <p class='formText'>OU</p>
+  <ion-button class='formButton1' fill='small'>Cadastro Para Clientes</ion-button>
+  <p></p>
+  <ion-button class='formButton2' fill='small'>Cadastro Para Lojas</ion-button>
+  <img src='../../assets/imagens/ondas.png'>
+
+  <ion-tabs>
+  <ion-tab-bar  class='navBar' slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="busca">
+      <ion-icon name="search"></ion-icon>
+      <ion-label>Busca</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="perfil">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="carrinho">
+      <ion-icon name="cart"></ion-icon>
+      <ion-label>Carrinho</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
 </ion-content>

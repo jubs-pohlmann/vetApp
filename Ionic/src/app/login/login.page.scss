@@ -1,0 +1,72 @@
+.title{
+  font-size:23px;
+  margin-top: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  color:#333333;
+}
+.placeholder{
+  margin-top: 20px;
+  color:#999999;
+}
+
+.input{
+  line:20%;
+}
+.forgot{
+  margin-left: 15px;
+  color:#999999;
+}
+
+.formButton{ 
+  color:#333333;
+  font-size:20px;
+  font-weight:bold;
+  --background:white;
+  -box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+  --border-radius:5px;
+  width:157px;
+  heigth:37px;  
+}
+
+.formButton{
+  color:#333333;
+  font-size:14px;
+  font-weight:bold;
+  --background:white;
+  --box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+  --border-radius:5px;
+  width:150px;
+  heigth:37px;
+  margin-left:110px;
+}
+
+.formText{
+  text-align: center;
+  color:#222222;
+  font-size: 14px;
+}
+
+.formButton1{
+  color:#333333;
+  font-size:13px;
+  font-weight:bold;
+  --background:white;
+  --box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+  --border-radius:5px;
+  margin-left:60px;
+
+}
+
+.formButton2{
+  color:#333333;
+  font-size:13px;
+  font-weight:bold;
+  --background:white;
+  --box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+  --border-radius:5px;
+  margin-left:72px;
+  
+}
+.navBar{
+  slot:'absoluted';
+}

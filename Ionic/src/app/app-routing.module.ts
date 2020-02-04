@@ -12,6 +12,14 @@ const routes: Routes = [
   },  {
     path: 'cadastro2',
     loadChildren: () => import('./cadastro2/cadastro2.module').then( m => m.Cadastro2PageModule)
+  },
+  {
+    path: 'cadastroloja',
+    loadChildren: () => import('./cadastroloja/cadastroloja.module').then( m => m.CadastrolojaPageModule)
+  },
+  {
+    path: 'cadastroloja2',
+    loadChildren: () => import('./cadastroloja2/cadastroloja2.module').then( m => m.Cadastroloja2PageModule)
   }
 
 ];

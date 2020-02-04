@@ -1,0 +1,41 @@
+<html>
+	<ion-header>
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+		<ion-toolbar>
+			<ion-icon size="large" name="arrow-round-back"></ion-icon>
+			<ion-title>Cadastro Loja</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+
+		<img class="backgroundImg" src="../../assets/images/aquarela+cao.jpg" alt="cachorro correndo" no-repeat/>
+    <div class="titleText"><ion-label>Insira informações pertinentes à loja apenas!</ion-label></div>
+
+    <div class=form>
+			<div class="formItem">
+				<ion-label class="formTitle" position="stacked">Nome</ion-label>
+				<ion-input class="formPlaceholder" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: João Silva"></ion-input>
+			</div>
+			<div class="formItem">
+				<ion-label class="formTitle" position="stacked">E-mail</ion-label>
+				<ion-input class="formPlaceholder" type="email" inputmode="email" required=true clear-input=true placeholder="ex.: joao@dominio.com"></ion-input>
+			</div>
+			<div class="formItem">
+				<ion-label class="formTitle" position="stacked">CNPJ</ion-label>
+				<ion-input class="formPlaceholder" type="number" inputmode="numeric" required=true clear-input=true placeholder="ex.: 31/12/1999"></ion-input>
+			</div>
+			<div class="formItem">
+				<ion-label class="formTitle" position="stacked">Telefone</ion-label>
+				<ion-input class="formPlaceholder" type="tel" inputmode="tel" required=true clear-input=true placeholder="ex.: (21) 999-919-495"></ion-input>
+			</div>
+		</div>
+		<!-- BUTTON MARGIN NEEDS FIX -->
+		<div class="buttonCentralizer">
+			<ion-button class="button" slot="bottom">
+				<ion-label class="buttonText">Continuar</ion-label>
+			</ion-button>
+		</div>
+	</ion-content>
+
+
+</html>

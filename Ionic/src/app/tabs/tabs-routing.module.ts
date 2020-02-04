@@ -58,6 +58,26 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'cadastroloja',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../cadastroloja/cadastroloja.module').then(m => m.CadastrolojaPageModule)
+          }
+       ]
+     },
+     {
+      path: 'cadastroloja2',
+      children: [
+        {
+          path: '',
+          loadChildren: () =>
+            import('../cadastroloja2/cadastroloja2.module').then(m => m.Cadastroloja2PageModule)
+        }
+     ]
+   },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

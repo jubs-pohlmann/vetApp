@@ -3,26 +3,42 @@
 		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 		<ion-toolbar>
 			<ion-icon size="large" name="arrow-round-back"></ion-icon>
-			<ion-title>Cadastro</ion-title>
+			<ion-title>Cadastro Loja</ion-title>
 		</ion-toolbar>
 	</ion-header>
 	<ion-content>
-
 		<img class="backgroundImg" src="../../assets/images/aquarela+cao.jpg" alt="cachorro correndo" no-repeat/>
-		
-		<div class=form>
+
+    	<div class=form>
 			<div class="formItem">
 				<ion-label class="formTitle" position="stacked">Endereço</ion-label>
-				<ion-input class="formPlaceholder" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Rua Totó Feliz, 520"></ion-input>
+				<ion-input class="formPlaceholder" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: João Silva"></ion-input>
 			</div>
 			<div class="formItem">
-				<ion-label class="formTitle" position="stacked">Bloco e Apartamento</ion-label>
-				<ion-input class="formPlaceholder" type="text" inputmode="text" required=false clear-input=true placeholder="ex.: Bloco 1, Apt 202"></ion-input>
+				<ion-label class="formTitle" position="stacked">Bloco e loja</ion-label>
+				<ion-input class="formPlaceholder" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: joao@dominio.com"></ion-input>
 			</div>
-			<div class="formItem">
-				<ion-label class="formTitle" position="stacked">CPF</ion-label>
-				<ion-input class="formPlaceholder" type="number" inputmode="numeric" required=true clear-input=true placeholder="ex.: 123.456.789-01"></ion-input>
-			</div>
+		</div>
+
+		<ion-list>
+			<ion-radio-group>
+			  <ion-list-header>
+				<ion-label>Sua loja fará entregas?</ion-label>
+			  </ion-list-header>
+		  
+			  <ion-item>
+				<ion-label>Sim</ion-label>
+				<ion-radio slot="start" value="sim" checked></ion-radio>
+			  </ion-item>
+		  
+			  <ion-item>
+				<ion-label>Não</ion-label>
+				<ion-radio slot="start" value="nao"></ion-radio>
+			  </ion-item>
+			</ion-radio-group>
+		</ion-list>
+
+		<div class=formPart2>
 			<div class="formItem">
 				<ion-label class="formTitle" position="stacked">Senha</ion-label>
 				<ion-input class="formPlaceholder" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
@@ -31,11 +47,12 @@
 				<ion-label class="formTitle" position="stacked">Confirme a senha</ion-label>
 				<ion-input class="formPlaceholder" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
 			</div>
-    </div>
-    
+		</div>
+
+		<!-- BUTTON MARGIN NEEDS FIX -->
 		<div class="buttonCentralizer">
-			<ion-button class="button">
-				<ion-label class="buttonText">Cadastrar-se</ion-label>
+			<ion-button class="button" slot="bottom">
+				<ion-label class="buttonText">Continuar</ion-label>
 			</ion-button>
 		</div>
 	</ion-content>

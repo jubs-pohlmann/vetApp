@@ -20,23 +20,26 @@
 			</div>
 		</div>
 
-		<ion-list>
-			<ion-radio-group>
-			  <ion-list-header>
+		
+		<ion-list class="radioText">
 				<ion-label>Sua loja fará entregas?</ion-label>
-			  </ion-list-header>
-		  
-			  <ion-item>
+			<ion-radio-group class="radioText">
+			  
+			  
+		  	<div class="delivery">
+			  <div class="radioMargin">
 				<ion-label>Sim</ion-label>
-				<ion-radio slot="start" value="sim" checked></ion-radio>
-			  </ion-item>
+				<ion-radio mode="md" slot="start" value="sim" checked></ion-radio>
+			  </div>
 		  
-			  <ion-item>
+			  <div class="radioMargin">
 				<ion-label>Não</ion-label>
-				<ion-radio slot="start" value="nao"></ion-radio>
-			  </ion-item>
+				<ion-radio mode="md" slot="start" value="nao"></ion-radio>
+			  </div>
+			</div>
 			</ion-radio-group>
 		</ion-list>
+		
 
 		<div class=formPart2>
 			<div class="formItem">

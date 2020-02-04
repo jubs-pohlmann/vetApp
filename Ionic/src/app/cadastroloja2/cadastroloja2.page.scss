@@ -3,17 +3,28 @@
 	--padding-top: 2px;
   }
 
-.titleText{
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 20px;
-    z-index: 1;
-    
+.delivery{
+	display: flex;
+	justify-content: center;
+}
+
+.radioMargin{
+	margin: 6px;
+	margin-left:20px;
+}
+
+.radioText{
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 20px;
+	color: #333333;
+	margin-top:10px;
+	margin-left:10px;
 }
 
 .form{
-	margin-top: -135px;
+	margin-top: -100px;
 	margin-left: 1em;
 	margin-right: 1em;
 	color: #333333;

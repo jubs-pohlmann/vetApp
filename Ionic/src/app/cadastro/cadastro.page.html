@@ -7,7 +7,63 @@
 		</ion-toolbar>
 	</ion-header>
 	<ion-content>
+	 //Mudancas em aula 
+	<div class="ion-padding">
+		<form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+			<ion-list>
+				<ion-item [class.invalid]="registerForm.controls.name.invalid && registerForm.controls.name.touched">
+					<ion-label position="floating">Nome</ion-label>
+					<ion-input type="text" formControlName="name"></ion-input>
+				</ion-item>
 
+				<ion-item [class.invalid]="registerForm.controls.email.invalid && registerForm.controls.email.touched">
+					<ion-label position="floating">E-mail</ion-label>
+					<ion-input type="email" formControlName="email"></ion-input>
+				</ion-item>
+
+				<ion-item [class.invalid]="registerForm.controls.password.invalid && registerForm.controls.password.touched">
+					<ion-label position="floating">Password</ion-label>
+					<ion-input type="password" formControlName="password"></ion-input>
+				</ion-item>
+
+				<ion-item [class.invalid]="registerForm.controls.phone.invalid && registerForm.controls.phone.touched">
+					<ion-label position="floating">Phone</ion-label>
+					<ion-input minlength="15" type="text" formControlName="phone" [brmasker]="{phone: true}"></ion-input>
+				</ion-item>
+
+
+			</ion-list>
+
+			<ion-list class="ion-margin-top">
+				<ion-radio-group fromControlName="genre">
+					<ion-list-header>
+					<ion-label>Gênero favorito</ion-label>
+					</ion-list-header>
+
+					<ion-item>
+						<ion-label>Ação</ion-label>
+						<ion-radio slot="start" value="acao"></ion-radio>
+					</ion-item>
+
+					<ion-item>
+						<ion-label>Romance</ion-label>
+						<ion-radio slot="start" value="romance"></ion-radio>
+					</ion-item>
+
+					<ion-item>
+						<ion-label>Terror</ion-label>
+						<ion-radio slot="start" value="terror"></ion-radio>
+					</ion-item>
+				</ion-radio-group>
+			</ion-list>
+
+			<ion-row class="ion-justify-content-center">
+				<ion-button type="submit" color="danger" shape="round" disabled="registerForm.invalid">Cadastrar</ion-button>
+			</ion-row>
+		</form>
+	</div>
+
+	//FIM MUDANÇAS EM AULA
 		<img class="backgroundImg" src="../../assets/images/aquarela+cao.jpg" alt="cachorro correndo" no-repeat/>
 		
 		<div class=form>

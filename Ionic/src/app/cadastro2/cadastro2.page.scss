@@ -16,6 +16,15 @@
 	--color: #333333;
 }
 
+.invalid {
+	ion-label{
+		--color:#FF8B94;
+	}
+	ion-input{
+		border-bottom: 1px solid #FF8B94;
+	}
+}
+
 .formTitle {
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: normal;

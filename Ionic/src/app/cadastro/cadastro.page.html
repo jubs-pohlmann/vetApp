@@ -7,90 +7,34 @@
 		</ion-toolbar>
 	</ion-header>
 	<ion-content>
-	 //Mudancas em aula 
-	<div class="ion-padding">
-		<form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
-			<ion-list>
-				<ion-item [class.invalid]="registerForm.controls.name.invalid && registerForm.controls.name.touched">
-					<ion-label position="floating">Nome</ion-label>
-					<ion-input type="text" formControlName="name"></ion-input>
-				</ion-item>
-
-				<ion-item [class.invalid]="registerForm.controls.email.invalid && registerForm.controls.email.touched">
-					<ion-label position="floating">E-mail</ion-label>
-					<ion-input type="email" formControlName="email"></ion-input>
-				</ion-item>
-
-				<ion-item [class.invalid]="registerForm.controls.password.invalid && registerForm.controls.password.touched">
-					<ion-label position="floating">Password</ion-label>
-					<ion-input type="password" formControlName="password"></ion-input>
-				</ion-item>
-
-				<ion-item [class.invalid]="registerForm.controls.phone.invalid && registerForm.controls.phone.touched">
-					<ion-label position="floating">Phone</ion-label>
-					<ion-input minlength="15" type="text" formControlName="phone" [brmasker]="{phone: true}"></ion-input>
-				</ion-item>
-
-
-			</ion-list>
-
-			<ion-list class="ion-margin-top">
-				<ion-radio-group fromControlName="genre">
-					<ion-list-header>
-					<ion-label>Gênero favorito</ion-label>
-					</ion-list-header>
-
-					<ion-item>
-						<ion-label>Ação</ion-label>
-						<ion-radio slot="start" value="acao"></ion-radio>
-					</ion-item>
-
-					<ion-item>
-						<ion-label>Romance</ion-label>
-						<ion-radio slot="start" value="romance"></ion-radio>
-					</ion-item>
-
-					<ion-item>
-						<ion-label>Terror</ion-label>
-						<ion-radio slot="start" value="terror"></ion-radio>
-					</ion-item>
-				</ion-radio-group>
-			</ion-list>
-
-			<ion-row class="ion-justify-content-center">
-				<ion-button type="submit" color="danger" shape="round" [disabled]="registerForm.invalid">Cadastrar</ion-button>
-			</ion-row>
-		</form>
-	</div>
-
-	//FIM MUDANÇAS EM AULA
 		<img class="backgroundImg" src="../../assets/images/aquarela+cao.jpg" alt="cachorro correndo" no-repeat/>
 		
-		<div class=form>
-			<div class="formItem">
+		<form class="form" [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+			<div class="formItem" [class.invalid]="registerForm.controls.name.invalid && registerForm.controls.name.touched"> 
 				<ion-label class="formTitle" position="stacked">Nome</ion-label>
-				<ion-input class="formPlaceholder" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: João Silva"></ion-input>
+				<ion-input class="formPlaceholder" formControlName="name" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: João Silva"></ion-input>
 			</div>
-			<div class="formItem">
+
+			<div class="formItem" [class.invalid]="registerForm.controls.email.invalid && registerForm.controls.email.touched">
 				<ion-label class="formTitle" position="stacked">E-mail</ion-label>
-				<ion-input class="formPlaceholder" type="email" inputmode="email" required=true clear-input=true placeholder="ex.: joao@dominio.com"></ion-input>
+				<ion-input class="formPlaceholder" formControlName="email" type="email" inputmode="email" required=true clear-input=true placeholder="ex.: joao@dominio.com"></ion-input>
 			</div>
-			<div class="formItem">
+
+			<div class="formItem" [class.invalid]="registerForm.controls.birthdate.invalid && registerForm.controls.birthdate.touched">
 				<ion-label class="formTitle" position="stacked">Nascimento</ion-label>
-				<ion-input class="formPlaceholder" type="date" inputmode="numeric" required=true clear-input=true placeholder="ex.: 31/12/1999"></ion-input>
+				<ion-input class="formPlaceholder" formControlName="birthdate" type="date" inputmode="numeric" required=true clear-input=true placeholder="ex.: 31/12/1999"></ion-input>
 			</div>
-			<div class="formItem">
+			<!-- formato de retorno birthdate AAAA-MM-DD --> 
+			<div class="formItem" [class.invalid]="registerForm.controls.phone.invalid && registerForm.controls.phone.touched">
 				<ion-label class="formTitle" position="stacked">Telefone</ion-label>
-				<ion-input class="formPlaceholder" type="tel" inputmode="tel" required=true clear-input=true placeholder="ex.: (21) 999-919-495"></ion-input>
+				<ion-input class="formPlaceholder" formControlName="phone" minLength="15" [brmasker]="{phone: true}" type="text" inputmode="numeric" required=true clear-input=true placeholder="ex.: (21) 999-919-495"></ion-input>
 			</div>
-		</div>
-		<!-- BUTTON MARGIN NEEDS FIX -->
-		<div class="buttonCentralizer">
-			<ion-button class="button" slot="bottom">
-				<ion-label class="buttonText">Continuar</ion-label>
-			</ion-button>
-		</div>
+			<!-- formato de retorno phone (DD) XXXXX-XXXX/(DD) XXXX-XXXX -->
+			<div class="buttonCentralizer">
+				<ion-button class="button" type="submit" slot="bottom" [disabled]="registerForm.invalid">
+					<ion-label class="buttonText">Continuar</ion-label>
+				</ion-button>
+			</div>
+		</form>
 	</ion-content>
-
-
 </html>

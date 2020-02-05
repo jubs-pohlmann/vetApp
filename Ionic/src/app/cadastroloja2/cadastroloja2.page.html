@@ -15,8 +15,8 @@
 			</div> -->
 		
 		<ion-list class="radioText">
-				<ion-label>Sua loja fará entregas?</ion-label>
-			<ion-radio-group class="radioText">
+			<ion-label>Sua loja fará entregas?</ion-label>
+			<ion-radio-group>
 			  
 		  	<div class="delivery">
 			  <div class="radioMargin">
@@ -33,7 +33,7 @@
 		</ion-list>
 		
 
-		<form class="formPart2" [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+		<form class="form" [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
 			<div class="formItem" [class.invalid]="registerForm.controls.address.invalid && registerForm.controls.address.touched">
 				<ion-label class="formTitle" position="stacked">Endereço</ion-label>
 				<ion-input class="formPlaceholder" formControlName="address" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Av. Dogville, 450"></ion-input>
@@ -42,6 +42,11 @@
 			<div class="formItem" [class.invalid]="registerForm.controls.password.invalid && registerForm.controls.password.touched && password==passwordVerify">
 				<ion-label class="formTitle" position="stacked">Senha</ion-label>
 				<ion-input class="formPlaceholder" formControlName="password" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
+			  </div>
+
+			  <div class="formItem" [class.invalid]="registerForm.controls.passwordVerify.invalid && registerForm.controls.passwordVerify.touched && password==passwordVerify">
+				<ion-label class="formTitle" position="stacked">Senha</ion-label>
+				<ion-input class="formPlaceholder" formControlName="passwordVerify" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
 			  </div>
 			  
       		

@@ -4,25 +4,30 @@
   }
 
 .titleText{
+	display: flex;
+	justify-content: center;
+	text-align: center;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 20px;
-    
-    margin-top: -100px;
+    font-size: 1.25em;
+    line-height: 1.25em;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: -15vh;
+	color: #333333;
     
 }
 
 .form{
-	//margin-top: -135px;
+	margin-top: -2vh;
 	margin-left: 1em;
 	margin-right: 1em;
 	color: #333333;
-
+ 
 }
 
 .formItem {
-	padding-top: 20px;
+	padding-top: 3vh;
 	--color: #333333;
 }
 
@@ -30,8 +35,8 @@
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: normal;
 	font-weight: 600;
-	font-size: 20px;
-	line-height: 20px;
+	font-size: 1.12em;
+	line-height: 1.12em;
 	color: #333333;
 }
 
@@ -39,14 +44,15 @@
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 18px;
-	line-height: 18px;
+	font-size: 1.12em;
+	line-height: 1.12em;
 	color: #999999;
 	border-bottom: 1px solid #A8E6CF;
 }
 
 .buttonCentralizer{
-	margin-top: 10px;
+	margin: 5vh 0vh;
+	margin-bottom: 3.5vh;
 	display: flex;
 	justify-content: center;
 }
@@ -55,19 +61,20 @@
 	//TEXT
 	--color: #333333;
 	font-family: 'Josefin Sans', sans-serif;
-	font-size: 20px;
+	font-size: 1.25em;
 	font-weight: bold;
 	//BOX
-	margin-bottom: 30px;
+	margin-bottom: 1.875em;
 	--background: white;
 	--box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 	--border-radius: 5px;
-	width: 157px;
-	height: 37px;
+	width: 42.39vw;
+	height: 5.55vh;
 }
 
 .buttonText{
-	margin: 10px 32px;
+	margin: 2.7vw 4.8vh;
+	text-transform: capitalize;
 }
 
 .invalid{
@@ -75,8 +82,9 @@
 		--color: #FF8B94;
 	}
 
-	ion-input{
+	ion-input {
 		border-bottom: 1px solid #FF8B94;
 	}
 }
+
 

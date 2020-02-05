@@ -14,10 +14,9 @@ export class CadastroPage implements OnInit {
 	constructor(public formbuilder: FormBuilder) { 
 		this.registerForm = this.formbuilder.group({
 			name: [null, [Validators.required, Validators.minLength(3)]],
-			password: [null, [Validators.required, Validators.minLength(6)]],
 			email: [null, [Validators.required, Validators.email]],
-			phone: [null, [Validators.required]]
-			//birthdate: [null, [Validators.required, Validators.date]]
+			phone: [null, [Validators.required]],
+			birthdate: [null, [Validators.required]]
 		});
 	}
 	

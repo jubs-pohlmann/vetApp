@@ -4,7 +4,7 @@
   }
 
 .form{
-	margin-top: -135px;
+	margin-top: -18vh;
 	margin-left: 1em;
 	margin-right: 1em;
 	color: #333333;
@@ -12,7 +12,7 @@
 }
 
 .formItem {
-	padding-top: 20px;
+	padding-top: 3vh;
 	--color: #333333;
 }
 
@@ -20,8 +20,8 @@
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: normal;
 	font-weight: 600;
-	font-size: 20px;
-	line-height: 20px;
+	font-size: 1.12em;
+	line-height: 1.12em;
 	color: #333333;
 }
 
@@ -29,14 +29,15 @@
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 18px;
-	line-height: 18px;
+	font-size: 1.12em;
+	line-height: 1.12em;
 	color: #999999;
 	border-bottom: 1px solid #A8E6CF;
 }
 
 .buttonCentralizer{
-	margin-top: 80px;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
 	display: flex;
 	justify-content: center;
 }
@@ -45,19 +46,20 @@
 	//TEXT
 	--color: #333333;
 	font-family: 'Josefin Sans', sans-serif;
-	font-size: 20px;
+	font-size: 1.25em;
 	font-weight: bold;
 	//BOX
-	margin-bottom: 30px;
+	margin-bottom: 1.875em;
 	--background: white;
 	--box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 	--border-radius: 5px;
-	width: 157px;
-	height: 37px;
+	width: 42.39vw;
+	height: 5.55vh;
 }
 
 .buttonText{
-	margin: 10px 32px;
+	margin: 2.7vw 4.8vh;
+	text-transform: lowercase;
 }
 
 //EM AULA

@@ -14,7 +14,7 @@ export class Cadastroloja2Page implements OnInit {
     this.registerForm = this.formbuilder.group({
       address: [null,[Validators.required, Validators.minLength(2)]],
       password: [null,[Validators.required, Validators.minLength(6)]],
-      
+      passwordVerify: [null,[Validators.required,Validators.minLength(6)]]   
     });
    }
 

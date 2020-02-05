@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { Router} from '@angular/router'
  
 @Component({
   selector: 'app-login',
@@ -10,11 +11,11 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 export class LoginPage implements OnInit {
   
   
-  registerForm: FormGroup;
+  loginForm: FormGroup;
 
-  constructor(public formbuilder: FormBuilder) {
+  constructor(public formbuilder: FormBuilder, public router: Router) {
 
-    this.registerForm = this.formbuilder.group({
+    this.loginForm = this.formbuilder.group({
       
       email:[null,[Validators.required,Validators.email]],
       password:[null,[Validators.required,Validators.minLength(6)]],
@@ -26,6 +27,15 @@ export class LoginPage implements OnInit {
     console.log(form);
     console.log(form.value);
   }
+
+  // navegarCadastroLoja(){
+  //   this.router.navigate(['/CadastroLoja'])
+  // }
+
+  // navegarCadastroUsuario(){
+  //   this.router.navigate(['cadastro'])
+  // } <= ROTAS AINDA NÃO LINKADAS 
+
 
   ngOnInit() {
   }

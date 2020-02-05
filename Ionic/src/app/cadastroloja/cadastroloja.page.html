@@ -14,19 +14,19 @@
     <form class=form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
 			<div class="formItem" [class.invalid]="registerForm.controls.name.invalid && registerForm.controls.name.touched"> 
 				<ion-label class="formTitle" position="stacked">Nome</ion-label>
-				<ion-input class="formPlaceholder" formControlName="name" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: João Silva"></ion-input>
+				<ion-input class="formPlaceholder" formControlName="name" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: PetLove"></ion-input>
 			</div>
 			<div class="formItem" [class.invalid]="registerForm.controls.email.invalid && registerForm.controls.email.touched">
 				<ion-label class="formTitle" position="stacked">E-mail</ion-label>
-				<ion-input class="formPlaceholder" formControlName="email" type="email" inputmode="email" required=true clear-input=true placeholder="ex.: joao@dominio.com"></ion-input>
+				<ion-input class="formPlaceholder" formControlName="email" type="email" inputmode="email" required=true clear-input=true placeholder="ex.: petlove@dominio.com"></ion-input>
 			</div>
 			<div class="formItem" [class.invalid]="registerForm.controls.cnpj.invalid && registerForm.controls.cnpj.touched">
 				<ion-label class="formTitle" position="stacked">CNPJ</ion-label>
-				<ion-input class="formPlaceholder" formControlName="cnpj" type="number" inputmode="numeric" required=true clear-input=true placeholder="ex.: 31/12/1999"></ion-input>
+				<ion-input class="formPlaceholder" formControlName="cnpj" type="text" inputmode="numeric" required=true clear-input=true placeholder="ex.: 28.268.157/0001-11" [brmasker]="{person: true}"></ion-input>
 			</div>
 			<div class="formItem" [class.invalid]="registerForm.controls.phone.invalid && registerForm.controls.phone.touched">
 				<ion-label class="formTitle" position="stacked">Telefone</ion-label>
-				<ion-input class="formPlaceholder" formControlName="phone" type="tel" inputmode="tel" required=true clear-input=true placeholder="ex.: (21) 999-919-495"></ion-input>
+				<ion-input class="formPlaceholder" formControlName="phone" type="text" inputmode="tel" required=true clear-input=true placeholder="ex.: (21) 999-919-495" [brmasker]="{phone: true}"></ion-input>
 			</div>
 			<div class="buttonCentralizer">
 				<ion-button class="button" type="submit" slot="bottom" [disabled]="registerForm.invalid">

@@ -15,8 +15,7 @@
 	margin-top: 5px;
 }
 
-.radioMargin{
-	margin: 6px;
+.radioMargin{ 
 	margin-left:5.4vw;
 }
 
@@ -26,7 +25,7 @@
 	font-size: 1.11em;
 	line-height: 1.11em;
 	color: #333333;
-	margin-top:0.15vh;
+	margin-top:-10vh;
 	margin-left:2.7vw;
 }
 
@@ -62,7 +61,7 @@
 }
 
 .buttonCentralizer{
-	margin: 0vh 5vh;
+	margin: 5vh 0vh;
 	margin-bottom: 3.5vh;
 	display: flex;
 	justify-content: center;
@@ -85,7 +84,7 @@
 
 .buttonText{
 	margin: 2.7vw 4.8vh;
-	text-transform: capitalize;
+	text-transform: lowercase;
 }
 
 .invalid{

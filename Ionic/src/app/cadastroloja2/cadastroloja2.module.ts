@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,7 +13,8 @@ import { Cadastroloja2Page } from './cadastroloja2.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    Cadastroloja2PageRoutingModule
+    Cadastroloja2PageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [Cadastroloja2Page]
 })

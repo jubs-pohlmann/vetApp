@@ -48,10 +48,16 @@ const routes: Routes = [
         ]
       },
       {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
+        path: 'produto',
+        children: [
+          {
+            path:'',
+            loadChildren:() =>
+            import('../produto/produto.module').then(m => m.ProdutoPageModule)
+          }
+        ]
+       
+      },
     ]
   },
   {

@@ -15,23 +15,19 @@ class CreateStoresTable extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
             $table->string('rating')->nullable();
-            $table->string('photo');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('email');
-            $table->string('password');
             $table->string('cnpj');
             $table->boolean('delivery');
-            $table->unsignedBigInteger('account_id')->nullable();
+            $table->unsignedBigInteger('super_id');
             $table->timestamps();
         });
 
         //Foreign key
         Schema::table('stores', function (Blueprint $table) {
-            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
+            $table->foreign('super_id')->references('id')->on('supers')->onDelete('cascade');
         });
+
+
     }
 
     /**

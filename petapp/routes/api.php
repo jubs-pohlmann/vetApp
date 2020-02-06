@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('listarClientes', 'UserController@listUser');
 Route::get('mostrarCliente/{id}', 'UserController@showUser');
 Route::post('criarCliente', 'UserController@createUser');
-Route::put('atualizarCliente/{id}', 'UserController@updateUser');
+Route::put('atualizarCliente', 'UserController@updateUser');
 Route::delete('deletarCliente/{id}', 'UserController@deleteUser');
 
 Route::put('adicionarCartao/{id}/{card_id}', 'UserController@addCard');
@@ -33,14 +33,20 @@ Route::get('listarProdutos/{id}', 'UserController@listProducts');
 Route::put('avaliar/{id}/{store_id}/{grade}', 'UserController@rate');
 Route::get('listarLojaAv/{id}', 'UserController@listRate');
 
+Route::post('register', 'API\PassportController@register');
+Route::post('login', 'API\PassportController@login');
+Route::group(['middleware'=> 'auth.api'], function(){
+    Route::get('logout', 'API\PassportController@logout');
+    Route::post('getDetails', 'API\PassportController@getDetails');
 
+});
 
 
 //Rotas Store
 Route::get('listarLojas', 'StoreController@listStore');
 Route::get('mostrarLoja/{id}', 'StoreController@showStore');
 Route::post('criarLoja', 'StoreController@createStore');
-Route::put('atualizarLoja/{id}', 'StoreController@updateStore');
+Route::put('atualizarLoja', 'StoreController@updateStore');
 Route::delete('deletarLoja/{id}', 'StoreController@deleteStore');
 
 Route::put('adicionarConta/{id}/{account_id}', 'StoreController@addAccount');
@@ -52,7 +58,7 @@ Route::get('listarClienteAv/{id}', 'StoreController@listClients');
 Route::get('listarProdutos', 'ProductController@listProduct');
 Route::get('mostrarProduto/{id}', 'ProductController@showProduct');
 Route::post('criarProduto', 'ProductController@createProduct');
-Route::put('atualizarProduto/{id}', 'ProductController@updateProduct');
+Route::put('atualizarProduto', 'ProductController@updateProduct');
 Route::delete('deletarProduto/{id}', 'ProductController@deleteProduct');
 
 Route::put('adicionarLoja/{id}/{store_id}', 'ProductController@addStore');
@@ -66,12 +72,12 @@ Route::put('compra/{user_id}/{id}', 'ProductController@sale');
 Route::get('listarContas', 'AccountController@listAccount');
 Route::get('mostrarConta/{id}', 'AccountController@showAccount');
 Route::post('criarConta', 'AccountController@createAccount');
-Route::put('atualizarConta/{id}', 'AccountController@updateAccount');
+Route::put('atualizarConta', 'AccountController@updateAccount');
 Route::delete('deletarConta/{id}', 'AccountController@deleteAccount');
 
 //Rotas Card
 Route::get('listarCartoes', 'CardController@listCard');
 Route::get('mostrarCartao/{id}', 'CardController@showCard');
 Route::post('criarCartao', 'CardController@createCard');
-Route::put('atualizarCartao/{id}', 'CardController@updateCard');
+Route::put('atualizarCartao', 'CardController@updateCard');
 Route::delete('deletarCartao/{id}', 'CardController@deleteCard');

@@ -15,23 +15,17 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('photo');
-            $table->string('phone');
-            $table->string('address');
             $table->string('birthdate');
             $table->string('cpf');
-            $table->unsignedBigInteger('card_id')->nullable();
             $table->rememberToken();
+            $table->unsignedBigInteger('super_id');
             $table->timestamps();
         });
         //Foreign key
         Schema::table('users', function (Blueprint $table) {
-            $table->foreign('card_id')->references('id')->on('cards')->onDelete('cascade');
+            $table->foreign('super_id')->references('id')->on('supers')->onDelete('cascade');
         });
+
     }
 
     /**

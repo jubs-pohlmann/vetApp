@@ -9,19 +9,8 @@ class StoreController extends Controller
 {
   //Método responsável por criar nova loja
   public function createStore(StoreRequest $request){
-
     $store = new Store;
-
-    $store->name = $request->name;
-    $store->email = $request->email;
-    $store->photo = $request->photo;
-    $store->phone = $request->phone;
-    $store->address = $request->address;
-    $store->password = $request->password;
-    $store->cnpj = $request->cnpj;
-    $store->delivery = $request->delivery;
-    $store->save();
-
+    $store->createStore($request);
     return response()->json([$store]);
   }
 
@@ -44,62 +33,14 @@ class StoreController extends Controller
   }
 
   //Método para edição de dados da loja
-  public function updateStore(StoreRequest $request, $id){
-    $store = Store::find($id);
-    if($store){
-      if($request->name){
-        $store->name = $request->name;
-      }
-      if($request->email){
-        $store->email = $request->email;
-      }
-      if($request->password){
-        $store->password = $request->password;
-      }
-      if($request->rating){
-        $store->rating = $request->rating;
-      }
-      if($request->photo){
-        $store->photo = $request->photo;
-      }
-      if($request->phone){
-        $store->phone = $request->phone;
-      }
-      if($request->address){
-        $store->address = $request->address;
-      }
-      if($request->delivery){
-        $store->delivery = $request->delivery;
-      }
-      if($request->cnpj){
-        $store->cnpj = $request->cnpj;
-      }
-      $store->save();
-      return response()->json([$store]);
-    }
-    else{
-      return response()->json(['Esta loja nao existe']);
-    }
-  }
-
-  //Método responsavel por estabelecer uma relação entre loja e conta
-  public function addAccount($id, $account_id){
-    $store = Store::find($id);
-    $store->account_id = $account_id;
-    $store->save();
-    return response()->json(['Sucesso']);
-  }
-
-  //Método responsavel por remover uma relação entre loja e conta
-  public function removeAccount($id){
-    $store = Store::find($id);
-    $store->account_id = null;
-    $store->save();
-    return response()->json(['Sucesso']);
+  public function updateStore(StoreRequest $request){
+    $store = Auth::store();
+    $store->updateStore($request);
+    return response()->json([$store]);
   }
 
   //Método responsável por listar os clientes que avaliaram uma loja
-  public function listClients($id){
+  public function listUsers($id){
     $store = Store::find($id);
     return response()->json($store->users);
   }

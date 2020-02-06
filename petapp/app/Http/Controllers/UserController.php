@@ -7,23 +7,14 @@ use App\User;
 use App\Store;
 use App\Http\Requests\UserRequest;
 
+
+
 class UserController extends Controller
 {
   //Método responsável por criar um novo user
   public function createUser(UserRequest $request){
-
     $user = new User;
-
-    $user->name = $request->name;
-    $user->email = $request->email;
-    $user->password = $request->password;
-    $user->birthdate = $request->birthdate;
-    $user->phone = $request->phone;
-    $user->cpf = $request->cpf;
-    $user->photo = $request->photo;
-    $user->address = $request->address;
-    $user->save();
-
+    $user->createUser($request);
     return response()->json([$user]);
   }
 
@@ -46,60 +37,15 @@ class UserController extends Controller
   }
 
   //Método para edição de dados do user
-  public function updateUser(UserRequest $request, $id){
-    $user = User::find($id);
-    if($user){
-      if($request->name){
-        $user->name = $request->name;
-      }
-      if($request->email){
-        $user->email = $request->email;
-      }
-      if($request->password){
-        $user->password = $request->password;
-      }
-      if($request->photo){
-        $user->photo = $request->photo;
-      }
-      if($request->phone){
-        $user->phone = $request->phone;
-      }
-      if($request->address){
-        $user->address = $request->address;
-      }
-      if($request->birthdate){
-        $user->birthdate = $request->birthdate;
-      }
-      if($request->cpf){
-        $user->cpf = $request->cpf;
-      }
-      $user->save();
-      return response()->json([$user]);
-    }
-    else{
-      return response()->json(['Este user nao existe']);
-    }
-  }
-
-  //Método responsavel por estabelecer uma relação entre user e cartao
-  public function addCard($id, $card_id){
-    $user = User::find($id);
-    $user->card_id = $card_id;
-    $user->save();
-    return response()->json(['Sucesso']);
-  }
-
-  //Método responsavel por remover uma relação entre user e cartao
-  public function removeCard($id){
-    $user = User::find($id);
-    $user->card_id = null;
-    $user->save();
-    return response()->json(['Sucesso']);
+  public function updateUser(UserRequest $request){
+    $user = Auth::user();
+    $user->updateUser($request);
+    return response()->json([$user]);
   }
 
   //Método responsável por listar os produtos comprados pelo user
-  public function listProducts($id){
-    $user = User::find($id);
+  public function listProducts(){
+    $user = Auth::user();
     return response()->json($user->products);
   }
 
@@ -107,7 +53,7 @@ class UserController extends Controller
   public function rate($id, $store_id, $grade){
     $user = User::find($id);
     $store = Store::find($store_id);
-
+    //$user->stores()->where('id',$store_id);
     $user->stores()->attach($store->id,['grade' => $grade]);
     return response()->json(['Avaliacao realizada']);
   }
@@ -118,4 +64,14 @@ class UserController extends Controller
     return response()->json($user->stores);
   }
 
+
+
+  // Compra
+
+  //Método responsável por representar a compra de um produto por cliente
+  public function sale($product_id){
+    $user = User::find($id);
+    $user->sale();
+    return response()->json(['Venda realizada']);
+  }
 }

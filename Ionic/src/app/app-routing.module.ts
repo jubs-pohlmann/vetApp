@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'cadastroloja2',
     loadChildren: () => import('./cadastroloja2/cadastroloja2.module').then( m => m.Cadastroloja2PageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   }
 
 ];

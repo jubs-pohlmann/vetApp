@@ -16,14 +16,31 @@
 </ion-header>
 
 <ion-content>
-  <div class="categoriasProdutos">
-    <div class="categoriaCard">
-      <img src="../../assets/images/petclothes.jpg">
-      <ion-label>Acessórios</ion-label>
-    </div>
-   
-  </div>
-
+  <ion-label class="title">Categorias</ion-label>
+  <ion-slides>
+    <ion-slide>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/petclothes.jpg" alt="gato de casaco" />
+        <div class="categoriaText">Acessórios</div>
+      </ion-card>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/medicine.jpg" alt="gato de casaco" />
+        <div class="categoriaText" id="card2">Saúde</div>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/medicine.jpg" alt="gato de casaco" />
+        <div class="categoriaText" id="card2">Saúde</div>
+      </ion-card>
+    <!-- </ion-slide>
+    <ion-slide> -->
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/food.jpg" alt="gato de casaco" />
+        <div class="categoriaText" id="card3">Alimentação</div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
 
 </html>

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,67 +16,48 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Rotas Client
+Route::get('listClient', 'ClientController@listClient');
+Route::get('showClient/{id}', 'ClientController@showClient');
 
-//Rotas User
-Route::get('listarClientes', 'UserController@listUser');
-Route::get('mostrarCliente/{id}', 'UserController@showUser');
-Route::post('criarCliente', 'UserController@createUser');
-Route::put('atualizarCliente', 'UserController@updateUser');
-Route::delete('deletarCliente/{id}', 'UserController@deleteUser');
-
-Route::put('adicionarCartao/{id}/{card_id}', 'UserController@addCard');
-Route::put('removerCartao/{id}', 'UserController@removeCard');
-
-Route::get('listarProdutos/{id}', 'UserController@listProducts');
-
-Route::put('avaliar/{id}/{store_id}/{grade}', 'UserController@rate');
-Route::get('listarLojaAv/{id}', 'UserController@listRate');
-
-Route::post('register', 'API\PassportController@register');
-Route::post('login', 'API\PassportController@login');
-Route::group(['middleware'=> 'auth.api'], function(){
-    Route::get('logout', 'API\PassportController@logout');
-    Route::post('getDetails', 'API\PassportController@getDetails');
-
-});
+// Route::get('listarProdutos/{id}', 'UserController@listProducts');
+//
+// Route::put('avaliar/{id}/{store_id}/{grade}', 'UserController@rate');
+// Route::get('listarLojaAv/{id}', 'UserController@listRate');
 
 
 //Rotas Store
-Route::get('listarLojas', 'StoreController@listStore');
-Route::get('mostrarLoja/{id}', 'StoreController@showStore');
-Route::post('criarLoja', 'StoreController@createStore');
-Route::put('atualizarLoja', 'StoreController@updateStore');
-Route::delete('deletarLoja/{id}', 'StoreController@deleteStore');
+Route::get('listStore', 'StoreController@listStore');
+Route::get('showStore/{id}', 'StoreController@showStore');
 
-Route::put('adicionarConta/{id}/{account_id}', 'StoreController@addAccount');
-Route::put('removerConta/{id}', 'StoreController@removeAccount');
-
-Route::get('listarClienteAv/{id}', 'StoreController@listClients');
+//Route::get('listarUserAv/{id}', 'StoreController@listClients');
 
 //Rotas Product
-Route::get('listarProdutos', 'ProductController@listProduct');
-Route::get('mostrarProduto/{id}', 'ProductController@showProduct');
-Route::post('criarProduto', 'ProductController@createProduct');
-Route::put('atualizarProduto', 'ProductController@updateProduct');
-Route::delete('deletarProduto/{id}', 'ProductController@deleteProduct');
+Route::get('listProduct', 'ProductController@listProduct');
+Route::get('showProduto/{id}', 'ProductController@showProduct');
+Route::post('createProduto', 'ProductController@createProduct');
+Route::put('updateProduto', 'ProductController@updateProduct');
+Route::delete('deleteProduto/{id}', 'ProductController@deleteProduct');
 
-Route::put('adicionarLoja/{id}/{store_id}', 'ProductController@addStore');
-Route::put('removerLoja/{id}', 'ProductController@removeStore');
+// Route::put('adicionarLoja/{id}/{store_id}', 'ProductController@addStore');
+// Route::put('removerLoja/{id}', 'ProductController@removeStore');
+//
+// Route::get('listarUsers/{id}', 'ProductController@listClients');
+// Route::put('compra/{user_id}/{id}', 'ProductController@sale');
 
-Route::get('listarClientes/{id}', 'ProductController@listClients');
-Route::put('compra/{user_id}/{id}', 'ProductController@sale');
 
 
-//Rotas Account
-Route::get('listarContas', 'AccountController@listAccount');
-Route::get('mostrarConta/{id}', 'AccountController@showAccount');
-Route::post('criarConta', 'AccountController@createAccount');
-Route::put('atualizarConta', 'AccountController@updateAccount');
-Route::delete('deletarConta/{id}', 'AccountController@deleteAccount');
+//Rotas User
+Route::get('listUser', 'UserController@listUser');
+Route::get('showUser', 'UserController@showUser');
+Route::delete('deleteUser/{id}', 'UserController@deleteUser');
 
-//Rotas Card
-Route::get('listarCartoes', 'CardController@listCard');
-Route::get('mostrarCartao/{id}', 'CardController@showCard');
-Route::post('criarCartao', 'CardController@createCard');
-Route::put('atualizarCartao', 'CardController@updateCard');
-Route::delete('deletarCartao/{id}', 'CardController@deleteCard');
+Route::post('registerStore', 'API\PassportController@registerStore');
+Route::post('registerClient', 'API\PassportController@registerClient');
+Route::post('login', 'API\PassportController@login');
+Route::group(['middleware'=> 'auth:api'], function(){
+    Route::get('logout', 'API\PassportController@logout');
+    Route::post('getDetails', 'API\PassportController@getDetails');
+    Route::put('updateClient', 'API\PassportController@updateClient');
+    Route::put('updateStore', 'API\PassportController@updateStore');
+});

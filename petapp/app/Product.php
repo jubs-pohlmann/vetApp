@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Store;
+use User;
 
 class Product extends Model
 {

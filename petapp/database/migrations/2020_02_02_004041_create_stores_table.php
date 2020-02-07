@@ -18,13 +18,13 @@ class CreateStoresTable extends Migration
             $table->string('rating')->nullable();
             $table->string('cnpj');
             $table->boolean('delivery');
-            $table->unsignedBigInteger('super_id');
+            $table->unsignedBigInteger('user_id')->nullable()->unique();
             $table->timestamps();
         });
 
         //Foreign key
         Schema::table('stores', function (Blueprint $table) {
-            $table->foreign('super_id')->references('id')->on('supers')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
 

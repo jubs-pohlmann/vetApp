@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStoreUserTable extends Migration
+class CreateClientStoreTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,20 @@ class CreateStoreUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('store_user', function (Blueprint $table) {
+        Schema::create('client_store', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('grade');
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('client_id')->nullable();
             $table->unsignedBigInteger('store_id')->nullable();
             $table->timestamps();
         });
 
         //Foreign key
-        Schema::table('store_user', function (Blueprint $table) {
-          $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        Schema::table('client_store', function (Blueprint $table) {
+          $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
         });
 
-        Schema::table('store_user', function (Blueprint $table) {
+        Schema::table('client_store', function (Blueprint $table) {
           $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
         });
     }
@@ -38,6 +38,6 @@ class CreateStoreUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('store_user');
+        Schema::dropIfExists('client_store');
     }
 }

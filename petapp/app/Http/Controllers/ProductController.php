@@ -40,27 +40,27 @@ class ProductController extends Controller
 
   }
 
-
-  //Método responsavel por estabelecer uma relação entre produto e loja
-  public function addStore($id, $store_id){
-    $product = Product::find($id);
-    $product->store_id = store_id;
-    $product->save();
-    return response()->json(['Sucesso']);
-  }
-
-  //Método responsavel por remover uma relação entre produto e loja
-  public function removeStore($id){
-    $product = Product::find($id);
-    $product->store_id = null;
-    $product->save();
-    return response()->json(['Sucesso']);
-  }
-
-  //Método responsável por listar os clientes que compraram um produto
-  public function listUsers($id){
-    $product = Product::find($id);
-    return response()->json($product->users);
-  }
+  //
+  // //Método responsavel por estabelecer uma relação entre produto e loja
+  // public function addStore($id, $store_id){
+  //   $product = Product::find($id);
+  //   $product->store_id = store_id;
+  //   $product->save();
+  //   return response()->json(['Sucesso']);
+  // }
+  //
+  // //Método responsavel por remover uma relação entre produto e loja
+  // public function removeStore($id){
+  //   $product = Product::find($id);
+  //   $product->store_id = null;
+  //   $product->save();
+  //   return response()->json(['Sucesso']);
+  // }
+  //
+  // //Método responsável por listar os clientes que compraram um produto
+  // public function listUsers($id){
+  //   $product = Product::find($id);
+  //   return response()->json($product->users);
+  // }
 
 }

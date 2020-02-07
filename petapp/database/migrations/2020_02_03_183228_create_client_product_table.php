@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductUserTable extends Migration
+class CreateClientProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,19 @@ class CreateProductUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_user', function (Blueprint $table) {
+        Schema::create('client_product', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('client_id')->nullable();
             $table->unsignedBigInteger('product_id')->nullable();
             $table->timestamps();
         });
 
         //Foreign key
-        Schema::table('product_user', function (Blueprint $table) {
-          $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        Schema::table('client_product', function (Blueprint $table) {
+          $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
         });
 
-        Schema::table('product_user', function (Blueprint $table) {
+        Schema::table('client_product', function (Blueprint $table) {
           $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
@@ -37,6 +37,6 @@ class CreateProductUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_user');
+        Schema::dropIfExists('client_product');
     }
 }

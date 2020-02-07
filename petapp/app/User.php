@@ -2,89 +2,91 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Http\Request;
 use Laravel\Passport\HasApiTokens;
+
+use Client;
+use Product;
+use Store;
 
 class User extends Authenticatable
 {
-    use HasApiTokens;
-    use Notifiable;
+  use Notifiable;
+  use HasApiTokens;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+  /**
+    * The attributes that are mass assignable.
+    *
+    * @var array
+  */
+  protected $fillable = [
+    'name', 'email', 'password',
+  ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+  /**
+   * The attributes that should be hidden for arrays.
+   *
+   * @var array
+  */
+  protected $hidden = [
+    'password', 'remember_token',
+  ];
 
-    //Relacionamentos
-    public function super(){
-      return $this->hasOne('App\Super');
+  /**
+   * The attributes that should be cast to native types.
+   *
+   * @var array
+  */
+  protected $casts = [
+    'email_verified_at' => 'datetime',
+  ];
+
+
+  //Relacionamentos
+  public function client(){
+    return $this->hasOne('App\Client');
+  }
+  public function store(){
+    return $this->hasOne('App\Store');
+  }
+
+  //Método responsável por criar um novo usuário
+  public function createUser(Request $request){
+    $this->name = $request->name;
+    $this->email = $request->email;
+    $this->password = bcrypt($request->password);
+    $this->phone = $request->phone;
+    $this->photo = $request->photo;
+    $this->address = $request->address;
+    $this->save();
+  }
+
+  //Método responsável por editar usuário
+  public function updateUser(Request $request){
+    if($request->name){
+      $this->name = $request->name;
     }
-
-    public function products(){
-      return $this->belongsToMany('App\Product');
+    if($request->email){
+      $this->email = $request->email;
     }
-
-    public function stores(){
-      return $this->belongsToMany('App\Store')
-        ->withPivot('grade');
+    if($request->password){
+      $this->password = $request->password;
     }
-
-
-    //Método responsável por criar um novo user
-    public function createUser($request){
-      $super = new Super();
-      $super->createSuper;
-      $this->birthdate = $request->birthdate;
-      $this->cpf = $request->cpf;
-      $this->super()->attach($super);
-      $this->save();
+    if($request->photo){
+      $this->photo = $request->photo;
     }
-
-    //Método para edição de dados do user
-    public function updateUser($request){
-      $super = User::find($this->super_id);
-      $super->updateSuper;
-
-      if($request->birthdate){
-        $this->birthdate = $request->birthdate;
-      }
-      if($request->cpf){
-        $this->cpf = $request->cpf;
-      }
-      $this->save();
+    if($request->phone){
+      $this->phone = $request->phone;
     }
-
-
-    //Método responsável por representar a compra de um produto por cliente
-    public function sale($product_id){
-      $product = Product::find($product_id);
-      $this->products()->attach($product);
+    if($request->address){
+      $this->address = $request->address;
     }
-
-
+    $this->save();
+  }
 
 }

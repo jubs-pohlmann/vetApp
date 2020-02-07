@@ -14,6 +14,8 @@ export class AnunciarProdutoPage implements OnInit {
       name: [null, [Validators.required, Validators.maxLength(30)]],
       price: [null, [Validators.required]],
       description: [null, [Validators.required]],
+      animal: [null, [Validators.required]],
+      category: [null, [Validators.required]],
       // photo: [null, [Validators.required]],
     })
    }

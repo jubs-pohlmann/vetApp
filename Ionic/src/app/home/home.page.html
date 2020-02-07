@@ -1,0 +1,66 @@
+<html>
+
+<ion-header>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <ion-toolbar>
+    <ion-icon size="large" name="arrow-round-back"></ion-icon>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label class="title">Categorias</ion-label>
+  <ion-slides>
+    <ion-slide> 
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/petclothes.jpg" alt="gato de casaco" />
+        <div class="categoriaText">Acessórios</div>
+      </ion-card>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/food.jpg" alt="ração para gato" />
+        <div class="categoriaText" id="card2">Alimentação</div>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/medicine.jpg" alt="cachorros com estetoscópio" />
+        <div class="categoriaText" id="card3">Saúde</div>
+      </ion-card>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/petshower.jpg" alt="cachorro de touca" />
+        <div class="categoriaText" id="card4">Higiene</div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-label class="title">Para o seu animal</ion-label>
+  <ion-slides>
+    <ion-slide>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/dog.jpg" alt="cachorro" />
+        <div class="categoriaText" id="card4">Cachorros</div>
+      </ion-card>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/gato.jpg" alt="gato" />
+        <div class="categoriaText" id="card3">Gatos</div>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/bird.jpg" alt="pássaro" />
+        <div class="categoriaText" id="card5">Aves</div>
+      </ion-card>
+      <ion-card class="categoriaCard">
+        <img src="../../assets/images/fish.jpg" alt="peixe" />
+        <div class="categoriaText">Peixes</div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  
+  <ion-label class="title" id="titleMargin">Adicionados recentemente</ion-label>
+  <app-produto></app-produto> <app-produto></app-produto> 
+  <!-- ^chamada do component produto. fazer o ngFor com o BD -->
+
+</ion-content>
+
+</html>

@@ -1,0 +1,61 @@
+<html>
+	<ion-header>
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+		<ion-toolbar>
+			<ion-icon size="large" name="arrow-round-back"></ion-icon>
+			<ion-title>Cadastro Loja</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<img class="backgroundImg" src="../../assets/images/aquarela+cao.jpg" alt="cachorro correndo" no-repeat/>
+			
+			<!-- <div class="formItem">
+				<ion-label class="formTitle" position="stacked">Bloco e loja</ion-label>
+				<ion-input class="formPlaceholder" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: joao@dominio.com"></ion-input>
+			</div> -->
+		
+		<div class="radioText">
+			<ion-label>Sua loja fará entregas?</ion-label>
+			<ion-radio-group>
+			  
+		  	<div class="delivery">
+			  <div class="radioMargin">
+				<ion-label>Sim</ion-label>
+				<ion-radio mode="md" slot="start" value="sim" checked></ion-radio>
+			  </div>
+		  
+			  <div class="radioMargin">
+				<ion-label>Não</ion-label>
+				<ion-radio mode="md" slot="start" value="nao"></ion-radio>
+			  </div>
+			</div>
+			</ion-radio-group>
+		</div>
+		
+
+		<form class="form" [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+			<div class="formItem" [class.invalid]="registerForm.controls.address.invalid && registerForm.controls.address.touched">
+				<ion-label class="formTitle" position="stacked">Endereço</ion-label>
+				<ion-input class="formPlaceholder" formControlName="address" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Av. Dogville, 450"></ion-input>
+			</div>
+
+			<div class="formItem" [class.invalid]="registerForm.controls.password.invalid && registerForm.controls.password.touched && password==passwordVerify">
+				<ion-label class="formTitle" position="stacked">Senha</ion-label>
+				<ion-input class="formPlaceholder" formControlName="password" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
+			  </div>
+
+			  <div class="formItem" [class.invalid]="registerForm.controls.passwordVerify.invalid && registerForm.controls.passwordVerify.touched && password==passwordVerify">
+				<ion-label class="formTitle" position="stacked">Confirme a senha</ion-label>
+				<ion-input class="formPlaceholder" formControlName="passwordVerify" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
+			  </div>
+			  
+      		
+			<div class="buttonCentralizer">
+				<ion-button class="button" type="submit" [disabled]="registerForm.invalid" slot="bottom">
+					<ion-label class="buttonText">Cadastrar-se</ion-label>
+				</ion-button>
+			</div>
+		</form>
+
+	</ion-content>
+</html>

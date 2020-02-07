@@ -8,6 +8,16 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: 'home',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../home/home.module').then(m => m.HomePageModule)
+          }
+       ]
+     },
+      {
         path: 'tab1',
         children: [
           {
@@ -37,6 +47,66 @@ const routes: Routes = [
           }
         ]
       },
+       {
+         path: 'cadastro',
+         children: [
+           {
+             path: '',
+             loadChildren: () =>
+               import('../cadastro/cadastro.module').then(m => m.CadastroPageModule)
+           }
+        ]
+      },
+       {
+         path: 'cadastro2',
+         children: [
+           {
+             path: '',
+             loadChildren: () =>
+               import('../cadastro2/cadastro2.module').then(m => m.Cadastro2PageModule)
+           }
+        ]
+      },
+      {
+        path: 'cadastroloja',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../cadastroloja/cadastroloja.module').then(m => m.CadastrolojaPageModule)
+          }
+       ]
+     },
+     {
+      path: 'cadastroloja2',
+      children: [
+        {
+          path: '',
+          loadChildren: () =>
+            import('../cadastroloja2/cadastroloja2.module').then(m => m.Cadastroloja2PageModule)
+        }
+     ]
+   },
+   {
+      path: 'cadastroloja2',
+      children: [
+        {
+          path: '',
+          loadChildren: () =>
+            import('../cadastroloja2/cadastroloja2.module').then(m => m.Cadastroloja2PageModule)
+        }
+     ]
+   },
+   {
+    path: 'anunciar-produto',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../anunciar-produto/anunciar-produto.module').then(m => m.AnunciarProdutoPageModule)
+      }
+   ]
+  },
       {
         path: '',
         redirectTo: '/tabs/tab1',

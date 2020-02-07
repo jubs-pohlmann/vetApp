@@ -3,29 +3,29 @@
 
 /** Ionic CSS Variables **/
 :root {
+  /* set the font for the entire app */
+  --ion-font-family: 'Josefin sans', sans-serif;
   /** primary **/
-  --ion-color-primary: #3880ff;
-  --ion-color-primary-rgb: 56, 128, 255;
-  --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary: #A8E6CF;
+  --ion-color-primary-rgb: 168,230,207;
+  --ion-color-primary-contrast: #333333;
+  --ion-color-primary-contrast-rgb: 0,0,0;
+  --ion-color-primary-shade: #94cab6;
+  --ion-color-primary-tint: #b1e9d4;
 
-  /** secondary **/
-  --ion-color-secondary: #0cd1e8;
-  --ion-color-secondary-rgb: 12, 209, 232;
-  --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #0bb8cc;
-  --ion-color-secondary-tint: #24d6ea;
+  --ion-color-secondary: #FFD3B6;
+  --ion-color-secondary-rgb: 255,211,182;
+  --ion-color-secondary-contrast: #333333;
+  --ion-color-secondary-contrast-rgb: 0,0,0;
+  --ion-color-secondary-shade: #e0baa0;
+  --ion-color-secondary-tint: #ffd7bd;
 
-  /** tertiary **/
-  --ion-color-tertiary: #7044ff;
-  --ion-color-tertiary-rgb: 112, 68, 255;
-  --ion-color-tertiary-contrast: #ffffff;
-  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #633ce0;
-  --ion-color-tertiary-tint: #7e57ff;
+  --ion-color-tertiary: #FF8B94;
+  --ion-color-tertiary-rgb: 255,139,148;
+  --ion-color-tertiary-contrast: #333333;
+  --ion-color-tertiary-contrast-rgb: 0,0,0;
+  --ion-color-tertiary-shade: #e07a82;
+  --ion-color-tertiary-tint: #ff979f;
 
   /** success **/
   --ion-color-success: #10dc60;
@@ -74,4 +74,7 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /*Fonts*/
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 }

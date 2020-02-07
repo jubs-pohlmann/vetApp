@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-
+import { UsuarioService } from '../services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,7 +12,7 @@ export class CadastroPage implements OnInit {
 //AULA!!
 	registerForm: FormGroup;
 
-	constructor(public formbuilder: FormBuilder) { 
+	constructor(public router: Router, public formbuilder: FormBuilder, public usuarioService: UsuarioService) { 
 		this.registerForm = this.formbuilder.group({
 			name: [null, [Validators.required, Validators.minLength(3)]],
 			email: [null, [Validators.required, Validators.email]],
@@ -20,7 +21,11 @@ export class CadastroPage implements OnInit {
 		});
 	}
 	
+
 	submitForm(form) {
+		this.usuarioService.postClient(form).subscribe( (res) => {
+			this.router.navigateByUrl('/login');//MUDANCA RECENTE N TESTADA
+		} );
 		console.log(form);
 		console.log(form.value);
 	}

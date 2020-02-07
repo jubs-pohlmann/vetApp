@@ -23,19 +23,18 @@
       <ion-label class="formTitle" position="stacked">Descreva o produto</ion-label>
       <ion-input class="formPlaceholder" maxLength="300" formControlName="description" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Uma coleira rosa de couro, tamanho ajustável para cachorros grandes e pequenos."></ion-input>
       </div>
-      
-        
-    <div class="buttonCentralizer">
-      <ion-button class="button" type="submit" [disabled]="registerForm.invalid" slot="bottom">
-        <ion-label class="buttonText">Anunciar</ion-label>
-      </ion-button>
-    </div>
+
+      <div class="buttonCentralizer">
+        <ion-button class="button" type="submit" [disabled]="registerForm.invalid" slot="bottom">
+          <ion-label class="buttonText">Anunciar</ion-label>
+        </ion-button>
+      </div>
+    </form>
     
     <div class="radioText">
       <ion-label>Seu produto é voltado para que animais? Escolha apenas um.</ion-label>
-      <ion-radio-group>
-        
-        <div class="delivery">
+      <ion-radio-group class="delivery">
+  
         <div class="radioMargin">
         <ion-label>Cachorros</ion-label>
         <ion-radio mode="md" slot="start" value="dogs" checked></ion-radio>
@@ -54,15 +53,14 @@
           <div class="radioMargin">
             <ion-label>Peixes</ion-label>
             <ion-radio mode="md" slot="start" value="fishes"></ion-radio>
-          </div>
-      </div>
+          </div>     
       </ion-radio-group>
+    </div>
 
       <div class="radioText">
         <ion-label>Seu produto pertence a qual categoria? Escolha apenas uma.</ion-label>
-        <ion-radio-group>
+        <ion-radio-group class="delivery">
           
-          <div class="delivery">
           <div class="radioMargin">
           <ion-label>Acessórios</ion-label>
           <ion-radio mode="md" slot="start" value="accessories" checked></ion-radio>
@@ -81,10 +79,7 @@
             <div class="radioMargin">
               <ion-label>Peixes</ion-label>
               <ion-radio mode="md" slot="start" value="fishes"></ion-radio>
-            </div>
-        </div>
+            </div>      
         </ion-radio-group>
-    </div>
-  </form>
-
+        </div>
 </ion-content>

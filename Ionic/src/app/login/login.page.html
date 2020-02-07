@@ -1,0 +1,51 @@
+<html>
+	
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  
+	<ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- FORMULÁRIO PARA LOGIN -->
+  <ion-content scroll-y="false">
+
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)">
+      <ion-list>
+        <div class="formInput" [class.invalid]="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+          <ion-label class="formTitle" position='stacked'>Email</ion-label>
+          <ion-input  class="formPlaceholder" required=true clear-input=true placeholder="ex.:joao@gmail.com" 
+          type="email" formControlName="email"></ion-input>
+        </div>
+
+        <div class="formInput" [class.invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+          <ion-label  class="formTitle" position='stacked'>Senha</ion-label>
+          <ion-input  class="formPlaceholder" required=true clear-input=true placeholder="ex.:********" 
+          type="password" formControlName="password"></ion-input>
+        </div>
+      </ion-list>
+
+      <p class="forgot">Esqueci minha senha</p>
+
+    <!-- BOTÃO PARA LOGIN -->
+      <ion-row class="ion-justify-content-center">
+        <ion-button class=formButton type='submit' shape='default'  [disabled]="loginForm.invalid">Login</ion-button>
+      </ion-row>
+  </form>
+
+  <p class='formText'>OU</p>
+  <!-- BOTÕES PARA CADASTRO DE CLIENTE E LOJA -->
+  <ion-row class='ion-justify-content-center'>
+   <ion-button class="formButton" type='button' shape='default'>Cadastro Para Cliente</ion-button>
+  </ion-row>
+
+  <ion-row class='ion-justify-content-center'>
+	 <ion-button class='formButton' type='button' shape='default'>Cadastro Para Loja</ion-button>
+  </ion-row>
+
+
+  <img class="image" src='../../assets/imagens/ondas.png'>
+    
+ </ion-content>
+</html> 

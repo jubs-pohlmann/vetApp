@@ -1,0 +1,67 @@
+.formInput {
+  padding-top:3vh;
+  --color: #333333;
+  margin-right:3vw;
+  margin-left:3vw;
+}
+
+.formTitle {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4em;
+  line-height: 1em;
+  color: #333333;
+  
+  
+}
+
+.formPlaceholder{
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2em;
+  line-height:1.2em;
+  color: #999999;
+  border-bottom: 1px solid #A8E6CF;
+  
+  
+}
+
+.formButton{
+  //TEXT
+  --color: #333333;
+  font-family: 'Josefin Sans', sans-serif;
+  
+  font-weight: bold;
+  //BOX
+ 
+  --background: white;
+  --box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  --border-radius: 5px;
+ } 
+
+.forgot{
+  margin-left:3vw;
+  color:#999999;
+}
+
+
+.formText{
+  text-align: center;
+  color:#222222;
+  font-size:1em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.invalid{
+  ion-label{
+    --color:red;
+  }
+  ion-input{
+    border-bottom:1px solid red;
+  }
+}
+.image{
+  margin-top:-30%;
+}

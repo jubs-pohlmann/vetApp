@@ -5,17 +5,13 @@
   <ion-toolbar>
     <ion-icon size="large" name="arrow-round-back"></ion-icon>
     <ion-title>Home</ion-title>
-    <!-- <div>
-      Entregar em: 
-
-    </div> -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-label class="title">Categorias</ion-label>
   <ion-slides>
-    <ion-slide>
+    <ion-slide> 
       <ion-card class="categoriaCard">
         <img src="../../assets/images/petclothes.jpg" alt="gato de casaco" />
         <div class="categoriaText">Acessórios</div>
@@ -60,19 +56,10 @@
       </ion-card>
     </ion-slide>
   </ion-slides>
-
-  <ion-label class="title">Adicionados recentemente</ion-label>
-  <ion-card class="produtoCard">
-    <img src="" alt="" />
-    <ion-card-header>
-      <ion-card-subtitle></ion-card-subtitle>
-      <ion-card-title>Welcome to Ionic</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p></p>
-    </ion-card-content>
-  </ion-card>
-
+  
+  <ion-label class="title" id="titleMargin">Adicionados recentemente</ion-label>
+  <app-produto></app-produto> <app-produto></app-produto> 
+  <!-- ^chamada do component produto. fazer o ngFor com o BD -->
 
 </ion-content>
 

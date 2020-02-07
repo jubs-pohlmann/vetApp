@@ -11,21 +11,42 @@
 
   <ion-content>
     
-    <div class="formAnuncioDoProduto">
-      <div class= 'conteudoDoAnuncio'>
+    <div class="conteudoDoAnuncio">
         <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSkxy01nJwhDj3zLrzmIN2S88mMgLkRSpLbzMqtr15n1eW7tgIa" >
         
-          <p>R$ 18,50</p>
-          <div class= 'descrição'>
-              <p>Marca de excelência para o seu pet. Dê a ele o que merece!</p>
-              <p>sabor carne com cheddar, até você vai querer!!!</p>
-        </div>
-      </div>
+          
+          <div class= 'descricao'>
+            <p>Marca de excelência para o seu pet. Dê a ele o que merece!</p>
+            <p>sabor carne com cheddar, até você vai querer!!!</p>
+          </div>      
     </div>
 
+    <div class="nomeProdutoEPreco">
+      <p>Ração DogDoguinho</p>
+      <p>R$18,50</p>
+    </div>
+
+    <div class='categorias'>
+      <ion-chip class='categoria'>
+        <ion-label  >Alimento</ion-label>
+      </ion-chip>
+
+      <ion-chip class='categoria'>
+        <ion-label >Cães</ion-label>
+      </ion-chip>
+    </div>
+
+
     <ion-row class="ion-justify-content-center">
-      <ion-button class="formButton" type='button' shape='default'>Comprar</ion-button>
-    </ion-row>     
+      <ion-button (click)="toast()" class="formButton" type='button' shape='default' >Comprar</ion-button>
+    </ion-row>
+
+    <div class='encaminhaParaLoja'>
+      <p class=''>Ir para a loja <span (click)='irParaLoja' class='loja'>DogStore</span></p>
+    </div>
+
+    
+
     
 
   </ion-content>

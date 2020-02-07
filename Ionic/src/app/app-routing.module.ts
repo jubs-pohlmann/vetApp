@@ -10,7 +10,8 @@ const routes: Routes = [
 
     path: 'cadastro',
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
-  },  {
+  },
+  {
     path: 'cadastro2',
     loadChildren: () => import('./cadastro2/cadastro2.module').then( m => m.Cadastro2PageModule)
   },
@@ -29,16 +30,15 @@ const routes: Routes = [
   {
     path: 'anunciar-produto',
     loadChildren: () => import('./anunciar-produto/anunciar-produto.module').then( m => m.AnunciarProdutoPageModule)
-  }
-
-    path: '',
+  },
+  {
+    path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'produto',
     loadChildren: () => import('./produto/produto.module').then( m => m.ProdutoPageModule)
-  }
-
-
+  },
 
 ];
 @NgModule({

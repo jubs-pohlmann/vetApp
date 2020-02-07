@@ -14,13 +14,23 @@ class ClientController extends Controller
 
   //Método que retorna lista com todos os clients
   public function listClient(){
-    $client = Client::all();
-    return response()->json($client);
+    $clients = Client::all();
+    $array=[];
+    $cont=0;
+    foreach ($clients as $client) {
+      $user = User::where('id', $client->user_id)->get();
+      $client->user = $user;
+      $array[$cont] = $client;
+      $cont++;
+    }
+    return response()->json([$array]);
   }
 
   //Método responsavel por exibir o client com o id informado
   public function showClient($id){
     $client = Client::findOrFail($id);
+    $user = User::where('id', $client->user_id)->get();
+    $client->user = $user;
     return response()->json([$client]);
   }
   //

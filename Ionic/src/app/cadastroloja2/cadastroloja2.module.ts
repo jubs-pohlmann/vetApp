@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl, FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 

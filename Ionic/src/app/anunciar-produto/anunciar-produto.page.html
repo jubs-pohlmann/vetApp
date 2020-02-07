@@ -1,0 +1,90 @@
+<ion-header>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <ion-toolbar>
+    <ion-icon size="large" name="arrow-round-back"></ion-icon>
+    <ion-title>Anunciar Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+    <div class="formItem" [class.invalid]="registerForm.controls.name.invalid && registerForm.controls.name.touched">
+      <ion-label class="formTitle" position="stacked">Nome</ion-label>
+      <ion-input class="formPlaceholder" maxLength="40" formControlName="name" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Coleira rosa"></ion-input>
+    </div>
+
+    <div class="formItem" [class.invalid]="registerForm.controls.price.invalid && registerForm.controls.price.touched">
+      <ion-label class="formTitle" position="stacked">Preço</ion-label>
+      <ion-input class="formPlaceholder" maxLength="10" formControlName="price" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: R$ 18,50" [brmasker]="{money: true}"></ion-input>
+      </div>
+
+      <div class="formItem" [class.invalid]="registerForm.controls.description.invalid && registerForm.controls.description.touched">
+      <ion-label class="formTitle" position="stacked">Descreva o produto</ion-label>
+      <ion-input class="formPlaceholder" maxLength="300" formControlName="description" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Uma coleira rosa de couro, tamanho ajustável para cachorros grandes e pequenos."></ion-input>
+      </div>
+      
+        
+    <div class="buttonCentralizer">
+      <ion-button class="button" type="submit" [disabled]="registerForm.invalid" slot="bottom">
+        <ion-label class="buttonText">Anunciar</ion-label>
+      </ion-button>
+    </div>
+    
+    <div class="radioText">
+      <ion-label>Seu produto é voltado para que animais? Escolha apenas um.</ion-label>
+      <ion-radio-group>
+        
+        <div class="delivery">
+        <div class="radioMargin">
+        <ion-label>Cachorros</ion-label>
+        <ion-radio mode="md" slot="start" value="dogs" checked></ion-radio>
+        </div>
+      
+        <div class="radioMargin">
+        <ion-label>Gatos</ion-label>
+        <ion-radio mode="md" slot="start" value="cats"></ion-radio>
+        </div>
+
+        <div class="radioMargin">
+          <ion-label>Aves</ion-label>
+          <ion-radio mode="md" slot="start" value="birds"></ion-radio>
+        </div>
+
+          <div class="radioMargin">
+            <ion-label>Peixes</ion-label>
+            <ion-radio mode="md" slot="start" value="fishes"></ion-radio>
+          </div>
+      </div>
+      </ion-radio-group>
+
+      <div class="radioText">
+        <ion-label>Seu produto pertence a qual categoria? Escolha apenas uma.</ion-label>
+        <ion-radio-group>
+          
+          <div class="delivery">
+          <div class="radioMargin">
+          <ion-label>Acessórios</ion-label>
+          <ion-radio mode="md" slot="start" value="accessories" checked></ion-radio>
+          </div>
+        
+          <div class="radioMargin">
+          <ion-label>Saúde</ion-label>
+          <ion-radio mode="md" slot="start" value="health"></ion-radio>
+          </div>
+  
+          <div class="radioMargin">
+            <ion-label>Aves</ion-label>
+            <ion-radio mode="md" slot="start" value="birds"></ion-radio>
+          </div>
+  
+            <div class="radioMargin">
+              <ion-label>Peixes</ion-label>
+              <ion-radio mode="md" slot="start" value="fishes"></ion-radio>
+            </div>
+        </div>
+        </ion-radio-group>
+    </div>
+  </form>
+
+</ion-content>

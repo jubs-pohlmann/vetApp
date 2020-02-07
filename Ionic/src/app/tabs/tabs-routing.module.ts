@@ -87,6 +87,26 @@ const routes: Routes = [
         }
      ]
    },
+   {
+      path: 'cadastroloja2',
+      children: [
+        {
+          path: '',
+          loadChildren: () =>
+            import('../cadastroloja2/cadastroloja2.module').then(m => m.Cadastroloja2PageModule)
+        }
+     ]
+   },
+   {
+    path: 'anunciar-produto',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../anunciar-produto/anunciar-produto.module').then(m => m.AnunciarProdutoPageModule)
+      }
+   ]
+  },
       {
         path: '',
         redirectTo: '/tabs/tab1',

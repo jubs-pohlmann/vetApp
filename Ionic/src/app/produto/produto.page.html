@@ -3,29 +3,32 @@
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
   
 	<ion-toolbar>
+    <!-- //BACK-BUTTON// -->
     <ion-buttons class='formButton1' slot="start">
       <ion-back-button  text="" defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title class='nomeDoProdutoTitulo'>Nome do Produto</ion-title>
+    <!-- NOME DO PRODUTO -->
+    <ion-title class='nomeDoProdutoTitulo'>XXXXXXXXXXXX XXXXXXXXXXXXX</ion-title>
   </ion-toolbar>
 
-  <ion-content>
-    
+  <ion-content scroll-y="true">
+
+    <!-- NOME DA LOJA -->
+    <ion-label class='nomeLoja'>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ion-label>
     <div class="conteudoDoAnuncio">
-        <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSkxy01nJwhDj3zLrzmIN2S88mMgLkRSpLbzMqtr15n1eW7tgIa" >
-        
-          
+        <!-- FOTO DO PRODUTO OU IMAGEM DEFAULT ALTERNATIVA -->
+        <img class="image" src="" onerror="this.src='../../assets/images/imagemDefault.jpg' ">       
+         <!-- DESCRIÇÃO DO PRODUTO COM MÁXIMO DE 160 CARACTERES -->
           <div class= 'descricao'>
-            <p>Marca de excelência para o seu pet. Dê a ele o que merece!</p>
-            <p>sabor carne com cheddar, até você vai querer!!!</p>
+            <p>name name name name name name name name name name name name name name name name name name name name name name name name name name name name name name </p>           
           </div>      
     </div>
-
+   <!--  NOME DO PRODUTO E PREÇO -->
     <div class="nomeProdutoEPreco">
       <p>Ração DogDoguinho</p>
       <p>R$18,50</p>
     </div>
-
+    <!-- FILTRO DE CATEGORIAS -->
     <div class='categorias'>
       <ion-chip class='categoria'>
         <ion-label  >Alimento</ion-label>
@@ -35,19 +38,15 @@
         <ion-label >Cães</ion-label>
       </ion-chip>
     </div>
-
-
+      <!-- BOTÃO PARA REALIZAR SOLICITAÇÃO DE COMPRAR -->
     <ion-row class="ion-justify-content-center">
-      <ion-button (click)="toast()" class="formButton" type='button' shape='default' >Comprar</ion-button>
+      <ion-button (click)="presentToast()" class="formButton" type='button' shape='default' >Comprar</ion-button>
     </ion-row>
-
+      <!-- ENCAMINHAR À LOJA  -->
     <div class='encaminhaParaLoja'>
-      <p class=''>Ir para a loja <span (click)='irParaLoja' class='loja'>DogStore</span></p>
+      <p class=''>Ir para a loja <a href='/home'><span class='loja'>DogStore</span></a><a href="/home"><span>
+      <ion-icon name='arrow-forward-outline'></ion-icon></span></a></p>
     </div>
-
-    
-
-    
 
   </ion-content>
 </html>  

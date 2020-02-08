@@ -103,7 +103,7 @@ class PassportController extends Controller
     $user = Auth::user();
     $client = Client::where('user_id', '$user->id');
 
-    if($request->bithdate || $request->cpf)
+    if($request->birthdate || $request->cpf)
       $client->updateClient($request);
     else
       $user->updateUser($request);
@@ -112,11 +112,11 @@ class PassportController extends Controller
   }
 
   //Método para edição de dados da loja
-  public function updateStore(StoreRequest $request){
+  public function updateStore(Request $request){
     $user = Auth::user();
     $store = Store::where('user_id', '$user->id');
 
-    if($request->delivey || $request->cnpj)
+    if($request->delivery || $request->cnpj)
       $store->updateStore($request);
     else
       $user->updateUser($request);
@@ -124,5 +124,13 @@ class PassportController extends Controller
     return response()->json([$user]);
   }
 
+  //Método responsável por representar a compra de um produto por cliente
+  public function sale(Request $request){
+    $user = Auth::user();
+    $client = Client::where('user_id', $user->id)->first();
+    $client->sale($request);
+    $client->save();
+    return response()->json(['Compra realizada']);
+  }
 
 }

@@ -33,12 +33,12 @@ class ClientController extends Controller
     $client->user = $user;
     return response()->json([$client]);
   }
-  //
-  // //Método responsável por listar os produtos comprados pelo client
-  // public function listProducts(){
-  //   $client = Auth::client();
-  //   return response()->json($client->products);
-  // }
+
+  //Método responsável por listar os produtos comprados pelo client
+  public function listProducts(){
+    $client = Auth::client();
+    return response()->json($client->products);
+  }
   //
   // //Método responsável por represnetar a avaliação do cliente a uma loja
   // public function rate($id, $store_id, $grade){

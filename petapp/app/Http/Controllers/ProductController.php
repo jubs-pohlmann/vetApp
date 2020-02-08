@@ -17,12 +17,12 @@ class ProductController extends Controller
   //Método que retorna lista com todos os produtos
   public function listProduct(){
     $product = Product::all();
-    return response()->json($product);
+    return response()->json([$product]);
   }
 
   //Método responsavel por exibir o produto com o id informado
   public function showProduct($id){
-    $product = Prooduct::findOrFail($id);
+    $product = Product::findOrFail($id);
     return response()->json([$product]);
   }
 

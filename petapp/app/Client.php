@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use User;
 use Store;
+use App\Product;
 
 class Client extends Model
 {
@@ -47,10 +48,12 @@ class Client extends Model
 
 
   //Método responsável por representar a compra de um produto por cliente
-  public function sale($product_id){
-    $product = Product::find($product_id);
-    $this->products()->attach($product);
+  public function sale(Request $request){
+    $this->products()->attach($request->id);
+    $this->save();
   }
+
+  
 
 
 

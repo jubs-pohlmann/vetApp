@@ -58,7 +58,10 @@
   </ion-slides>
   
   <ion-label class="title" id="titleMargin">Adicionados recentemente</ion-label>
-  <app-produto></app-produto> <app-produto></app-produto> 
+  <ion-item *ngFor="let i of produto">
+    <app-produto></app-produto>
+  </ion-item>
+
   <!-- ^chamada do component produto. fazer o ngFor com o BD -->
 
 </ion-content>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrMaskerModule } from 'br-mask';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -16,7 +17,8 @@ import { Cadastro2Page } from './cadastro2.page';
     IonicModule,
     Cadastro2PageRoutingModule,
     ReactiveFormsModule,
-    BrMaskerModule
+    BrMaskerModule,
+    HttpClientModule,
   ],
   declarations: [Cadastro2Page]
 })

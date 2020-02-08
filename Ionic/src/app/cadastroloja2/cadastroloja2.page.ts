@@ -9,9 +9,11 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 export class Cadastroloja2Page implements OnInit {
 
   registerForm: FormGroup;
+  verificationError: boolean;
 
   constructor(public formbuilder: FormBuilder) {
     this.registerForm = this.formbuilder.group({
+      delivery: [null, [Validators.required]],
       address: [null,[Validators.required, Validators.minLength(2)]],
       password: [null,[Validators.required, Validators.minLength(6)]],
       passwordVerify: [null,[Validators.required,Validators.minLength(6)]]   
@@ -22,6 +24,14 @@ export class Cadastroloja2Page implements OnInit {
      console.log(form);
      console.log(form.value);
    }
+
+   passwordVerification(form){
+    if(form.value.password != form.value.passwordVerify){
+      this.verificationError = true;
+    } else{
+      this.verificationError = false;
+    }
+  }
 
   ngOnInit() {
   }

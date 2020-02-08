@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuarioService } from '../services/usuario.service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,8 +24,8 @@ export class CadastroPage implements OnInit {
 	
 
 	submitForm(form) {
-		this.usuarioService.postClient(form).subscribe( (res) => {
-			this.router.navigateByUrl('/login');//MUDANCA RECENTE N TESTADA
+		this.usuarioService.postClient(form.value).subscribe( (res) => {
+			this.router.navigateByUrl('../cadastro2/');//MUDANCA RECENTE N TESTADA
 		} );
 		console.log(form);
 		console.log(form.value);

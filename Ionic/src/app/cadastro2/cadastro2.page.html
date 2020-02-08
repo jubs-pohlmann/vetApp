@@ -29,11 +29,11 @@
       		</div>
       		<div class="formItem">
 				<ion-label class="formTitle" position="stacked">Confirme a senha</ion-label>
-				<ion-input class="formPlaceholder" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
+				<ion-input class="formPlaceholder" formControlName="passwordVerify" (keyup)="passwordVerification(registerForm)" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
 			</div>
 
 			<div class="buttonCentralizer">
-				<ion-button class="button" type="submit" [disabled]="registerForm.invalid">
+				<ion-button class="button" type="submit" [disabled]="registerForm.invalid || verificationError===false">
 					<ion-label class="buttonText">Cadastrar-se</ion-label>
 				</ion-button>
 			</div>

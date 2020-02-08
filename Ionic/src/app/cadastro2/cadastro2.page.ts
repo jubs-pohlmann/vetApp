@@ -9,15 +9,24 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class Cadastro2Page implements OnInit {
 
   registerForm:FormGroup;
-
+  verificationError:boolean;
+  
   constructor(public formbuilder: FormBuilder) {
 
     this.registerForm = this.formbuilder.group({
       address: [null, [Validators.required, Validators.minLength(5)]],
       cpf: [null, [Validators.required, Validators.minLength(11)]],
-      password: [null, [Validators.required, Validators.minLength(5)]]
+      password: [null, [Validators.required, Validators.minLength(5)]],
+      passwordVerify: [null, [Validators.required, Validators.minLength(5)],]
     })
+   }
 
+   passwordVerification(form){
+     if(form.value.password != form.value.passwordVerify){
+       this.verificationError = true;
+     } else{
+       this.verificationError = false;
+     }
    }
 
    submitForm(form){

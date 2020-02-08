@@ -14,8 +14,8 @@ export class Cadastro2Page implements OnInit {
 
     this.registerForm = this.formbuilder.group({
       address: [null, [Validators.required, Validators.minLength(5)]],
-      cpf: [null, [Validators.required]],
-      password: [null, [Validators.required]]
+      cpf: [null, [Validators.required, Validators.minLength(11)]],
+      password: [null, [Validators.required, Validators.minLength(5)]]
     })
 
    }

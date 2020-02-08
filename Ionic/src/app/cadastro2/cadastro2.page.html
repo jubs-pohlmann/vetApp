@@ -21,7 +21,7 @@
 			</div> -->
 			<div class="formItem" [class.invalid]="registerForm.controls.cpf.invalid && registerForm.controls.cpf.touched">
 				<ion-label class="formTitle" position="stacked">CPF</ion-label>
-				<ion-input class="formPlaceholder" minLength="11" formControlName="cpf" type="text" inputmode="numeric" required=true clear-input=true placeholder="ex.: 123.456.789-01" [brmasker]="{person: true}"></ion-input>
+				<ion-input class="formPlaceholder" maxLength="14" minLength="11" formControlName="cpf" type="text" inputmode="numeric" required=true clear-input=true placeholder="ex.: 123.456.789-01" [brmasker]="{person: true}"></ion-input>
 			</div>
 			<div class="formItem" [class.invalid]="registerForm.controls.password.invalid && registerForm.controls.password.touched">
 				<ion-label class="formTitle" position="stacked">Senha</ion-label>

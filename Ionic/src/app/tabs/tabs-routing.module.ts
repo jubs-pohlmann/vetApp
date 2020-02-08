@@ -126,7 +126,6 @@ const routes: Routes = [
             import('../produto/produto.module').then(m => m.ProdutoPageModule)
           }
         ]
-       
       },
     ]
   },

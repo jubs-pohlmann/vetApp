@@ -130,7 +130,10 @@ class PassportController extends Controller
     $user = Auth::user();
     $client = Client::where('user_id', $user->id)->first();
     $client->sale($product_id);
+    $product = Product::find($product_id);
+    $product->stock--;
     $client->save();
+    $product->save();
     return response()->json(['Compra realizada']);
   }
 

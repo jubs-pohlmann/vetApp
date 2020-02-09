@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->longText('description');
             $table->string('animal');
             $table->unsignedBigInteger('stock');
-            $table->unsignedBigInteger('store_id')->nullable();
+            $table->unsignedBigInteger('store_id');
             $table->timestamps();
         });
 

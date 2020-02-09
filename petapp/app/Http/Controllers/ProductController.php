@@ -19,17 +19,16 @@ class ProductController extends Controller
     $product = Product::all();
     return response()->json([$product]);
   }
+  //Método usado para deletar um produto
+  public function deleteProduct($id){
+    Product::destroy($id);
+    return response()->json(['Produto deletado']);
+  }
 
   //Método responsavel por exibir o produto com o id informado
   public function showProduct($id){
     $product = Product::findOrFail($id);
     return response()->json([$product]);
-  }
-
-  //Método usado para deletar um produto
-  public function deleteProduct($id){
-    Product::destroy($id);
-    return response()->json(['Produto deletado']);
   }
 
   //Método para edição de dados do produto

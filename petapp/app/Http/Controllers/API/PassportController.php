@@ -132,6 +132,8 @@ class PassportController extends Controller
     $client->sale($product_id);
     $product = Product::find($product_id);
     $product->stock--;
+    if(($product->stock) == 0 )
+      Product::destroy($product->id);
     $client->save();
     $product->save();
     return response()->json(['Compra realizada']);

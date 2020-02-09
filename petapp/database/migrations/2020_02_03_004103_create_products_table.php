@@ -21,8 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('category');
             $table->longText('description');
             $table->string('animal');
-            $table->integer('stock');
-            $table->boolean('status_stock');
+            $table->unsignedBigInteger('stock');
             $table->unsignedBigInteger('store_id')->nullable();
             $table->timestamps();
         });

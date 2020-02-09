@@ -16,7 +16,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Alimento',
         'description'=> 'Comida deliciosa sabor banana',
-        'status_stock'=> '1',
         'stock'=> 40,
         'animal'=> 'Gato'
       ]);
@@ -26,7 +25,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Alimento',
         'description'=> 'Comida deliciosa sabor banana',
-        'status_stock'=> '1',
         'stock'=> 40,
         'animal'=> 'Cachorro'
       ]);
@@ -36,7 +34,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Acessório',
         'description'=> 'Coleira tamanho P rosa',
-        'status_stock'=> '1',
         'stock'=> 5,
         'animal'=> 'Cachorro'
       ]);
@@ -46,7 +43,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Medicina e Saúde',
         'description'=> 'Medicina e Saúde 100% indicado',
-        'status_stock'=> '1',
         'stock'=> 10,
         'animal'=> 'Gato'
       ]);
@@ -56,7 +52,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Acessório',
         'description'=> 'Gaiola grande usada para aves de grande porte',
-        'status_stock'=> '1',
         'stock'=> 1,
         'animal'=> 'Ave'
       ]);
@@ -67,7 +62,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Alimento',
         'description'=> 'Comida deliciosa sabor sardinha',
-        'status_stock'=> '1',
         'stock'=> 40,
         'animal'=> 'Peixe'
       ]);
@@ -77,7 +71,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Alimento',
         'description'=> 'Comida deliciosa sabor banana',
-        'status_stock'=> '1',
         'stock'=> 40,
         'animal'=> 'Gato'
       ]);
@@ -87,7 +80,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Acessório',
         'description'=> 'Roupa de gato filhote',
-        'status_stock'=> '1',
         'stock'=> 5,
         'animal'=> 'Gato'
       ]);
@@ -97,7 +89,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Acessório',
         'description'=> 'Cama confortável',
-        'status_stock'=> '1',
         'stock'=> 4,
         'animal'=> 'Cachorro'
       ]);
@@ -107,7 +98,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Brinquedo',
         'description'=> 'Mordedor flexivel',
-        'status_stock'=> '1',
         'stock'=> 40,
         'animal'=> 'Cachorro'
       ]);
@@ -118,7 +108,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Acessório',
         'description'=> 'Escova macia',
-        'status_stock'=> '1',
         'stock'=> 4,
         'animal'=> 'Cachorro'
       ]);
@@ -128,7 +117,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Roupa',
         'description'=> 'Sapato tamanho 42',
-        'status_stock'=> '1',
         'stock'=> 10,
         'animal'=> 'Cachorro'
       ]);
@@ -138,7 +126,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Medicina e Saúde',
         'description'=> 'Indicado para filhotes',
-        'status_stock'=> '1',
         'stock'=> 40,
         'animal'=> 'Gato'
       ]);
@@ -148,7 +135,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Cosméticos',
         'description'=> 'Cheirinho de nenem',
-        'status_stock'=> '1',
         'stock'=> 40,
         'animal'=> 'Cachorro'
       ]);
@@ -158,7 +144,6 @@ class ProductSeeder extends Seeder
         'price'=> 10,
         'category'=> 'Acessório',
         'description'=> 'Cambuca para colocar a ração',
-        'status_stock'=> '1',
         'stock'=> 10,
         'animal'=> 'Cachorro'
       ]);

@@ -161,7 +161,9 @@ class PassportController extends Controller
     $client = Client::where('user_id', $user->id)->first();
     $store = Store::find($store_id);
     $client->rate($store, $grade);
+    $store->avgRate();
     $client->save();
+    $store->save();
     return response()->json(['Avaliação concluida', $grade]);
   }
 

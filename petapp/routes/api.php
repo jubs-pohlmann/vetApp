@@ -37,8 +37,6 @@ Route::put('updateProduct', 'ProductController@updateProduct');
 Route::delete('deleteProduct/{id}', 'ProductController@deleteProduct');
 Route::get('listClient/{id}', 'ProductController@listClient'); //lista os clientes que compraram um produto
 
-
-
 //Rotas User
 Route::get('listUser', 'UserController@listUser');
 Route::get('showUser', 'UserController@showUser');

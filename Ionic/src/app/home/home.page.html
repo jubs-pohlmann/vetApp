@@ -10,7 +10,7 @@
 
 <ion-content>
   <ion-label class="title">Categorias</ion-label>
-  <ion-slides>
+  <ion-slides pager>
     <ion-slide> 
       <ion-card class="categoriaCard">
         <img src="../../assets/images/petclothes.jpg" alt="gato de casaco" />
@@ -34,7 +34,7 @@
   </ion-slides>
 
   <ion-label class="title">Para o seu animal</ion-label>
-  <ion-slides>
+  <ion-slides pager>
     <ion-slide>
       <ion-card class="categoriaCard">
         <img src="../../assets/images/dog.jpg" alt="cachorro" />
@@ -58,10 +58,10 @@
   </ion-slides>
   
   <ion-label class="title" id="titleMargin">Adicionados recentemente</ion-label>
-  <ion-item *ngFor="let i of produto">
+  <div *ngFor="let each of produto">
     <app-produto></app-produto>
-  </ion-item>
-
+  </div>
+  <app-produto></app-produto><app-produto></app-produto>
   <!-- ^chamada do component produto. fazer o ngFor com o BD -->
 
 </ion-content>

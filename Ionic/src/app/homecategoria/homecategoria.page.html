@@ -1,0 +1,31 @@
+
+<ion-header>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <ion-toolbar>
+    <ion-icon size="large" name="arrow-round-back"></ion-icon>
+    <ion-title>Categoria</ion-title>
+     <!-- COMO FAZER?^^ DATA BINDING -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="" />
+  <div *ngFor="let produto of produtos">
+
+  <div class="produtoCard">
+    <img class="produtoImg" src="../../assets/images/fish.jpg" alt="imagem do produto"/>
+    <div class="produtoTexto">
+      <div class="produtoLoja">Loja CachorroFeliz</div>
+      <div class="produtoNomePreco">
+        <div>{{produto.name}}</div>
+        <div>{{produto.price}}</div>
+      </div>
+      <div class="produtoDescricao">{{produto.description}}</div>
+  </div>
+
+</div>
+
+  </div>
+
+
+</ion-content>

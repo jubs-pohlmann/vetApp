@@ -17,6 +17,16 @@ const routes: Routes = [
           }
        ]
      },
+     {
+      path: 'homecategoria',
+      children: [
+        {
+          path: '',
+          loadChildren: () =>
+            import('../homecategoria/homecategoria.module').then(m => m.HomecategoriaPageModule)
+        }
+     ]
+   },
       {
         path: 'tab1',
         children: [

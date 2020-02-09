@@ -51,8 +51,7 @@ class Store extends Model
  }
 
  public function avgRate(){
-   $rating = DB::table('client_store')->where('store_id',$this->id)->avg('grade');
-   $this->rating = $rating;
+   $this->rating = DB::table('client_store')->where('store_id',$this->id)->avg('grade');
  }
 
 }

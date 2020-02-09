@@ -24,9 +24,13 @@ export class CadastroPage implements OnInit {
 	
 
 	submitForm(form) {
-		this.usuarioService.postClient(form.value).subscribe( (res ) => {
-			this.router.navigateByUrl('tabs/cadastro2');//MUDANCA RECENTE N TESTADA
-		} );
+		this.usuarioService.postClient(form.value).subscribe( 
+			(res) => {
+			this.router.navigateByUrl('tabs/cadastro2');
+		},
+		(error) => {
+			console.log(error);
+		  });
 		console.log(form);
 		console.log(form.value);
 	}

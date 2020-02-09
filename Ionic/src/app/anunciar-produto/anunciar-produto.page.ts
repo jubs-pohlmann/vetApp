@@ -31,8 +31,7 @@ export class AnunciarProdutoPage implements OnInit {
     form.value.stock=1;
 		this.produtoService.postProduto(form.value).subscribe( 
       (res) => {
-        console.log(res);
-			  this.router.navigateByUrl('tabs/home');//MUDANCA RECENTE N TESTADA
+			  this.router.navigateByUrl('tabs/home');
       },
       (error) => {
         console.log(error);

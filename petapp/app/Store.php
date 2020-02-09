@@ -47,5 +47,4 @@ class Store extends Model
    }
    $this->save();
  }
-
 }

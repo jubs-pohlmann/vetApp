@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Client;
 use App\User;
 use App\Store;
+use App\Product;
 use Auth;
 use DB;
 
@@ -125,12 +126,52 @@ class PassportController extends Controller
   }
 
   //Método responsável por representar a compra de um produto por cliente
-  public function sale(Request $request){
+  public function sale($product_id){
     $user = Auth::user();
     $client = Client::where('user_id', $user->id)->first();
-    $client->sale($request);
+    $client->sale($product_id);
     $client->save();
     return response()->json(['Compra realizada']);
+  }
+
+  //Método responsável por listar os produtos comprados pelo client
+  public function listProduct(){
+    $user = Auth::user();
+    $client = Client::where('user_id', $user->id)->first();
+    return response()->json($client->products);
+  }
+
+  //Método responsavel por estabelecer uma relação entre produto e loja
+  public function addProduct($request){
+    $user = Auth::user();
+    $store = Store::where('user_id', $user->id)->first();
+    $product = Product::find($request);
+    $product->addStore($store->id);
+    return response()->json(['Produto adicionado']);
+  }
+
+  //Método responsável por represnetar a avaliação do cliente a uma loja
+  public function rate($store_id, $grade){
+    $user = Auth::user();
+    $client = Client::where('user_id', $user->id)->first();
+    $store = Store::find($store_id);
+    $client->rate($store, $grade);
+    $client->save();
+    return response()->json(['Avaliação concluida', $grade]);
+  }
+
+  //Método responsável por listar as lojas avaliadas pelo client
+  public function listRate(){
+    $user = Auth::user();
+    $client = Client::where('user_id', $user->id)->first();
+    return response()->json($client->stores);
+  }
+
+  //Método responsável por listar os clientes que avaliaram a loja
+  public function listRateStore(){
+    $user = Auth::user();
+    $store = Store::where('user_id', $user->id)->first();
+    return response()->json($store->clients);
   }
 
 }

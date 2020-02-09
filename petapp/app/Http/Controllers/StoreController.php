@@ -32,11 +32,5 @@ class StoreController extends Controller
     $store->user = $user;
     return response()->json([$store]);
   }
-  //
-  // //Método responsável por listar os clientes que avaliaram uma loja
-  // public function listUsers($id){
-  //   $store = Store::find($id);
-  //   return response()->json($store->users);
-  // }
 
 }

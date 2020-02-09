@@ -33,36 +33,15 @@ class ClientController extends Controller
     $client->user = $user;
     return response()->json([$client]);
   }
-
   //Método responsável por listar os produtos comprados pelo client
-  public function listProducts(){
-    $client = Auth::client();
+  public function listProduct($id){
+    $client = Client::findOrFail($id);
     return response()->json($client->products);
   }
-  //
-  // //Método responsável por represnetar a avaliação do cliente a uma loja
-  // public function rate($id, $store_id, $grade){
-  //   $client = Client::find($id);
-  //   $store = Store::find($store_id);
-  //   //$client->stores()->where('id',$store_id);
-  //   $client->stores()->attach($store->id,['grade' => $grade]);
-  //   return response()->json(['Avaliacao realizada']);
-  // }
-  //
-  // //Método responsável por listar as lojas avaliadas pelo client
-  // public function listRate($id){
-  //   $client = Client::find($id);
-  //   return response()->json($client->stores);
-  // }
-  //
-  //
-  //
-  // // Compra
-  //
-  // //Método responsável por representar a compra de um produto por cliente
-  // public function sale($product_id){
-  //   $client = Client::find($id);
-  //   $client->sale();
-  //   return response()->json(['Venda realizada']);
-  // }
+
+  //Método responsável por listar as lojas avaliadas pelo cliente
+  public function listRate($id){
+    $client = Client::findOrFail($id);
+    return response()->json($client->stores);
+  }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -22,6 +23,14 @@ class UserController extends Controller
   //Método usado para deletar um user
   public function deleteUser($id){
     User::destroy($id);
-    return response()->json(['user deletado']);
+    Storage::delete('localUserPhotos/'. $user->photo);
+    return response()->json(['User deletado']);
+  }
+
+  //Método responsável por exibir a foto do user
+  public function showPhoto($id){
+    $user = User::findOrFail($id);
+    $path = $user->photo;
+    return Storage::download($path);
   }
 }

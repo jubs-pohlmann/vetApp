@@ -11,6 +11,30 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
+  produtos= [{
+    name: 'ração eca',
+    description: 'muito ecaa aaaaaaaaaaaaaaaaaaaaaa',
+    price: 112,
+    photo: null,
+    animal: "cats",
 
+  },
+  {
+    name: 'ração boa',
+    description: 'muito boaaa aaaaaaaaaaaaaaaaaaaaaa',
+    price: 11230124,
+    photo: null,
+    animal: "dogs",
+
+  },
+  {
+  name: 'ração media',
+    description: 'muito boaaa aaaaaaaaaaaaaaaaaaaaaa',
+    price: 11230124,
+    photo: null,
+    animal: "cats",
+
+  }
+]
  
 }

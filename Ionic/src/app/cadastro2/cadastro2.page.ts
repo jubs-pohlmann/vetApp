@@ -34,7 +34,7 @@ export class Cadastro2Page implements OnInit {
 
    submitForm(form) {
 		this.usuarioService.postClient(form.value).subscribe( (res) => {
-			this.router.navigateByUrl('../home/');//MUDANCA RECENTE N TESTADA
+			this.router.navigateByUrl('home');//MUDANCA RECENTE N TESTADA
 		} );
 		console.log(form);
 		console.log(form.value);

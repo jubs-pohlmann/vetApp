@@ -32,7 +32,6 @@ Route::get('listRate/{id}', 'StoreController@listRate'); //admin ter acesso ao h
 //Rotas Product
 Route::get('listProduct', 'ProductController@listProduct');
 Route::get('showProduct/{id}', 'ProductController@showProduct');
-Route::post('createProduct', 'ProductController@createProduct');
 Route::put('updateProduct', 'ProductController@updateProduct');
 Route::delete('deleteProduct/{id}', 'ProductController@deleteProduct');
 Route::get('listClient/{id}', 'ProductController@listClient'); //lista os clientes que compraram um produto
@@ -49,7 +48,7 @@ Route::post('login', 'API\PassportController@login');
 Route::group(['middleware'=> 'auth:api'], function(){
     Route::get('logout', 'API\PassportController@logout');
     Route::put('sale/{id}', 'API\PassportController@sale');
-    Route::put('addProduct/{id}', 'API\PassportController@addProduct');
+    Route::put('createProduct', 'API\PassportController@createProduct');
     Route::post('getDetails', 'API\PassportController@getDetails');
     Route::put('updateClient', 'API\PassportController@updateClient');
     Route::put('updateStore', 'API\PassportController@updateStore');

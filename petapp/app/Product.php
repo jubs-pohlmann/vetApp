@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Store;
 use User;
 
@@ -19,7 +20,7 @@ class Product extends Model
 
 
   //Método responsável por criar novo produto
-  public function createProduct($request){
+  public function createProduct(Request $request, $store_id){
     $this->name = $request->name;
     $this->photo = $request->photo;
     $this->price = $request->price;
@@ -27,7 +28,7 @@ class Product extends Model
     $this->description = $request->description;
     $this->animal = $request->animal;
     $this->stock = $request->stock;
-    $this->status_stock = $request->status_stock;
+    $this->store_id = $store_id;
     $this->save();
   }
 
@@ -52,18 +53,9 @@ class Product extends Model
     if($request->stock){
       $this->stock = $request->stock;
     }
-    if($request->status_stock){
-      $this->status_stock = $request->status_stock;
-    }
     if($request->animal){
       $this->animal = $request->animal;
     }
-    $this->save();
-  }
-
-  //Método responsavel por estabelecer uma relação entre produto e loja
-  public function addStore($request){
-    $this->store_id = $request;
     $this->save();
   }
 

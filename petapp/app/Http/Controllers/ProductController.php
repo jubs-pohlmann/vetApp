@@ -50,4 +50,58 @@ class ProductController extends Controller
     $path = $product->photo;
     return Storage::download($path);
   }
+
+  //Método responsável por ordenar os produtos do forma decrescente
+  public function orderBy(){
+    $desc = Product::orderBy('id', 'desc')->get();
+    return response()->json([$desc]);
+  }
+
+  //Método responsável por ordenar os produtos por animal - cats
+  public function cats(){
+    $cats = Product::where('animal', 'cats')->get();
+    return response()->json([$cats]);
+  }
+
+  //Método responsável por ordenar os produtos por animal - dogs
+  public function dogs(){
+    $dogs = Product::where('animal', 'dogs')->get();
+    return response()->json([$dogs]);
+  }
+
+  //Método responsável por ordenar os produtos por animal - fishes
+  public function fishes(){
+    $fishes = Product::where('animal', 'fishes')->get();
+    return response()->json([$fishes]);
+  }
+
+  //Método responsável por ordenar os produtos por animal - birds
+  public function birds(){
+    $birds = Product::where('animal', 'birds')->get();
+    return response()->json([$birds]);
+  }
+
+  //Método responsável por ordenar os produtos por categoria
+  public function accessories(){
+    $accessories = Product::where('category', 'accessories')->get();
+    return response()->json([$accessories]);
+  }
+
+  //Método responsável por ordenar os produtos por categoria
+  public function health(){
+    $health = Product::where('category', 'health')->get();
+    return response()->json([$health]);
+  }
+
+  //Método responsável por ordenar os produtos por categoria
+  public function food(){
+    $food = Product::where('category', 'food')->get();
+    return response()->json([$food]);
+  }
+
+  //Método responsável por ordenar os produtos por categoria
+  public function bath(){
+    $bath = Product::where('category', 'bath')->get();
+    return response()->json([$bath]);
+  }
 }

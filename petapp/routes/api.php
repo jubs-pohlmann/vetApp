@@ -36,6 +36,14 @@ Route::put('updateProduct/{id}', 'ProductController@updateProduct');
 Route::delete('deleteProduct/{id}', 'ProductController@deleteProduct');
 Route::get('listClient/{id}', 'ProductController@listClient'); //lista os clientes que compraram um produto
 Route::get('showPhotoProduct/{id}', 'ProductController@showPhoto');
+Route::get('orderBy', 'ProductController@orderBy');
+Route::get('dogs', 'ProductController@dogs');
+Route::get('cats', 'ProductController@cats');
+Route::get('fishes', 'ProductController@fishes');
+Route::get('accessories', 'ProductController@accessories');
+Route::get('food', 'ProductController@food');
+Route::get('health', 'ProductController@health');
+Route::get('bath', 'ProductController@bath');
 
 //Rotas User
 Route::get('listUser', 'UserController@listUser');

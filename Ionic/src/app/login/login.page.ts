@@ -46,7 +46,7 @@ export class LoginPage implements OnInit {
   			(res) => {
   				console.log( res );
   				localStorage.setItem( 'userToken', res.data.token );
-  				this.router.navigate(['/tab1']);
+  				this.router.navigate(['home']);
   			}
   		);
 

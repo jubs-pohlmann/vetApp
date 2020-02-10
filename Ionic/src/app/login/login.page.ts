@@ -29,13 +29,13 @@ export class LoginPage implements OnInit {
     console.log(form.value);
   }
 
-  // navegarCadastroLoja(){
-  //   this.router.navigate(['/CadastroLoja'])
-  // }
+   navegarCadastroLoja(){
+     this.router.navigate(['/Cadastroloja'])
+  }
 
-  // navegarCadastroUsuario(){
-  //   this.router.navigate(['cadastro'])
-  // } <= ROTAS AINDA NÃO LINKADAS 
+   navegarCadastroUsuario(){
+    this.router.navigate(['cadastro'])
+   } 
 
   loginUser( loginForm ) {
 

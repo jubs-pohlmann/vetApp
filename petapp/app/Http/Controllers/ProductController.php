@@ -32,8 +32,8 @@ class ProductController extends Controller
   }
 
   //Método para edição de dados do produto
-  public function updateProduct(Request $request){
-    $product = new Product;
+  public function updateProduct(Request $request, $product_id){
+    $product = Product::findOrFail($product_id);
     $product->updateProduct($request);
     return response()->json([$product]);
   }

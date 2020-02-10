@@ -32,7 +32,7 @@ Route::get('listRate/{id}', 'StoreController@listRate'); //admin ter acesso ao h
 //Rotas Product
 Route::get('listProduct', 'ProductController@listProduct');
 Route::get('showProduct/{id}', 'ProductController@showProduct');
-Route::put('updateProduct', 'ProductController@updateProduct');
+Route::put('updateProduct/{id}', 'ProductController@updateProduct');
 Route::delete('deleteProduct/{id}', 'ProductController@deleteProduct');
 Route::get('listClient/{id}', 'ProductController@listClient'); //lista os clientes que compraram um produto
 Route::get('showPhotoProduct/{id}', 'ProductController@showPhoto');

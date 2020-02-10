@@ -17,19 +17,18 @@ class ProductController extends Controller
   //Método que retorna lista com todos os produtos
   public function listProduct(){
     $product = Product::all();
-    return response()->json($product);
-  }
-
-  //Método responsavel por exibir o produto com o id informado
-  public function showProduct($id){
-    $product = Prooduct::findOrFail($id);
     return response()->json([$product]);
   }
-
   //Método usado para deletar um produto
   public function deleteProduct($id){
     Product::destroy($id);
     return response()->json(['Produto deletado']);
+  }
+
+  //Método responsavel por exibir o produto com o id informado
+  public function showProduct($id){
+    $product = Product::findOrFail($id);
+    return response()->json([$product]);
   }
 
   //Método para edição de dados do produto
@@ -37,30 +36,10 @@ class ProductController extends Controller
     $product = new Product;
     $product->updateProduct($request);
     return response()->json([$product]);
-
   }
 
-  //
-  // //Método responsavel por estabelecer uma relação entre produto e loja
-  // public function addStore($id, $store_id){
-  //   $product = Product::find($id);
-  //   $product->store_id = store_id;
-  //   $product->save();
-  //   return response()->json(['Sucesso']);
-  // }
-  //
-  // //Método responsavel por remover uma relação entre produto e loja
-  // public function removeStore($id){
-  //   $product = Product::find($id);
-  //   $product->store_id = null;
-  //   $product->save();
-  //   return response()->json(['Sucesso']);
-  // }
-  //
-  // //Método responsável por listar os clientes que compraram um produto
-  // public function listUsers($id){
-  //   $product = Product::find($id);
-  //   return response()->json($product->users);
-  // }
-
+  public function listClient($id){
+    $product = Product::findOrFail($id);
+    return response()->json($product->clients);
+  }
 }

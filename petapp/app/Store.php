@@ -1,4 +1,4 @@
-//herança<?php
+<?php
 
 namespace App;
 
@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use User;
 use Client;
 use Product;
+use DB;
 
 class Store extends Model
 {
@@ -22,7 +23,8 @@ class Store extends Model
   }
 
   public function clients(){
-   return $this->belongsToMany('App\Client');
+   return $this->belongsToMany('App\Client')
+    ->withPivot('grade');
   }
 
   //Método responsável por criar nova loja
@@ -46,6 +48,10 @@ class Store extends Model
      $this->cnpj = $request->cnpj;
    }
    $this->save();
+ }
+
+ public function avgRate(){
+   $this->rating = DB::table('client_store')->where('store_id',$this->id)->avg('grade');
  }
 
 }

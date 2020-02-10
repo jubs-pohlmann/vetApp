@@ -24,9 +24,6 @@ class CreateClientStoreTable extends Migration
         //Foreign key
         Schema::table('client_store', function (Blueprint $table) {
           $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
-        });
-
-        Schema::table('client_store', function (Blueprint $table) {
           $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
         });
     }

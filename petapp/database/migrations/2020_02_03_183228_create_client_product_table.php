@@ -15,19 +15,20 @@ class CreateClientProductTable extends Migration
     {
         Schema::create('client_product', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('client_id')->nullable();
-            $table->unsignedBigInteger('product_id')->nullable();
+            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('product_id');
             $table->timestamps();
         });
 
         //Foreign key
         Schema::table('client_product', function (Blueprint $table) {
           $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
-        });
-
-        Schema::table('client_product', function (Blueprint $table) {
           $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
+
+        // Schema::table('client_product', function (Blueprint $table) {
+        //   $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+        // });
     }
 
     /**

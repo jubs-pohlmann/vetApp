@@ -13,8 +13,8 @@ class Product extends Model
     return $this->belongsTo('App\Store');
   }
 
-  public function users(){
-    return $this->belongsToMany('App\User');
+  public function clients(){
+    return $this->belongsToMany('App\Client');
   }
 
 
@@ -60,4 +60,11 @@ class Product extends Model
     }
     $this->save();
   }
+
+  //Método responsavel por estabelecer uma relação entre produto e loja
+  public function addStore($request){
+    $this->store_id = $request;
+    $this->save();
+  }
+
 }

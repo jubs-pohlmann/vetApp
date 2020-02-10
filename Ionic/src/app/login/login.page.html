@@ -11,7 +11,7 @@
   <!-- FORMULÁRIO PARA LOGIN -->
   <ion-content scroll-y="false">
 
-    <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm)">
       <ion-list>
         <div class="formInput" [class.invalid]="loginForm.controls.email.invalid && loginForm.controls.email.touched">
           <ion-label class="formTitle" position='stacked'>Email</ion-label>

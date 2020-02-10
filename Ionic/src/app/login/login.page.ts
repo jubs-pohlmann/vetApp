@@ -19,14 +19,14 @@ export class LoginPage implements OnInit {
     this.loginForm = this.formbuilder.group({
       
       email:[null,[Validators.required,Validators.email]],
-      password:[null,[Validators.required,Validators.minLength(6)]],
+      password:[null,[Validators.required,Validators.maxLength(5)]],
          
     });
   }
 
   submitForm(form){
-    console.log(form);
-    console.log(form.value);
+    //console.log(form);
+    //console.log(form.value);
   }
 
    navegarCadastroLoja(){
@@ -44,7 +44,8 @@ export class LoginPage implements OnInit {
 
   		this.authService.loginUser( loginForm.value ).subscribe(
   			(res) => {
-  				console.log( res );
+          //console.log( res );
+          console.log(res.data.token);
   				localStorage.setItem( 'userToken', res.data.token );
   				this.router.navigate(['home']);
   			}

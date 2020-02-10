@@ -50,4 +50,10 @@ class ProductController extends Controller
     $path = $product->photo;
     return Storage::download($path);
   }
+
+  //Método responsável por ordenar os produtos do forma decrescente
+  public function orderBy(){
+    $desc = Product::orderBy('id', 'desc')->get();
+    return response()->json([$desc]);
+  }
 }

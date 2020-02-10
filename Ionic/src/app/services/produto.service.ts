@@ -17,4 +17,8 @@ export class ProdutoService {
   // ListProdutos(id:number):Observable<any>{
   //   return this.http.get(this.apiURL + 'listProduct/{id}', id);
   // }
+
+  listRecentes():Observable<any> {
+    return this.http.get(this.apiURL + 'orderBy');
+  }
 }

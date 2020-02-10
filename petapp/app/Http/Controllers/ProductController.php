@@ -80,4 +80,28 @@ class ProductController extends Controller
     $birds = Product::where('animal', 'birds')->get();
     return response()->json([$birds]);
   }
+
+  //Método responsável por ordenar os produtos por categoria
+  public function accessories(){
+    $accessories = Product::where('category', 'accessories')->get();
+    return response()->json([$accessories]);
+  }
+
+  //Método responsável por ordenar os produtos por categoria
+  public function health(){
+    $health = Product::where('category', 'health')->get();
+    return response()->json([$health]);
+  }
+
+  //Método responsável por ordenar os produtos por categoria
+  public function food(){
+    $food = Product::where('category', 'food')->get();
+    return response()->json([$food]);
+  }
+
+  //Método responsável por ordenar os produtos por categoria
+  public function bath(){
+    $bath = Product::where('category', 'bath')->get();
+    return response()->json([$bath]);
+  }
 }

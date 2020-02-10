@@ -40,7 +40,10 @@ Route::get('orderBy', 'ProductController@orderBy');
 Route::get('dogs', 'ProductController@dogs');
 Route::get('cats', 'ProductController@cats');
 Route::get('fishes', 'ProductController@fishes');
-Route::get('birds', 'ProductController@birds');
+Route::get('accessories', 'ProductController@accessories');
+Route::get('food', 'ProductController@food');
+Route::get('health', 'ProductController@health');
+Route::get('bath', 'ProductController@bath');
 
 //Rotas User
 Route::get('listUser', 'UserController@listUser');

@@ -13,4 +13,8 @@ export class ProdutoService {
   postProduto(form:any):Observable<any> {
     return this.http.post(this.apiURL + 'createProduto', form);
   }
+
+  // ListProdutos(id:number):Observable<any>{
+  //   return this.http.get(this.apiURL + 'listProduct/{id}', id);
+  // }
 }

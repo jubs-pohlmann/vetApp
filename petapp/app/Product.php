@@ -23,26 +23,27 @@ class Product extends Model
   //Método responsável por criar novo produto
   public function createProduct(Request $request, $store_id){
     $this->name = $request->name;
-    $this->photo = $request->photo;
     $this->price = $request->price;
     $this->category = $request->category;
     $this->description = $request->description;
     $this->animal = $request->animal;
     $this->stock = $request->stock;
     $this->store_id = $store_id;
-    If (!Storage::exists('localProductPhotos/'))
-			Storage::makeDirectory('localProductPhotos/',0775,true);
-    $file = $request->file('photo');
-    $filename = $this->id.'.'.$file->getClientOriginalExtension();
-    $path = $file->storeAs('localProductPhotos', $filename);
-    $this->photo = $path;
+    if($request->photo){
+      If (!Storage::exists('localProductPhotos/'))
+  			Storage::makeDirectory('localProductPhotos/',0775,true);
+      $file = $request->file('photo');
+      $filename = $this->id.'.'.$file->getClientOriginalExtension();
+      $path = $file->storeAs('localProductPhotos', $filename);
+      $this->photo = $path;
+    }
 
     $this->save();
   }
 
 
   //Método para edição de dados do produto
-  public function updateProduct($request, $id){
+  public function updateProduct($request){
     if($request->name){
       $this->name = $request->name;
     }
@@ -63,6 +64,14 @@ class Product extends Model
     }
     if($request->animal){
       $this->animal = $request->animal;
+    }
+    if($request->photo){
+      If (!Storage::exists('localProductPhotos/'))
+  			Storage::makeDirectory('localProductPhotos/',0775,true);
+      $file = $request->file('photo');
+      $filename = $this->id.'.'.$file->getClientOriginalExtension();
+      $path = $file->storeAs('localProductPhotos', $filename);
+      $this->photo = $path;
     }
     $this->save();
   }

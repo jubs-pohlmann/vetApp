@@ -140,9 +140,18 @@ class PassportController extends Controller
 
     if($request->delivery || $request->cnpj)
       $store->updateStore($request);
-    else
-      $user->updateUser($request);
 
+    if($request->name || $request->email || $request->password || $request->phone || $request->address){
+      $user->updateUser($request);
+    }
+    else{
+        Storage::delete($user->photo);
+        $file = $request->file('photo');
+        $filename = $user->id.'.'.$file->getClientOriginalExtension();
+        $path = $file->storeAs('localUserPhotos', $filename);
+        $user->photo = $path;
+        $user->save();
+      }
     return response()->json([$user]);
   }
 

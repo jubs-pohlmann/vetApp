@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Store;
 use User;
@@ -29,6 +30,13 @@ class Product extends Model
     $this->animal = $request->animal;
     $this->stock = $request->stock;
     $this->store_id = $store_id;
+    If (!Storage::exists('localProductPhotos/'))
+			Storage::makeDirectory('localProductPhotos/',0775,true);
+    $file = $request->file('photo');
+    $filename = $this->id.'.'.$file->getClientOriginalExtension();
+    $path = $file->storeAs('localProductPhotos', $filename);
+    $this->photo = $path;
+
     $this->save();
   }
 

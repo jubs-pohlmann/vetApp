@@ -38,8 +38,16 @@ class ProductController extends Controller
     return response()->json([$product]);
   }
 
+  //Método responsável por listar os clientes que compraram um produto
   public function listClient($id){
     $product = Product::findOrFail($id);
     return response()->json($product->clients);
+  }
+
+  //Método responsável por exibir a foto do produto
+  public function showPhoto($id){
+    $product = Product::findOrFail($id);
+    $path = $product->photo;
+    return Storage::download($path);
   }
 }

@@ -8,27 +8,32 @@
       <ion-back-button  text="" defaultHref="/"></ion-back-button>
     </ion-buttons>
     <!-- NOME DO PRODUTO -->
-    <ion-title class='nomeDoProdutoTitulo'>XXXXXXXXXXXX XXXXXXXXXXXXX</ion-title>
+    <ion-title class='nomeDoProdutoTitulo'>Ração Whiskas 1KG</ion-title>
   </ion-toolbar>
 
   <ion-content scroll-y="true">
 
     <!-- NOME DA LOJA -->
-    <ion-label class='nomeLoja'>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ion-label>
+    
     <div class="conteudoDoAnuncio">
         <!-- FOTO DO PRODUTO OU IMAGEM DEFAULT ALTERNATIVA -->
-        <img class="image" src="" onerror="this.src='../../assets/images/imagemDefault.jpg' ">       
+        <img class="image" src="" onerror="this.src='../../assets/images/imagemDefault.jpg' "> 
+
+        <ion-chip>
+          <ion-label class-='porloja'>Por <span class='nomeDaLoja'>Dogstore</span></ion-label>
+        </ion-chip>      
          <!-- DESCRIÇÃO DO PRODUTO COM MÁXIMO DE 160 CARACTERES -->
-          <div class= 'descricao'>
-            <p>name name name name name name name name name name name name name name name name name name name name name name name name name name name name name name </p>           
-          </div>      
+        <div class= 'descricao'>
+          <ion-label>Descrição</ion-label>
+          <p>name name name name name name name name name name name name name name name name name name name name name name name name name name name name name name </p>           
+        </div>      
     </div>
-   <!--  NOME DO PRODUTO E PREÇO -->
-    <div class="nomeProdutoEPreco">
-      <p>Ração DogDoguinho</p>
-      <p>R$18,50</p>
-    </div>
+   
     <!-- FILTRO DE CATEGORIAS -->
+    <div class="filtro">
+      <ion-label >Categorias</ion-label>
+    </div>
+    
     <div class='categorias'>
       <ion-chip class='categoria'>
         <ion-label  >Alimento</ion-label>
@@ -40,7 +45,7 @@
     </div>
       <!-- BOTÃO PARA REALIZAR SOLICITAÇÃO DE COMPRAR -->
     <ion-row class="ion-justify-content-center">
-      <ion-button (click)="presentToast()" class="formButton" type='button' shape='default' >Comprar</ion-button>
+      <ion-button (click)="presentToast()" class="formButton" type='button' shape='default' >Comprar (18,50)</ion-button>
     </ion-row>
       <!-- ENCAMINHAR À LOJA  -->
     <div class='encaminhaParaLoja'>

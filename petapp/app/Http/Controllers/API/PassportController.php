@@ -177,7 +177,7 @@ class PassportController extends Controller
   }
 
   //Método responsavel por estabelecer uma relação entre produto e loja
-  public function addProduct($request){
+  public function addProduct(){
     $user = Auth::user();
     $store = Store::where('user_id', $user->id)->first();
     $product = Product::find($request);

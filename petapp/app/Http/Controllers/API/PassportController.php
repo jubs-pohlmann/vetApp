@@ -115,11 +115,21 @@ class PassportController extends Controller
     $user = Auth::user();
     $client = Client::where('user_id', '$user->id');
 
+
     if($request->birthdate || $request->cpf)
       $client->updateClient($request);
-    else
-      $user->updateUser($request);
 
+    if($request->name || $request->email || $request->password || $request->phone || $request->address){
+      $user->updateUser($request);
+    }
+    else{
+      Storage::delete($user->photo);
+      $file = $request->file('photo');
+      $filename = $user->id.'.'.$file->getClientOriginalExtension();
+      $path = $file->storeAs('localUserPhotos', $filename);
+      $user->photo = $path;
+      $user->save();
+    }
     return response()->json([$user]);
   }
 

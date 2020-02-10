@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Http\Request;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Support\Facades\Storage;
 
 use Client;
 use Product;
@@ -76,9 +77,6 @@ class User extends Authenticatable
     }
     if($request->password){
       $this->password = $request->password;
-    }
-    if($request->photo){
-      $this->photo = $request->photo;
     }
     if($request->phone){
       $this->phone = $request->phone;

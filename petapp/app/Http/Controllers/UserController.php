@@ -22,8 +22,9 @@ class UserController extends Controller
 
   //Método usado para deletar um user
   public function deleteUser($id){
+    $user = User::findOrFail($id);
+    Storage::delete($user->photo);
     User::destroy($id);
-    Storage::delete('localUserPhotos/'. $user->photo);
     return response()->json(['User deletado']);
   }
 

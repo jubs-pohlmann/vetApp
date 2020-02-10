@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor banana',
         'stock'=> 40,
         'store_id'=>1,
-        'animal'=> 'Gato'
+        'animal'=> 'cats'
       ]);
 
       DB::table('products')->insert([
@@ -28,7 +28,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor banana',
         'stock'=> 40,
         'store_id'=>1,
-        'animal'=> 'Cachorro'
+        'animal'=> 'dogs'
       ]);
 
       DB::table('products')->insert([
@@ -38,7 +38,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Coleira tamanho P rosa',
         'stock'=> 5,
         'store_id'=>1,
-        'animal'=> 'Cachorro'
+        'animal'=> 'dogs'
       ]);
 
       DB::table('products')->insert([
@@ -48,7 +48,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Medicina e Saúde 100% indicado',
         'stock'=> 10,
         'store_id'=>2,
-        'animal'=> 'Gato'
+        'animal'=> 'cats'
       ]);
 
       DB::table('products')->insert([
@@ -58,7 +58,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Gaiola grande usada para aves de grande porte',
         'stock'=> 1,
         'store_id'=>2,
-        'animal'=> 'Ave'
+        'animal'=> 'birds'
       ]);
 
 
@@ -69,7 +69,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor sardinha',
         'stock'=> 40,
         'store_id'=>3,
-        'animal'=> 'Peixe'
+        'animal'=> 'fishes'
       ]);
 
       DB::table('products')->insert([
@@ -79,7 +79,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor banana',
         'stock'=> 40,
         'store_id'=>4,
-        'animal'=> 'Gato'
+        'animal'=> 'cats'
       ]);
 
       DB::table('products')->insert([
@@ -89,7 +89,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Roupa de gato filhote',
         'stock'=> 5,
         'store_id'=>5,
-        'animal'=> 'Gato'
+        'animal'=> 'cats'
       ]);
 
       DB::table('products')->insert([
@@ -99,7 +99,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Cama confortável',
         'stock'=> 4,
         'store_id'=>6,
-        'animal'=> 'Cachorro'
+        'animal'=> 'dogs'
       ]);
 
       DB::table('products')->insert([
@@ -109,7 +109,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Mordedor flexivel',
         'stock'=> 40,
         'store_id'=>7,
-        'animal'=> 'Cachorro'
+        'animal'=> 'dogs'
       ]);
 
 
@@ -120,7 +120,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Escova macia',
         'stock'=> 4,
         'store_id'=>8,
-        'animal'=> 'Cachorro'
+        'animal'=> 'dogs'
       ]);
 
       DB::table('products')->insert([
@@ -130,7 +130,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Sapato tamanho 42',
         'stock'=> 10,
         'store_id'=>9,
-        'animal'=> 'Cachorro'
+        'animal'=> 'dogs'
       ]);
 
       DB::table('products')->insert([
@@ -140,7 +140,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Indicado para filhotes',
         'stock'=> 40,
         'store_id'=>10,
-        'animal'=> 'Gato'
+        'animal'=> 'cats'
       ]);
 
       DB::table('products')->insert([
@@ -150,7 +150,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Cheirinho de nenem',
         'stock'=> 40,
         'store_id'=>2,
-        'animal'=> 'Cachorro'
+        'animal'=> 'dogs'
       ]);
 
       DB::table('products')->insert([
@@ -160,7 +160,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Cambuca para colocar a ração',
         'stock'=> 10,
         'store_id'=>10,
-        'animal'=> 'Cachorro'
+        'animal'=> 'dogs'
       ]);
     }
 }

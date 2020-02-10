@@ -56,4 +56,28 @@ class ProductController extends Controller
     $desc = Product::orderBy('id', 'desc')->get();
     return response()->json([$desc]);
   }
+
+  //Método responsável por ordenar os produtos por animal - cats
+  public function cats(){
+    $cats = Product::where('animal', 'cats')->get();
+    return response()->json([$cats]);
+  }
+
+  //Método responsável por ordenar os produtos por animal - dogs
+  public function dogs(){
+    $dogs = Product::where('animal', 'dogs')->get();
+    return response()->json([$dogs]);
+  }
+
+  //Método responsável por ordenar os produtos por animal - fishes
+  public function fishes(){
+    $fishes = Product::where('animal', 'fishes')->get();
+    return response()->json([$fishes]);
+  }
+
+  //Método responsável por ordenar os produtos por animal - birds
+  public function birds(){
+    $birds = Product::where('animal', 'birds')->get();
+    return response()->json([$birds]);
+  }
 }

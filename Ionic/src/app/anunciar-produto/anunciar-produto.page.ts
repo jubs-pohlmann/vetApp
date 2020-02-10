@@ -19,7 +19,7 @@ export class AnunciarProdutoPage implements OnInit {
       description: [null, [Validators.required]],
       animal: [null, [Validators.required]],
       category: [null, [Validators.required]],
-      stock: [null],
+      stock: [null, [Validators.required]],
       // photo: [null, [Validators.required]],
     })
    }
@@ -28,7 +28,6 @@ export class AnunciarProdutoPage implements OnInit {
   }
 
   submitForm(form) {
-    form.value.stock=1;
 		this.produtoService.postProduto(form.value).subscribe( 
       (res) => {
 			  this.router.navigateByUrl('tabs/home');

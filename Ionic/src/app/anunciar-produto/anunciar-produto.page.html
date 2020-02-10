@@ -17,12 +17,17 @@
     <div class="formItem" [class.invalid]="registerForm.controls.price.invalid && registerForm.controls.price.touched">
       <ion-label class="formTitle" position="stacked">Preço</ion-label>
       <ion-input class="formPlaceholder" maxLength="10" formControlName="price" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: R$ 18,50" [brmasker]="{money: true}"></ion-input>
-      </div>
+    </div>
 
-      <div class="formItem" [class.invalid]="registerForm.controls.description.invalid && registerForm.controls.description.touched">
+    <div class="formItem" [class.invalid]="registerForm.controls.price.invalid && registerForm.controls.price.touched">
+      <ion-label class="formTitle" position="stacked">Quantidade em estoque</ion-label>
+      <ion-input class="formPlaceholder" maxLength="10" formControlName="stock" type="integer" inputmode="number" required=true clear-input=true placeholder="ex.: 100"></ion-input>
+    </div>
+
+    <div class="formItem" [class.invalid]="registerForm.controls.description.invalid && registerForm.controls.description.touched">
       <ion-label class="formTitle" position="stacked">Descreva o produto</ion-label>
       <ion-input class="formPlaceholder" maxLength="300" formControlName="description" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Uma coleira rosa de couro, tamanho ajustável para cachorros grandes e pequenos."></ion-input>
-      </div>
+    </div>
 
       <div class="radioText">
         <ion-label>Seu produto é voltado para que animais? Escolha apenas um.</ion-label>

@@ -41,6 +41,7 @@ Route::get('listClient/{id}', 'ProductController@listClient'); //lista os client
 Route::get('listUser', 'UserController@listUser');
 Route::get('showUser', 'UserController@showUser');
 Route::delete('deleteUser/{id}', 'UserController@deleteUser');
+Route::get('showPhoto/{id}', 'UserController@showPhoto');
 
 Route::post('registerStore', 'API\PassportController@registerStore');
 Route::post('registerClient', 'API\PassportController@registerClient');

@@ -8,6 +8,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { ComponentsModule } from '../components.module';
+// import { ProdutoComponent } from '../components/produto/produto.component'
+
 
 @NgModule({
   imports: [
@@ -15,7 +17,7 @@ import { ComponentsModule } from '../components.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
   declarations: [HomePage]
 })

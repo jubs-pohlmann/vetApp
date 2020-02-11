@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto.service';
-import { ActivatedRoute } from '@angular/router';
-//import { Home } from '../home/home.page';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-homecategoria',
@@ -17,6 +17,7 @@ export class HomecategoriaPage implements OnInit {
 
   produtos=[];
   produtoCategoria:string;
+
 
 
   ngOnInit() {

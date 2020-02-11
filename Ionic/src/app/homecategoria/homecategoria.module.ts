@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { HomecategoriaPageRoutingModule } from './homecategoria-routing.module';
 
 import { HomecategoriaPage } from './homecategoria.page';
+import { ComponentsModule } from '../components.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomecategoriaPageRoutingModule
+    HomecategoriaPageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [HomecategoriaPage]
 })

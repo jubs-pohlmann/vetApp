@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProdutoService } from '../services/produto.service';
+import { ProdutoComponent } from '../components/produto/produto.component';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { ProdutoService } from '../services/produto.service';
 })
 export class HomePage implements OnInit {
 
-  public produtos = [];
+
 
   public categorias = [
     {
@@ -59,7 +60,7 @@ export class HomePage implements OnInit {
 
   constructor(public router: Router, public produtoService: ProdutoService) { }
 
-  public categoriaClick( i:any ){
+  public categoriaClick( i:string ){
     this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);
   }
 

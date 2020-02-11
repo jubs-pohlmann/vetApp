@@ -9,17 +9,18 @@ export class ProdutoService {
 
   apiURL:string = 'http://localhost:8000/api/';
 
-  httpHeaders: object = {
+  httpHeaders: any = {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Autorization': 'Bearer '
+      'Autorization': 'Bearer ',
     }
   }
 
   constructor( public http: HttpClient ) { }
 
   postProduto(form:any):Observable<any> {
+    this.httpHeaders.headers["Authorization"] = "Bearer" + localStorage.getItem('storeToken');
     return this.http.post(this.apiURL + 'createProduto', form);
   }
 

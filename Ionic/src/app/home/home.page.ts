@@ -10,7 +10,7 @@ import { ProdutoComponent } from '../components/produto/produto.component';
 })
 export class HomePage implements OnInit {
 
-
+  produtos:any = [];
 
   public categorias = [
     {

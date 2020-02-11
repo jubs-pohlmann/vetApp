@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common'
-//import { Home } from '../home/home.page';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-homecategoria',

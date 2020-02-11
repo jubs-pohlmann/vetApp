@@ -9,10 +9,19 @@ import { Router } from '@angular/router';
 export class LojaService {
 
   apiURL: string = 'http://localhost/8000/api/'
+
+  httpHeaders: any = {
+  	headers: {
+  		'Content-Type': 'application/json',
+	  	'Accept': 'application/json',
+	  	'Authorization': 'Bearer',
+  	}
+  }
+
   constructor(public http:HttpClient, public router:Router) { }
 
   postLoja(form:any):Observable<any>{
-    return this.http.post(this.apiURL + 'registerStore', form);
+    return this.http.post( this.apiURL + 'registerStore', form, this.httpHeaders );
   }
 
   getLoja(id:number):Observable<any> {

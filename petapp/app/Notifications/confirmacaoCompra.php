@@ -38,18 +38,17 @@ class confirmacaoCompra extends Notification
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable, $product)
+    public function toMail($notifiable)
     {
-        $url = url();
+        $url = url('localhost:8000/tabs/home');
         $client = $notifiable;
-        $product = $product;
 
         return (new MailMessage)
                     ->greeting('Compra confirmada.')
                     ->line('Olá, '.$client->name)
-                    ->line('Sua compra de'.$product->name.'foi realizada com sucesso :)')
+                    ->line('Sua compra foi realizada com sucesso :)')
                     ->line('A data prevista para a entrega do seu pedido é: ') //adicionar data de entrega
-                    ->action('Voltar as compras.'.$url) //botão
+                    ->action('Voltar as compras.',$url) //botão
                     ->line('Obrigada pela compra!');
     }
 

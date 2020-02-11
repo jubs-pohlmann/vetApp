@@ -12,6 +12,7 @@ use App\Product;
 
 class Client extends Model
 {
+  use Notifiable;
 
   //Relacionamentos
   public function user(){ //herança
@@ -19,7 +20,7 @@ class Client extends Model
   }
 
   public function products(){
-    return $this->belongsToMany('App\Product');
+    return $this->belongsToMany('App\Product')
       ->withPivot('delivery_day');
   }
 

@@ -15,8 +15,8 @@
   <ion-label class="title">Categorias</ion-label>
   <ion-slides pager>
     <ion-slide *ngFor ="let categoria of categorias">
-      <ion-card class="categoriaCard" (click)="categoriaClick( categoria.name )">
-        <img src={{categoria.imagem}} alt="gato de casaco" />
+      <ion-card class="categoriaCard" (click)="categoriaClick( categoria )">
+        <img src={{categoria.imagem}} />
         <div class="categoriaText">{{ categoria.nome }}</div>
       </ion-card>
     </ion-slide>
@@ -24,31 +24,16 @@
 
   <ion-label class="title">Para o seu animal</ion-label>
   <ion-slides pager>
-    <ion-slide>
-      <ion-card class="categoriaCard" (click)="categoriaClick()">
-        <img src="../../assets/images/dog.jpg" alt="cachorro" />
-        <div class="categoriaText" id="card4">Cachorros</div>
-      </ion-card>
-      <ion-card class="categoriaCard" (click)="categoriaClick()">
-        <img src="../../assets/images/gato.jpg" alt="gato" />
-        <div class="categoriaText" id="card3">Gatos</div>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card class="categoriaCard" (click)="categoriaClick()">
-        <img src="../../assets/images/bird.jpg" alt="pássaro" />
-        <div class="categoriaText" id="card5">Aves</div>
-      </ion-card>
-      <ion-card class="categoriaCard" (click)="categoriaClick()">
-        <img src="../../assets/images/fish.jpg" alt="peixe" />
-        <div class="categoriaText">Peixes</div>
+    <ion-slide *ngFor ="let animal of animais">
+      <ion-card class="categoriaCard" (click)="categoriaClick( animal )">
+        <img src={{animal.imagem}} />
+        <div class="categoriaText">{{ animal.nome }}</div>
       </ion-card>
     </ion-slide>
   </ion-slides>
 
   <ion-label class="title" id="titleMargin">Adicionados recentemente</ion-label>
-
-    <app-produto *ngFor="let produto of produtos" [prodObj]="produto" ></app-produto>
+  <app-produto *ngFor="let produto of produtos" [prodObj]="produto" ></app-produto>
   <!-- ^chamada do component produto. fazer o ngFor com o BD -->
 
 </ion-content>

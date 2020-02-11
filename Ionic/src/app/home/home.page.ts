@@ -8,7 +8,9 @@ import { ProdutoService } from '../services/produto.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+
   public produtos = [];
+
   public categorias = [
     {
       nome: 'Alimentação',
@@ -32,9 +34,32 @@ export class HomePage implements OnInit {
     }
   ];
 
+  public animais = [
+    {
+      nome: 'Cães',
+      name: 'dogs',
+      imagem: "../../assets/images/dog.jpg"
+    },
+    {
+      nome: 'Gatos',
+      name: 'cats',
+      imagem: "../../assets/images/gato.jpg"
+    },
+    {
+      nome: 'Aves',
+      name: 'birds',
+      imagem: "../../assets/images/bird.jpg"
+    },
+    {
+      nome: 'Peixes',
+      name: 'fishes',
+      imagem: "../../assets/images/fish.jpg"
+    }
+  ];
+
   constructor(public router: Router, public produtoService: ProdutoService) { }
 
-  public categoriaClick( i:string ){
+  public categoriaClick( i:any ){
     this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);
   }
 
@@ -42,8 +67,8 @@ export class HomePage implements OnInit {
     this.produtoService.listRecentes().subscribe((res)=>{
       //console.log(res[0]);
       this.produtos=res[0];
-    }, err=>{
-      console.log('ERRO');
+    }, error=>{
+      console.log(error);
     });
   }
 

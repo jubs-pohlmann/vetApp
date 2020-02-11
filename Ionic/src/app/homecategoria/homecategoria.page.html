@@ -5,19 +5,28 @@
     <ion-buttons class='formButton1' slot="start">
       <ion-back-button  text="" defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Categoria</ion-title>
+    <ion-title>{{produtoCategoria.name}}</ion-title>
      <!-- COMO FAZER?^^ DATA BINDING PRA APARECER O NOME CORRETO DA CATEGORIA/ANIMAL-->
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <img src="../../assets/images/gato.jpg" />
+  <app-produto *ngFor="let produto of produtoCategoria" [prodObj]="produto" ></app-produto>
   <!-- ao clicar passar qual a categoria/animal clicada e mostrar essa imagem no topo da pagina -->
-  <app-produto *ngFor="let produto of produtos" [prodObj]="produto" ></app-produto>
-
-</div>
-
-  </div>
+  <!-- <div *ngFor="let produto of produtos">
+    <div class="produtoCard">
+      <img class="produtoImg" src="../../assets/images/fish.jpg" alt="imagem do produto"/>
+      <div class="produtoTexto">
+        <div class="produtoLoja">Loja CachorroFeliz</div>
+        <div class="produtoNomePreco">
+          <div>{{produto.name}}</div>
+          <div>{{produto.price}}</div>
+        </div>
+        <div class="produtoDescricao">{{produto.description}}</div>
+      </div>
+    </div>
+  </div> -->
 
 
 </ion-content>

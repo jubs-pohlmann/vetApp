@@ -1,48 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProdutoService } from '../services/produto.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
-
-    produtos= [{
-      name: 'ração eca',
-      description: 'muito ecaa aaaaaaaaaaaaaaaaaaaaaa',
-      price: 112,
-      photo: null,
-      animal: "cats",
-
+  public produtos = [];
+  public categorias = [
+    {
+      nome: 'Alimentação',
+      name: 'food',
+      imagem: "../../assets/images/food.jpg"
     },
     {
-      name: 'ração boa',
-      description: 'muito boaaa aaaaaaaaaaaaaaaaaaaaaa',
-      price: 11230124,
-      photo: null,
-      animal: "dogs",
-
+      nome: 'Saúde',
+      name: 'health',
+      imagem: "../../assets/images/medicine.jpg"
     },
     {
-    name: 'ração media',
-      description: 'muito boaaa aaaaaaaaaaaaaaaaaaaaaa',
-      price: 11230124,
-      photo: null,
-      animal: "cats",
-
+      nome: 'Higiene',
+      name: 'bath',
+      imagem: "../../assets/images/petshower.jpg"
+    },
+    {
+      nome: 'Acessórios',
+      name: 'accessories',
+      imagem: "../../assets/images/petclothes.jpg"
     }
-  ]
+  ];
 
-  constructor(public router: Router, public produto: ProdutoService) { }
+  constructor(public router: Router, public produtoService: ProdutoService) { }
 
-  categoriaClick(){
-    this.router.navigateByUrl('tabs/homecategoria');
+  public categoriaClick( i:string ){
+    this.router.navigate('tabs/homecategoria', {produtoCategoria: i});
   }
 
   ngOnInit(){
-    this.produto.listRecentes().subscribe((res)=>{
+    this.produtoService.listRecentes().subscribe((res)=>{
       //console.log(res[0]);
       this.produtos=res[0];
     }, err=>{

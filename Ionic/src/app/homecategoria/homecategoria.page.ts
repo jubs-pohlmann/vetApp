@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutoService } from '../services/produto.service';
+import { ActivatedRoute } from '@angular/router';
+import { Home } from '../home/home.page';
 
 @Component({
   selector: 'app-homecategoria',
@@ -7,37 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomecategoriaPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: ActivatedRoute, public produtoService: ProdutoService) {
+    console.log('aaaaaaaaaaa');
+    this.produtoCategoria = this.router.snapshot.params["produtoCategoria"];
+  }
 
-
-//   produtos= [{
-//     name: 'ração eca',
-//     description: 'muito ecaa aaaaaaaaaaaaaaaaaaaaaa',
-//     price: 112,
-//     photo: null,
-//     animal: "cats",
-//
-//   },
-//   {
-//     name: 'ração boa',
-//     description: 'muito boaaa aaaaaaaaaaaaaaaaaaaaaa',
-//     price: 11230124,
-//     photo: null,
-//     animal: "dogs",
-//
-//   },
-//   {
-//   name: 'ração media',
-//     description: 'muito boaaa aaaaaaaaaaaaaaaaaaaaaa',
-//     price: 11230124,
-//     photo: null,
-//     animal: "cats",
-//
-//   }
-// ]
+  produtos=[];
+  produtoCategoria:string;
 
 
   ngOnInit() {
+    this.produtoService.listCategoria(this.produtoCategoria).subscribe((res)=>{
+      console.log(res[0]);
+      this.produtos=res[0];
+    }, err=>{
+      console.log('ERRO');
+    });
   }
 
 }

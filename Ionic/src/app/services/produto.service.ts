@@ -7,18 +7,29 @@ import { Observable } from 'rxjs';
 })
 export class ProdutoService {
 
-  apiURL:string = 'http://localhost:8000/api/'
+  apiURL:string = 'http://localhost:8000/api/';
+
+  httpHeaders: object = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Autorization': 'Bearer '
+    }
+  }
+
   constructor( public http: HttpClient ) { }
 
   postProduto(form:any):Observable<any> {
     return this.http.post(this.apiURL + 'createProduto', form);
   }
 
-  // ListProdutos(id:number):Observable<any>{
-  //   return this.http.get(this.apiURL + 'listProduct/{id}', id);
-  // }
-
   listRecentes():Observable<any> {
     return this.http.get(this.apiURL + 'orderBy');
+  }
+  listAnimal():Observable<any> {
+    return this.http.get(this.apiURL + 'animal');
+  }
+  listCategoria( categoria:string ):Observable<any> {
+    return this.http.get(this.apiURL + 'category/'+ categoria);
   }
 }

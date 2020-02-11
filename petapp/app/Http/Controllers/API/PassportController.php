@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Notifications\confirmacaoCompra;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
@@ -169,6 +170,7 @@ class PassportController extends Controller
     $client->save();
     $product->save();
     //$client->delivery($proc);
+    $client->notify(new confirmacaoCompra($client, $product));
     return response()->json(['Compra realizada', $client]);
   }
 

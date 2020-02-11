@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-produto',
@@ -24,6 +25,10 @@ export class ProdutoPage implements OnInit {
   
   ngOnInit() {
     
+  }
+
+  backButton(){
+    this._location.back();
   }
 
 }

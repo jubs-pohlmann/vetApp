@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuarioService } from '../services/usuario.service';
-
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class CadastroPage implements OnInit {
 	registerForm: FormGroup;
 	verificationError:boolean;
 
-	constructor(public router: Router, public formbuilder: FormBuilder, public usuarioService: UsuarioService) { 
+	constructor(public router: Router, public formbuilder: FormBuilder, public usuarioService: UsuarioService, private _location: Location) { 
 		this.registerForm = this.formbuilder.group({
 			name: [null, [Validators.required, Validators.minLength(3)]],
 			email: [null, [Validators.required, Validators.email]],
@@ -36,11 +36,15 @@ export class CadastroPage implements OnInit {
  	}
 	
    submitForm(form) {
-		this.usuarioService.postClient(form.value).subscribe( (res) => {
+		this.usuarioService.RegisterUser(form.value).subscribe( (res) => {
 			this.router.navigateByUrl('tabs/home');
 		} );
 		console.log(form);
 		console.log(form.value);
+   }
+
+   backButton(){
+	   this._location.back();
    }
 
   /* constructor(formBuilder) { }
@@ -52,7 +56,28 @@ export class CadastroPage implements OnInit {
 		]))
 	}); */
 	
-
+	RegisterUser( registerForm ) {
+		//console.log(registerForm.value)
+		let data=registerForm.value.birthdate.split("-")
+		//console.log(data)
+		let newData= data[2] + "/" + data[1] +"/" + data[0]
+		//console.log(newData)
+		registerForm.value.birthdate=newData
+		registerForm.value.phone =registerForm.value.phone.replace(" ","")
+		//console.log(registerForm.value.phone)
+		if ( registerForm.status == "VALID" ) {
+  
+			this.usuarioService.RegisterUser( registerForm.value ).subscribe(
+				(res) => {
+			console.log( res );
+			//console.log(res.success.token);
+					localStorage.setItem( 'userToken', res.success.token );
+					this.router.navigate(['tabs/home']);
+				}
+			);
+  
+		}
+	}
 	
   ngOnInit() {
   }

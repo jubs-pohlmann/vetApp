@@ -9,6 +9,7 @@ import { IonicModule } from '@ionic/angular';
 import { CadastrolojaPageRoutingModule } from './cadastroloja-routing.module';
 
 import { CadastrolojaPage } from './cadastroloja.page';
+import { ComponentsModule } from '../components.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { CadastrolojaPage } from './cadastroloja.page';
     CadastrolojaPageRoutingModule,
     ReactiveFormsModule,
     BrMaskerModule,
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule
   ],
   declarations: [CadastrolojaPage]
 })

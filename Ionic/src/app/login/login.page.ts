@@ -30,11 +30,11 @@ export class LoginPage implements OnInit {
   }
 
    navegarCadastroLoja(){
-     this.router.navigate(['/Cadastroloja'])
+     this.router.navigate(['/tabs/cadastroloja'])
   }
 
    navegarCadastroUsuario(){
-    this.router.navigate(['cadastro'])
+    this.router.navigate(['/tabs/cadastro'])
    } 
 
   loginUser( loginForm ) {
@@ -45,9 +45,9 @@ export class LoginPage implements OnInit {
   		this.authService.loginUser( loginForm.value ).subscribe(
   			(res) => {
           //console.log( res );
-          console.log(res.data.token);
-  				localStorage.setItem( 'userToken', res.data.token );
-  				this.router.navigate(['home']);
+          console.log(res.success.token);
+  				localStorage.setItem( 'userToken', res.success.token );
+  				this.router.navigate(['/tabs/home']);
   			}
   		);
 

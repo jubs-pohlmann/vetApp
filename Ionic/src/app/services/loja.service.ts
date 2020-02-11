@@ -8,14 +8,20 @@ import { Router } from '@angular/router';
 })
 export class LojaService {
 
-  apiURL: string = 'http://localhost/8000/api/'
+  apiUrl: string = 'http://localhost/8000/api/'
   constructor(public http:HttpClient, public router:Router) { }
 
   postLoja(form:any):Observable<any>{
-    return this.http.post(this.apiURL + 'registerStore', form);
+    return this.http.post(this.apiUrl + 'registerStore', form);
   }
 
   getLoja(id:number):Observable<any> {
-    return this.http.get(this.apiURL + 'showStore/' + id);
+    return this.http.get(this.apiUrl + 'showStore/' + id);
   }
+
+  registerStore(form:any):Observable<any> {
+    return this.http.post(this.apiUrl + 'registerStore', form);
+  }
+
 }
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-produto',
@@ -9,7 +10,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class ProdutoPage implements OnInit {
 
-  constructor(public router: Router, public toastController: ToastController) { }
+  constructor(public router: Router, public toastController: ToastController, public _location: Location) { }
 
     async presentToast() {
     	const toast = await this.toastController.create({
@@ -24,6 +25,10 @@ export class ProdutoPage implements OnInit {
   
   ngOnInit() {
     
+  }
+
+  backButton(){
+    this._location.back();
   }
 
 }

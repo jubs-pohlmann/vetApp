@@ -33,9 +33,9 @@ export class Cadastro2Page implements OnInit {
    }
 
    submitForm(form) {
-		this.usuarioService.postClient(form.value).subscribe( (res) => {
-			this.router.navigateByUrl('tabs/home');
-		} );
+		// this.usuarioService.postClient(form.value).subscribe( (res) => {
+		// 	this.router.navigateByUrl('tabs/home');
+		// } );
 		console.log(form);
 		console.log(form.value);
 	}

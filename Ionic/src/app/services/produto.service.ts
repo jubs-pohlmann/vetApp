@@ -27,8 +27,8 @@ export class ProdutoService {
   listRecentes():Observable<any> {
     return this.http.get(this.apiURL + 'orderBy');
   }
-  listAnimal():Observable<any> {
-    return this.http.get(this.apiURL + 'animal');
+  listAnimal( animal:string ):Observable<any> {
+    return this.http.get(this.apiURL + 'animal/' + animal);
   }
   listCategoria( categoria:string ):Observable<any> {
     return this.http.get(this.apiURL + 'category/'+ categoria);

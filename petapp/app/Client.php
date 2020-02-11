@@ -5,7 +5,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 use User;
 use Store;
 use App\Product;
@@ -20,6 +20,7 @@ class Client extends Model
 
   public function products(){
     return $this->belongsToMany('App\Product');
+      ->withPivot('delivery_day');
   }
 
   public function stores(){
@@ -57,4 +58,12 @@ class Client extends Model
   public function rate($store, $grade){
     $this->stores()->attach($store, ['grade' => $grade]);
   }
+
+  // public function delivery($sale_id){
+  //   $this = Client::where('user_id', $user_id)->first();
+  //   $current = Carbon::now();
+  //   $sale->delivery_day = $current->addWeek()->format('d-m-Y');
+  //   qual compra?
+  //   retornar a data de entrega da compra
+  // }
 }

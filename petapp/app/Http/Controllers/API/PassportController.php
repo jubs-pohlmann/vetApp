@@ -18,14 +18,14 @@ class PassportController extends Controller
   public $successStatus=200;
 
 
-  //Responsável por cadastrar um novo usuário
+  //Responsável por cadastrar um novo cliente
   public function registerClient(Request $request){
     $validator = Validator::make($request->all(), [
       'name' => 'required|alpha',
       'email' => 'required|email|unique:users,email',
       'password' => 'required|numeric|digits:5',
       'phone' => 'required|telefone_com_ddd',
-      'photo' =>'required|file|image|mimes:jpeg,png,gif,webp|max:2048',
+      'photo' =>'file|image|mimes:jpeg,png,gif,webp|max:2048',
       'address' => 'required|string',
       'birthdate' => 'required|data',
       'cpf' => 'required|cpf'
@@ -41,12 +41,14 @@ class PassportController extends Controller
     $client->user_id = $user->id;
     $client->createClient($request);
 
-    If (!Storage::exists('localUserPhotos/'))
-			Storage::makeDirectory('localUserPhotos/',0775,true);
-    $file = $request->file('photo');
-    $filename = $user->id.'.'.$file->getClientOriginalExtension();
-    $path = $file->storeAs('localUserPhotos', $filename);
-    $user->photo = $path;
+    if($request->photo){
+      if(!Storage::exists('localUserPhotos/'))
+  			Storage::makeDirectory('localUserPhotos/',0775,true);
+      $file = $request->file('photo');
+      $filename = $user->id.'.'.$file->getClientOriginalExtension();
+      $path = $file->storeAs('localUserPhotos', $filename);
+      $user->photo = $path;
+    }
 
     $success['token'] = $user->createToken('MyApp')->accessToken;
     $user->save();
@@ -60,7 +62,7 @@ class PassportController extends Controller
       'email' => 'required|email|unique:users,email',
       'password' => 'required|numeric|digits:5',
       'phone' => 'required|telefone_com_ddd',
-      'photo' =>'required|file|image|mimes:jpeg,png,gif,webp|max:2048',
+      'photo' =>'file|image|mimes:jpeg,png,gif,webp|max:2048',
       'address' => 'required|string',
       'cnpj' => 'required|cnpj'
     ]);
@@ -166,7 +168,8 @@ class PassportController extends Controller
       Product::destroy($product->id);
     $client->save();
     $product->save();
-    return response()->json(['Compra realizada']);
+    //$client->delivery($proc);
+    return response()->json(['Compra realizada', $client]);
   }
 
   //Método responsável por listar os produtos comprados pelo client

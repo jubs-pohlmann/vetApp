@@ -50,6 +50,7 @@ Route::post('registerStore', 'API\PassportController@registerStore');
 Route::post('registerClient', 'API\PassportController@registerClient');
 Route::post('login', 'API\PassportController@login');
 Route::group(['middleware'=> 'auth:api'], function(){
+    Route::get('delivery', 'API\PassportController@delivery');
     Route::get('logout', 'API\PassportController@logout');
     Route::put('sale/{id}', 'API\PassportController@sale');
     Route::put('createProduct', 'API\PassportController@createProduct');

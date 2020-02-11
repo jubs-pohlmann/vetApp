@@ -35,9 +35,6 @@ export class CadastroPage implements OnInit {
 		}
  	}
 	
-
-
-	
    submitForm(form) {
 		this.usuarioService.postClient(form.value).subscribe( (res) => {
 			this.router.navigateByUrl('tabs/home');

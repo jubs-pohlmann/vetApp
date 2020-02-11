@@ -19,7 +19,6 @@ export class HomecategoriaPage implements OnInit {
   produtoCategoria:string;
 
 
-
   ngOnInit() {
     this.produtoService.listCategoria(this.produtoCategoria).subscribe((res)=>{
       console.log(res[0]);

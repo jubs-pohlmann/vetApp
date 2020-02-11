@@ -21,17 +21,17 @@ export class HomePage implements OnInit {
     {
       nome: 'Saúde',
       name: 'health',
-      imagem: "../../assets/images/medicine.jpg"
+      imagem: "../../assets/images/health.jpg"
     },
     {
       nome: 'Higiene',
       name: 'bath',
-      imagem: "../../assets/images/petshower.jpg"
+      imagem: "../../assets/images/bath.jpg"
     },
     {
       nome: 'Acessórios',
       name: 'accessories',
-      imagem: "../../assets/images/petclothes.jpg"
+      imagem: "../../assets/images/accessories.jpg"
     }
   ];
 
@@ -39,22 +39,22 @@ export class HomePage implements OnInit {
     {
       nome: 'Cães',
       name: 'dogs',
-      imagem: "../../assets/images/dog.jpg"
+      imagem: "../../assets/images/dogs.jpg"
     },
     {
       nome: 'Gatos',
       name: 'cats',
-      imagem: "../../assets/images/gato.jpg"
+      imagem: "../../assets/images/cats.jpg"
     },
     {
       nome: 'Aves',
       name: 'birds',
-      imagem: "../../assets/images/bird.jpg"
+      imagem: "../../assets/images/birds.jpg"
     },
     {
       nome: 'Peixes',
       name: 'fishes',
-      imagem: "../../assets/images/fish.jpg"
+      imagem: "../../assets/images/fishes.jpg"
     }
   ];
 

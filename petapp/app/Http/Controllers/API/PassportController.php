@@ -78,13 +78,14 @@ class PassportController extends Controller
     $store = new Store();
     $store->user_id = $user->id;
     $store->createStore($request);
-    If (!Storage::exists('localUserPhotos/'))
-      Storage::makeDirectory('localUserPhotos/',0775,true);
-    $file = $request->file('photo');
-    $filename = $user->id.'.'.$file->getClientOriginalExtension();
-    $path = $file->storeAs('localUserPhotos', $filename);
-    $user->photo = $path;
-
+    if($request->photo){
+      if(!Storage::exists('localUserPhotos/'))
+  			Storage::makeDirectory('localUserPhotos/',0775,true);
+      $file = $request->file('photo');
+      $filename = $user->id.'.'.$file->getClientOriginalExtension();
+      $path = $file->storeAs('localUserPhotos', $filename);
+      $user->photo = $path;
+    }
     $success['token'] = $user->createToken('MyApp')->accessToken;
     $user->save();
     return response()->json(['sucess'=> $success]);

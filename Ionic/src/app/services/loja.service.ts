@@ -11,11 +11,11 @@ export class LojaService {
   apiURL: string = 'http://localhost/8000/api/'
   constructor(public http:HttpClient, public router:Router) { }
 
-  // createLoja(form):Observable<any> { 
-  //   return this.http.post(this.apiURL + '') //TO-DO POS MERGE
-  // }
+  postLoja(form:any):Observable<any>{
+    return this.http.post(this.apiURL + 'registerStore', form);
+  }
 
-  postClient(form:any):Observable<any> {
-    return this.http.post(this.apiURL + 'registerClient', form);
+  getLoja(id:number):Observable<any> {
+    return this.http.get(this.apiURL + 'showStore/' + id);
   }
 }

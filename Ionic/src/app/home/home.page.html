@@ -15,7 +15,7 @@
   <ion-label class="title">Categorias</ion-label>
   <ion-slides pager>
     <ion-slide *ngFor ="let categoria of categorias">
-      <ion-card class="categoriaCard" (click)="categoriaClick( categoria.name )">
+      <ion-card class="categoriaCard" (click)="categoriaClick( categoria )">
         <img src={{categoria.imagem}} />
         <div class="categoriaText">{{ categoria.nome }}</div>
       </ion-card>
@@ -25,7 +25,7 @@
   <ion-label class="title">Para o seu animal</ion-label>
   <ion-slides pager>
     <ion-slide *ngFor ="let animal of animais">
-      <ion-card class="categoriaCard" (click)="categoriaClick( animal.name )">
+      <ion-card class="categoriaCard" (click)="categoriaClick( animal )">
         <img src={{animal.imagem}} />
         <div class="categoriaText">{{ animal.nome }}</div>
       </ion-card>

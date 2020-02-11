@@ -59,7 +59,7 @@ export class HomePage implements OnInit {
 
   constructor(public router: Router, public produtoService: ProdutoService) { }
 
-  public categoriaClick( i:string ){
+  public categoriaClick( i:any ){
     this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);
   }
 

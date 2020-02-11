@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProdutoService } from '../services/produto.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-anunciar-produto',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class AnunciarProdutoPage implements OnInit {
 
   registerForm: FormGroup;
-  constructor(public router:Router, public formbuilder: FormBuilder, public produtoService: ProdutoService) {
+  constructor(public router:Router, public formbuilder: FormBuilder, public produtoService: ProdutoService, private _location: Location) {
 
     this.registerForm = this.formbuilder.group({
       name: [null, [Validators.required, Validators.maxLength(30)]],
@@ -37,6 +38,10 @@ export class AnunciarProdutoPage implements OnInit {
       } );
 		console.log(form);
 		console.log(form.value);
-	}
+  }
+  
+  backButton(){
+    this._location.back();
+  }
 
 }

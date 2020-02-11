@@ -7,7 +7,7 @@
 	border:1px solid #999999;
 	onerror{
 		width:40%;
-		heigth:70%;
+		height:70%;
 	}
 }
 .conteudoDoAnuncio{
@@ -25,7 +25,7 @@
 .nomeDoProdutoTitulo{
 	
 	font-family: 'Josefin Sans', sans-serif;
-	font-color:#222222;
+	color:#222222;
 	
 }
 .descricao{
@@ -33,7 +33,7 @@
 	margin-top:10%;
 	margin-left:3%;
 	margin-right:3%;
-	font-color:#555555;
+	color:#555555;
 	border-top:1px solid #80808059;
 	
 }
@@ -43,7 +43,7 @@
   --color: #333333;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
-  font-color:#333333;
+  color:#333333;
   --background: white;
   --box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   --border-radius: 5px;
@@ -82,7 +82,7 @@
 }
 
 .encaminhaParaLoja{
-	font-color:#555555;
+	color:#555555;
 	font-family:'Josefin Sans', sans-serif;
 	position: relative;
 	top:8%;

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { Location } from '@angular/common'
+//import { Home } from '../home/home.page';
 
 @Component({
   selector: 'app-homecategoria',
@@ -10,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomecategoriaPage implements OnInit {
 
-  constructor(private router: ActivatedRoute, public produtoService: ProdutoService) {
+  constructor(private router: ActivatedRoute, public produtoService: ProdutoService, private _location: Location) {
     console.log('aaaaaaaaaaa');
     this.produtoCategoria = this.router.snapshot.params["produtoCategoria"];
   }
@@ -26,6 +27,10 @@ export class HomecategoriaPage implements OnInit {
     }, err=>{
       console.log('ERRO');
     });
+  }
+
+  backButton(){
+    this._location.back();
   }
 
 }

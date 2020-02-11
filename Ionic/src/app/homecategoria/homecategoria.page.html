@@ -2,9 +2,7 @@
 <ion-header>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
   <ion-toolbar>
-    <ion-buttons class='formButton1' slot="start">
-      <ion-back-button  text="" defaultHref="/"></ion-back-button>
-    </ion-buttons>
+    <ion-icon name='arrow-back' (click)='backButton()' ></ion-icon>
     <ion-title>{{produtoCategoria}}</ion-title>
      <!-- COMO FAZER?^^ DATA BINDING PRA APARECER O NOME CORRETO DA CATEGORIA/ANIMAL-->
   </ion-toolbar>

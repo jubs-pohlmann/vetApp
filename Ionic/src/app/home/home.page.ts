@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
   constructor(public router: Router, public produtoService: ProdutoService) { }
 
   public categoriaClick( i:string ){
-    this.router.navigate('tabs/homecategoria', {produtoCategoria: i});
+    this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);
   }
 
   ngOnInit(){

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Client;
 use App\User;
 use App\Store;
@@ -162,18 +163,22 @@ class PassportController extends Controller
 
   //Método responsável por representar a compra de um produto por cliente
   public function sale($product_id){
+    $current = Carbon::now();
     $user = Auth::user();
     $client = Client::where('user_id', $user->id)->first();
-    $client->sale($product_id);
+
     $product = Product::find($product_id);
+
+    $delivery_day = $current->addWeek();
+    $client->sale($product_id, $delivery_day);
+
     $product->stock--;
     if(($product->stock) == 0 )
       Product::destroy($product->id);
     $client->save();
     $product->save();
-    //$client->delivery($proc);
     $client->notify(new confirmacaoCompra($client));
-    return response()->json(['Compra realizada', $client]);
+    return response()->json(['Compra realizada', 'Data de entrega', $delivery_day->format('d-m-Y')]);
   }
 
   //Método responsável por listar os produtos comprados pelo client

@@ -15,7 +15,7 @@ class CreateClientProductTable extends Migration
     {
         Schema::create('client_product', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('delivery_day')->nullable();
+            $table->string('delivery_day')->nullable();
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('product_id');
             $table->timestamps();

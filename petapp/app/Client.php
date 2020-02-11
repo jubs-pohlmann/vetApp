@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
 use User;
 use Store;
 use App\Product;
@@ -50,8 +49,8 @@ class Client extends Model
 
 
   //Método responsável por representar a compra de um produto por cliente
-  public function sale($product_id){
-    $this->products()->attach($product_id);
+  public function sale($product_id, $delivery_day){
+    $this->products()->attach($product_id, ['delivery_day' => $delivery_day->format('d-m-Y')]);
     $this->save();
   }
 
@@ -59,12 +58,4 @@ class Client extends Model
   public function rate($store, $grade){
     $this->stores()->attach($store, ['grade' => $grade]);
   }
-
-  // public function delivery($sale_id){
-  //   $this = Client::where('user_id', $user_id)->first();
-  //   $current = Carbon::now();
-  //   $sale->delivery_day = $current->addWeek()->format('d-m-Y');
-  //   qual compra?
-  //   retornar a data de entrega da compra
-  // }
 }

@@ -16,7 +16,8 @@ class Product extends Model
   }
 
   public function clients(){
-    return $this->belongsToMany('App\Client');
+    return $this->belongsToMany('App\Client')
+      ->withPivot('delivery_day');
   }
 
 

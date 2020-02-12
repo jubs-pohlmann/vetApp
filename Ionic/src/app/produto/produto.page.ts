@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Location } from '@angular/common'
@@ -9,6 +9,8 @@ import { Location } from '@angular/common'
   styleUrls: ['./produto.page.scss'],
 })
 export class ProdutoPage implements OnInit {
+
+  @Input() prodObj = { }
 
   constructor(public router: Router, public toastController: ToastController, public _location: Location) { }
 

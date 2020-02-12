@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Location } from '@angular/common';
@@ -13,7 +13,8 @@ import { ProdutoService} from '../services/produto.service';
 export class ProdutoPage implements OnInit {
 
   constructor(public router: Router, public toastController: ToastController, public _location: Location, public produtoservice: ProdutoService) { }
-
+  @Input() prodObj = { }
+  
     async presentToast() {
     	const toast = await this.toastController.create({
     		message: 'Solicitação de compra enviada para o vendedor. Aguarde a confirmação.',

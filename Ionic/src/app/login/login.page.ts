@@ -24,6 +24,13 @@ export class LoginPage implements OnInit {
     });
   }
 
+  public check(condition){
+    if(localStorage.getItem(condition)===null){
+      return true;
+    }else{
+      return false;
+    }
+  }
   submitForm(form){
     //console.log(form);
     //console.log(form.value);

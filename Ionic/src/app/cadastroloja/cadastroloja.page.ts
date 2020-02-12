@@ -49,15 +49,21 @@ export class CadastrolojaPage implements OnInit {
 
   	
   	if ( registerStoreForm.status == "VALID" ) {
-
+      if(registerStoreForm.value.delivery=="sim"){
+        registerStoreForm.value.delivery=true;
+      }else{
+        registerStoreForm.value.delivery=false;
+      }
+    
     console.log(registerStoreForm.value)
+    registerStoreForm.value.phone =registerStoreForm.value.phone.replace(" ","")
 
   		this.lojaService.registerStore( registerStoreForm.value ).subscribe(
   			(res) => {
       console.log( res );
-          //console.log(res.success.token);
+          console.log(res);
   				localStorage.setItem( 'userToken', res.success.token );
-  				this.router.navigate(['tabs/home']);
+  				this.router.navigate(['/tabs/home']);
   			}
   		);
 

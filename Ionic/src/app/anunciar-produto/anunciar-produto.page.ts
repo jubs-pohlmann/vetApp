@@ -4,6 +4,7 @@ import { ProdutoService } from '../services/produto.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
+
 @Component({
   selector: 'app-anunciar-produto',
   templateUrl: './anunciar-produto.page.html',
@@ -28,16 +29,24 @@ export class AnunciarProdutoPage implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(form) {
-		this.produtoService.postProduto(form.value).subscribe( 
+  submitForm(registerForm) {
+
+    if ( registerForm.status == "VALID" ) {
+
+      
+
+    console.log(registerForm);
+    console.log(registerForm.value);
+    
+		this.produtoService.postProduto(registerForm.value).subscribe( 
       (res) => {
-			  this.router.navigateByUrl('tabs/home');
+        localStorage.get("userToken")
+			  this.router.navigate(['tabs/home']);
       },
       (error) => {
         console.log(error);
       } );
-		console.log(form);
-		console.log(form.value);
+    }
   }
   
   backButton(){

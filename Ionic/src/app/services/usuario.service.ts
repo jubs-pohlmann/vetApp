@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-  apiURL:string = 'http://localhost:8000/api/'
+  apiURL:string = 'http://localhost:8000/api/';
 
   httpHeaders: any = {
   	headers: {

@@ -21,7 +21,7 @@ export class ProdutoService {
 
   postProduto(form:any):Observable<any> {
     this.httpHeaders.headers["Authorization"] = "Bearer" + localStorage.getItem('storeToken');
-    return this.http.post(this.apiURL + 'createProduto', form);
+    return this.http.put(this.apiURL + 'createProduct', form);
   }
 
   listRecentes():Observable<any> {

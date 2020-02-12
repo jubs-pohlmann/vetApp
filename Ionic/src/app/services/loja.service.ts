@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LojaService {
 
-  apiURL: string = 'http://localhost/8000/api/'
+  apiURL: string = 'http://localhost:8000/api/';
 
   httpHeaders: any = {
   	headers: {
@@ -29,7 +29,7 @@ export class LojaService {
   // }
 
   registerStore(form:any):Observable<any> {
-    return this.http.post(this.apiURL + 'registerStore', form,this.httpHeaders);
+    return this.http.post(this.apiURL + 'registerStore', form, this.httpHeaders);
   }
 
 }

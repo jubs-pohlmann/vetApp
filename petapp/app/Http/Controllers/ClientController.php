@@ -19,6 +19,10 @@ use Illuminate\Notifications\Notifiable;
 class ClientController extends Controller
 {
 
+  public function construct () {
+  $this->middleware('checkClient');
+  }
+
   //Método que retorna lista com todos os clients
   public function listClient(){
     $clients = Client::all();

@@ -54,12 +54,12 @@ Route::group(['middleware'=> 'auth:api'], function(){
     Route::get('logout', 'API\PassportController@logout');
     Route::post('getDetails', 'API\PassportController@getDetails');
     Route::put('sale/{id}', 'ClientController@sale')->middleware('checkClient');
-    Route::put('createProduct', 'StoreController@createProduct');
+    Route::put('createProduct', 'StoreController@createProduct')->middleware('checkStore');
     Route::put('updateClient', 'ClientController@updateClient')->middleware('checkClient');
-    Route::put('updateStore', 'StoreController@updateStore');
+    Route::put('updateStore', 'StoreController@updateStore')->middleware('checkStore');
     Route::get('listProductClient', 'ClientController@listProduct')->middleware('checkClient'); //cliente ter acesso ao seu histórico de compras
-    Route::get('listProductStore', 'StoreController@listProduct'); //loja ter acesso ao seu histórico de produtos
+    Route::get('listProductStore', 'StoreController@listProduct')->middleware('checkStore'); //loja ter acesso ao seu histórico de produtos
     Route::put('rate/{store_id}/{grade}', 'ClientController@rate')->middleware('checkClient');
     Route::get('listRateClient', 'ClientController@listRate')->middleware('checkClient');//cliente ter acesso ao seu histórico avaliações
-    Route::get('listRateStore', 'StoreController@listRate');//store ter acesso ao seu histórico avaliações
+    Route::get('listRateStore', 'StoreController@listRate')->middleware('checkStore');//store ter acesso ao seu histórico avaliações
 });

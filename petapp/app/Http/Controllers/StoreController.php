@@ -16,7 +16,9 @@ use Illuminate\Notifications\Notifiable;
 
 class StoreController extends Controller
 {
-
+  public function construct () {
+  $this->middleware('checkStore');
+  }
   //Método que retorna lista com todos as lojas
   public function listStore(){
     $stores = Store::all();

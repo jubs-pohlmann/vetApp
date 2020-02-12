@@ -126,10 +126,10 @@ class ClientController extends Controller
     $client = Client::where('user_id', $user->id)->first();
     return response()->json($client->stores);
   }
-quem é a republic 
-republic->media = avg de col notas cometn
-
-pegar coluna d coments
-fazer média
-salvar em stores
+// quem é a republic
+// republic->media = avg de col notas cometn
+//
+// pegar coluna d coments
+// fazer média
+// salvar em stores
 }

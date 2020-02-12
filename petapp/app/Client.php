@@ -2,24 +2,22 @@
 
 namespace App;
 
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-
 use User;
 use Store;
 use App\Product;
 
 class Client extends Model
 {
-
   //Relacionamentos
   public function user(){ //herança
     return $this->belongsTo('App\User');
   }
 
   public function products(){
-    return $this->belongsToMany('App\Product');
+    return $this->belongsToMany('App\Product')
+      ->withPivot('delivery_day');
   }
 
   public function stores(){
@@ -48,8 +46,8 @@ class Client extends Model
 
 
   //Método responsável por representar a compra de um produto por cliente
-  public function sale($product_id){
-    $this->products()->attach($product_id);
+  public function sale($product_id, $delivery_day){
+    $this->products()->attach($product_id, ['delivery_day' => $delivery_day]);
     $this->save();
   }
 

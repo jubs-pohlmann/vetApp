@@ -16,7 +16,8 @@ class Product extends Model
   }
 
   public function clients(){
-    return $this->belongsToMany('App\Client');
+    return $this->belongsToMany('App\Client')
+      ->withPivot('delivery_day');
   }
 
 
@@ -30,8 +31,8 @@ class Product extends Model
     $this->stock = $request->stock;
     $this->store_id = $store_id;
     if($request->photo){
-      If (!Storage::exists('localProductPhotos/'))
-  			Storage::makeDirectory('localProductPhotos/',0775,true);
+      if(!Storage::exists('localProductPhotos/'))
+        Storage::makeDirectory('localProductPhotos/',0775,true);
       $file = $request->file('photo');
       $filename = $this->id.'.'.$file->getClientOriginalExtension();
       $path = $file->storeAs('localProductPhotos', $filename);
@@ -66,8 +67,8 @@ class Product extends Model
       $this->animal = $request->animal;
     }
     if($request->photo){
-      If (!Storage::exists('localProductPhotos/'))
-  			Storage::makeDirectory('localProductPhotos/',0775,true);
+      if(!Storage::exists('localProductPhotos/'))
+        Storage::makeDirectory('localProductPhotos/',0775,true);
       $file = $request->file('photo');
       $filename = $this->id.'.'.$file->getClientOriginalExtension();
       $path = $file->storeAs('localProductPhotos', $filename);

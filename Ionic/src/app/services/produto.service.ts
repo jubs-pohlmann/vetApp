@@ -31,6 +31,7 @@ export class ProdutoService {
 
   buyProduto(id:number):Observable<any> {
     this.httpHeaders.headers["Authorization"] = "Bearer " + localStorage.getItem('token');
+    console.log(this.httpHeaders);
     return this.http.put(this.apiURL + 'sale/'+ id, this.httpHeaders);
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProdutoService } from '../services/produto.service';
+import { LojaService } from '../services/loja.service';
 import { ProdutoComponent } from '../components/produto/produto.component';
 
 @Component({
@@ -62,6 +63,10 @@ export class HomePage implements OnInit {
 
   public categoriaClick( i:string ){
     this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);
+  }
+
+  lojaLogin(){
+    // if(localStorage.getItem('loja'))
   }
 
   ngOnInit(){

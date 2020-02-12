@@ -58,19 +58,20 @@ export class CadastroPage implements OnInit {
 	
 	RegisterUser( registerForm ) {
 		console.log(registerForm.value)
-		let data=registerForm.value.birthdate.split("-")
-		//console.log(data)
-		let newData= data[2] + "/" + data[1] +"/" + data[0]
+		let data=registerForm.value.birthdate.split("-");
+		
+		let newData= data[2] + "/" + data[1] +"/" + data[0];
+		//reorganiza a data para o formato do back
 		console.log(newData)
 		registerForm.value.birthdate=newData
 		registerForm.value.phone =registerForm.value.phone.replace(" ","")
-		//console.log(registerForm.value.phone)
+		
 		if ( registerForm.status == "VALID" ) {
   
 			this.usuarioService.RegisterUser( registerForm.value ).subscribe(
 				(res) => {
 			console.log( res );
-			//console.log(res.success.token);
+			console.log(res.success.token);
 					localStorage.setItem( 'userToken', res.success.token );
 					this.router.navigate(['/tabs/home']);
 				}

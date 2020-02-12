@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Notifications\confirmacaoCompra;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
 use App\Client;
 use App\User;
 use App\Store;

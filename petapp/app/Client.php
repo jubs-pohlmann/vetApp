@@ -47,7 +47,7 @@ class Client extends Model
 
   //Método responsável por representar a compra de um produto por cliente
   public function sale($product_id, $delivery_day){
-    $this->products()->attach($product_id, ['delivery_day' => $delivery_day->format('d-m-Y')]);
+    $this->products()->attach($product_id, ['delivery_day' => $delivery_day]);
     $this->save();
   }
 

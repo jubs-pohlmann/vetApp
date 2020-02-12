@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
-
+use DB;
 use Auth;
 use App\Client;
 use App\User;
 use App\Store;
+use App\Product;
+use App\ClientProduct;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Notifications\confirmacaoCompra;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Notifications\Notifiable;
 
 class ClientController extends Controller
 {
@@ -46,11 +52,10 @@ class ClientController extends Controller
     return response()->json($client->stores);
   }
 
-  //Método para edição de dados do user
+  //Método para edição de dados do cliente
   public function updateClient(Request $request){
     $user = Auth::user();
-    $client = Client::where('user_id', '$user->id');
-
+    $client = Client::where('user_id', $user->id);
 
     if($request->birthdate || $request->cpf)
       $client->updateClient($request);
@@ -79,14 +84,17 @@ class ClientController extends Controller
 
     $delivery_day = $current->addWeek();
     $client->sale($product_id, $delivery_day);
+    $delivery_day = $delivery_day->format('d-m-Y');
 
     $product->stock--;
     if(($product->stock) == 0 )
       Product::destroy($product->id);
+
     $client->save();
     $product->save();
+
     $user->notify(new confirmacaoCompra($user, $delivery_day));
-    return response()->json(['Compra realizada', 'Data de entrega', $delivery_day->format('d-m-Y')]);
+    return response()->json(['Compra realizada', 'Data de entrega', $delivery_day]);
   }
 
   //Método responsável por listar os produtos comprados pelo client logado

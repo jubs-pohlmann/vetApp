@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Auth;
 use App\User;
 use App\Client;
 use App\Store;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+use App\Notifications\confirmacaoCompra;
+use Illuminate\Notifications\Notifiable;
 
 class StoreController extends Controller
 {

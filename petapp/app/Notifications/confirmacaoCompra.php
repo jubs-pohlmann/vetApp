@@ -6,12 +6,13 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use App\User;
 
 class confirmacaoCompra extends Notification
 {
     use Queueable;
-    public date;
-    public client;
+    public $date;
+    public $client;
 
     /**
      * Create a new notification instance.
@@ -20,7 +21,7 @@ class confirmacaoCompra extends Notification
      */
     public function __construct(User $user, string $delivery_day)
     {
-        $this->$client = $user;
+        $this->client = $user;
         $this->date = $delivery_day;
     }
 
@@ -47,7 +48,7 @@ class confirmacaoCompra extends Notification
 
         return (new MailMessage)
                     ->greeting('Compra confirmada.')
-                    ->line('Olá, '.$this->$client->name)
+                    ->line('Olá, '.$this->client->name)
                     ->line('Sua compra foi realizada com sucesso :)')
                     ->line('A data prevista para a entrega do seu pedido é: '.$this->date) //adicionar data de entrega
                     ->action('Voltar as compras.',$url) //botão

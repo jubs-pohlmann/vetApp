@@ -10,7 +10,7 @@
 
 <ion-content>
   <img class="categoriaImage" src="../../assets/images/{{produtoCategoria}}.jpg" />
-  
+  <ion-label class="title">Recentemente na categoria</ion-label>
   <app-produto *ngFor="let produto of produtos" [prodObj]="produto" ></app-produto>
 
 

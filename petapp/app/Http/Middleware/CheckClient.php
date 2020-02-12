@@ -2,7 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use Auth;
+use App\Client;
+use App\User;
 use Closure;
+use Illuminate\Support\Collection;
 
 class CheckClient
 {
@@ -16,10 +20,9 @@ class CheckClient
     public function handle($request, Closure $next)
     {
       $user = Auth::user();
-      $client = Client::where('user_id', $user->id);
-      $is_client = User::has('clients')->where('client_id', $client->id);
+      $client = Client::where('user_id', $user->id)->get();
 
-      if($request->id = $is_client->id)
+      if($client->isNotEmpyt())
         return $next($request);
       else{
         return response()->json('Acesso negado.');

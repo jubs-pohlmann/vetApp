@@ -17,7 +17,6 @@ class PassportController extends Controller
 {
   public $successStatus=200;
 
-
   //Responsável por cadastrar um novo cliente
   public function registerClient(Request $request){
     $validator = Validator::make($request->all(), [

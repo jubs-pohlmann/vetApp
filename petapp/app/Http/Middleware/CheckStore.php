@@ -2,7 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use Auth;
+use App\Store;
+use App\User;
 use Closure;
+use Illuminate\Support\Collection;
 
 class CheckStore
 {
@@ -16,10 +20,9 @@ class CheckStore
     public function handle($request, Closure $next)
     {
       $user = Auth::user();
-      $store = Store::where('user_id', $user->id);
-      $is_store = User::has('stores')->where('store_id', $store->id);
+      $store = Store::where('user_id', $user->id)->get();
 
-      if($request->id = $is_store->id)
+      if($store->isNotEmpty())
         return $next($request);
       else{
         return response()->json('Acesso negado.');

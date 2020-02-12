@@ -6,6 +6,7 @@ use DB;
 use Auth;
 use App\User;
 use App\Client;
+use App\Product;
 use App\Store;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -17,8 +18,9 @@ use Illuminate\Notifications\Notifiable;
 class StoreController extends Controller
 {
   public function construct () {
-  $this->middleware('checkStore');
+    $this->middleware('checkStore')->except('registerStore');
   }
+
   //Método que retorna lista com todos as lojas
   public function listStore(){
     $stores = Store::all();

@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use User;
@@ -11,8 +10,6 @@ use App\Product;
 
 class Client extends Model
 {
-  use Notifiable;
-
   //Relacionamentos
   public function user(){ //herança
     return $this->belongsTo('App\User');

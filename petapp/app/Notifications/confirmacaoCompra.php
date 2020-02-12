@@ -41,11 +41,11 @@ class confirmacaoCompra extends Notification
     public function toMail($notifiable)
     {
         $url = url('localhost:8000/tabs/home');
-        $client = $notifiable;
+        $user = $notifiable;
 
         return (new MailMessage)
                     ->greeting('Compra confirmada.')
-                    ->line('Olá, '.$client->name)
+                    ->line('Olá, '.$user->name)
                     ->line('Sua compra foi realizada com sucesso :)')
                     ->line('A data prevista para a entrega do seu pedido é: ') //adicionar data de entrega
                     ->action('Voltar as compras.',$url) //botão

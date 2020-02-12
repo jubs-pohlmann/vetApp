@@ -177,7 +177,7 @@ class PassportController extends Controller
       Product::destroy($product->id);
     $client->save();
     $product->save();
-    $client->notify(new confirmacaoCompra($client));
+    $user->notify(new confirmacaoCompra($user));
     return response()->json(['Compra realizada', 'Data de entrega', $delivery_day->format('d-m-Y')]);
   }
 

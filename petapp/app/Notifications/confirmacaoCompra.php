@@ -10,15 +10,18 @@ use Illuminate\Notifications\Notification;
 class confirmacaoCompra extends Notification
 {
     use Queueable;
+    public date;
+    public client;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user, string $delivery_day)
     {
-        //
+        $this->$client = $user;
+        $this->date = $delivery_day;
     }
 
     /**
@@ -41,13 +44,12 @@ class confirmacaoCompra extends Notification
     public function toMail($notifiable)
     {
         $url = url('localhost:8000/tabs/home');
-        $user = $notifiable;
 
         return (new MailMessage)
                     ->greeting('Compra confirmada.')
-                    ->line('Olá, '.$user->name)
+                    ->line('Olá, '.$this->$client->name)
                     ->line('Sua compra foi realizada com sucesso :)')
-                    ->line('A data prevista para a entrega do seu pedido é: ') //adicionar data de entrega
+                    ->line('A data prevista para a entrega do seu pedido é: '.$this->date) //adicionar data de entrega
                     ->action('Voltar as compras.',$url) //botão
                     ->line('Obrigada pela compra!');
     }

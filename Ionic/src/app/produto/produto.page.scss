@@ -30,11 +30,12 @@
 }
 .descricao{
 	text-align:left;
-	margin-top:10%;
+	margin-top:-5%;
 	margin-left:3%;
 	margin-right:3%;
 	color:#555555;
-	border-top:1px solid #80808059;
+	font-size: 1em;
+	border-top:3px solid #80808059;
 	
 }
 
@@ -61,24 +62,42 @@
 }
 
 .filtro{
- 	border-top: 1px solid #80808059;
+ 	
  	margin-right:3%;
  	margin-left:3%;
  	margin-top:5%;
- 	font-family:'Josefin Sans', sans-serif;
+	font-family:'Josefin Sans', sans-serif;
+	font-size:1em;
+	border-top: 1px solid #80808059;
 }
 
 .categorias{
 	display:flex;
 	justify-content: flex-start;
 	margin-left:3%;
+	
 
 }
 
+// .categoria{
+// 	--background:#A8E6CF;s
+// 	font-family:'Josefin Sans', sans-serif;
+// 	margin-top:5%;
+// }
+
 .categoria{
-	--background:#A8E6CF;
+	display:flex;
+	Justify-content:space-between;
+	margin-left: 3%;
+	margin-right:5%;
+	margin-top:-3%;
 	font-family:'Josefin Sans', sans-serif;
-	margin-top:5%;
+
+}
+
+.category{
+	font-weight:bold;
+	color:#555555;
 }
 
 .encaminhaParaLoja{
@@ -102,4 +121,10 @@ a{
 	margin-left:10%;
 	margin-right:0%;
 	margin-top:5%;
+}
+
+.descrever{
+	margin-left:3%;
+	padding-bottom:5%;
+	font-size: 1.05em;
 }

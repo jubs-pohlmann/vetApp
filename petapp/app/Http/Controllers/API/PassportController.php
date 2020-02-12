@@ -86,7 +86,7 @@ class PassportController extends Controller
     $user->save();
     return response()->json(['success'=> $success]);
   }
-
+  
 
   public function login(){
     if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){

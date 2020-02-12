@@ -62,7 +62,7 @@ export class CadastrolojaPage implements OnInit {
   			(res) => {
       console.log( res );
           console.log(res);
-  				localStorage.setItem( 'userToken', res.success.token );
+  				localStorage.setItem( 'token', res.success.token );
   				this.router.navigate(['/tabs/home']);
   			}
   		);

@@ -40,7 +40,7 @@ export class AnunciarProdutoPage implements OnInit {
     
 		this.produtoService.postProduto(registerForm.value).subscribe( 
       (res) => {
-        localStorage.get("userToken")
+        
 			  this.router.navigate(['tabs/home']);
       },
       (error) => {

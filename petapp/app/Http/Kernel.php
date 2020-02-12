@@ -41,7 +41,6 @@ class Kernel extends HttpKernel
 
         'api' => [
             'throttle:60,1',
-            
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
@@ -65,6 +64,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'cors' => \App\Http\Middleware\CORS::class,
+        'checkClient' =>\App\Http\Middleware\CheckClient::class,
+        'checkStore' =>\App\Http\Middleware\CheckStore::class,
     ];
 
     /**

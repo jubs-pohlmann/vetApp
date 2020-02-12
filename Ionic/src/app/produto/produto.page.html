@@ -6,7 +6,7 @@
     <!-- //BACK-BUTTON// -->
     <ion-icon name='arrow-back' (click)='backButton()'></ion-icon>
     <!-- NOME DO PRODUTO -->
-    <ion-title class='nomeDoProdutoTitulo'>Ração Whiskas 1KG</ion-title>
+    <ion-title class='nomeDoProdutoTitulo'>{{produto.name}}</ion-title>
   </ion-toolbar>
 
   <ion-content scroll-y="true">
@@ -18,18 +18,18 @@
         <img class="image" src="" onerror="this.src='../../assets/images/imagemDefault.jpg' "> 
 
         <ion-chip>
-          <ion-label class-='porloja'>Por <span class='nomeDaLoja'>Dogstore</span></ion-label>
+          <ion-label class-='porloja'>Por <span class='nomeDaLoja'>{{loja.user[0].name}}</span></ion-label>
         </ion-chip>  
         
-        <div *ngIf= class="classify">
+        <!-- <div *ngIf class="classify">
           <ion-icon name="airplane-outline"></ion-icon>
           <p class=></p>
-        </div>
+        </div> -->
          <!-- DESCRIÇÃO DO PRODUTO COM MÁXIMO DE 160 CARACTERES -->
        
          <p class="descrever">Descrição</p>
          <div class= "descricao">
-          <p>name name name name name name name name name name name name name name name name name name name name name name name name name name name name name name </p>           
+          <p>{{produto.description}}</p>           
         </div>      
     </div>
    
@@ -38,25 +38,20 @@
       <p>Categorias</p>
     </div>
     
-    <div class='categoria'>
+    <div class="categoria">
        <p>Espécie</p>
-       <p class="category">animal</p>
+       <p class="category">{{produto.animal}}</p>
     </div>
 
-    <div class='categoria'>
+    <div class="categoria">
       <p>Tipo</p>
-      <p  class="category">Alimento</p>
+      <p class="category">{{produto.category}}</p>
     </div>
   
       <!-- BOTÃO PARA REALIZAR SOLICITAÇÃO DE COMPRAR -->
     <ion-row class="ion-justify-content-center">
       <ion-button (click)="presentToast()" (click)="compra()" class="formButton" type='button' shape='default'  >Comprar (18,50)</ion-button>
     </ion-row>
-      <!-- ENCAMINHAR À LOJA  -->
-    <div class='encaminhaParaLoja'>
-      <p class=''>Ir para a loja <a href='/home'><span class='loja'>DogStore</span></a><a href="/home"><span>
-      <ion-icon name='arrow-forward-outline'></ion-icon></span></a></p>
-    </div>
 
   </ion-content>
 </html>  

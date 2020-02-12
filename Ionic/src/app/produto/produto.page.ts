@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Location } from '@angular/common';
 import { ProdutoService} from '../services/produto.service';
+import { LojaService } from '../services/loja.service';
 
 
 @Component({
@@ -11,10 +12,43 @@ import { ProdutoService} from '../services/produto.service';
   styleUrls: ['./produto.page.scss'],
 })
 export class ProdutoPage implements OnInit {
-
-  constructor(public router: Router, public toastController: ToastController, public _location: Location, public produtoservice: ProdutoService) { }
   @Input() prodObj = { }
   
+  produto:any = {
+    id: 1,
+    photo: null,
+    name: "",
+    price: "",
+    category: "",
+    description: "",
+    animal: "",
+    stock: 2,
+    store_id: 55
+  };
+  loja:any = {
+    id: 1,
+    rating: null,
+    cnpj: "82.553.129/0001-91",
+    delivery: 1,
+    user_id: 23,
+    user: [{
+      id: 1,
+      name: "",
+      email: "",
+      email_verified_at: null,
+      photo: null,
+      phone: "",
+      address: ""
+    }]
+  };
+  produtoClick:number;
+
+  constructor(public router: Router, public toastController: ToastController, public _location: Location, public produtoservice: ProdutoService, public lojaservice: LojaService, private inputRouter :ActivatedRoute) {
+
+    this.produtoClick= this.inputRouter.snapshot.params["produtoClick"];
+    
+   }
+
     async presentToast() {
     	const toast = await this.toastController.create({
     		message: 'Solicitação de compra enviada para o vendedor. Aguarde a confirmação.',
@@ -34,9 +68,22 @@ export class ProdutoPage implements OnInit {
     });
     
   }
-  
+
+  async carrega() {
+    await this.produtoservice.getProduto(this.produtoClick).subscribe((res)=>{
+      this.produto=res[0];
+      console.log(res)
+      console.log(this.produto)
+      this.lojaservice.getLoja(res[0].store_id).subscribe((resLoja)=>{
+        console.log(resLoja)
+        this.loja=resLoja[0];
+      });
+    });
+  }
   
   ngOnInit() {
+    console.log(this.produtoClick)
+    this.carrega();
     
   }
 

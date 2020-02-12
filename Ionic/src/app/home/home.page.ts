@@ -15,47 +15,47 @@ export class HomePage implements OnInit {
 
   public categorias = [
     {
-      nome: 'Alimentação',
-      name: 'food',
-      imagem: "../../assets/images/food.jpg"
+      nome: 'Alimentos',
+      name: 'Alimentos',
+      imagem: "../../assets/images/Alimentos.jpg"
     },
     {
       nome: 'Saúde',
-      name: 'health',
-      imagem: "../../assets/images/health.jpg"
+      name: 'Saúde',
+      imagem: "../../assets/images/Saúde.jpg"
     },
     {
       nome: 'Higiene',
-      name: 'bath',
-      imagem: "../../assets/images/bath.jpg"
+      name: 'Higiene',
+      imagem: "../../assets/images/Higiene.jpg"
     },
     {
       nome: 'Acessórios',
-      name: 'accessories',
-      imagem: "../../assets/images/accessories.jpg"
+      name: 'Acessórios',
+      imagem: "../../assets/images/Acessórios.jpg"
     }
   ];
 
   public animais = [
     {
       nome: 'Cães',
-      name: 'dogs',
-      imagem: "../../assets/images/dogs.jpg"
+      name: 'Cães',
+      imagem: "../../assets/images/Cães.jpg"
     },
     {
       nome: 'Gatos',
-      name: 'cats',
-      imagem: "../../assets/images/cats.jpg"
+      name: 'Gatos',
+      imagem: "../../assets/images/Gatos.jpg"
     },
     {
       nome: 'Aves',
-      name: 'birds',
-      imagem: "../../assets/images/birds.jpg"
+      name: 'Aves',
+      imagem: "../../assets/images/Aves.jpg"
     },
     {
       nome: 'Peixes',
-      name: 'fishes',
-      imagem: "../../assets/images/fishes.jpg"
+      name: 'Peixes',
+      imagem: "../../assets/images/Peixes.jpg"
     }
   ];
 
@@ -65,9 +65,11 @@ export class HomePage implements OnInit {
     this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);
   }
 
-  lojaLogin(){
-    // if(localStorage.getItem('loja'))
-  }
+  // lojaLogin(){
+  //   // if(localStorage.getItem('loja'))
+  // }
+
+  
 
   ngOnInit(){
     this.produtoService.listRecentes().subscribe((res)=>{

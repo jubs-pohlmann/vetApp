@@ -23,7 +23,7 @@ export class HomecategoriaPage implements OnInit {
 
   ngOnInit() {
 
-    if(this.produtoCategoria=="health" || this.produtoCategoria=="food" || this.produtoCategoria=="bath" || this.produtoCategoria=="accessories"){
+    if(this.produtoCategoria=="Saúde" || this.produtoCategoria=="Alimentos" || this.produtoCategoria=="Higiene" || this.produtoCategoria=="Acessórios"){
       this.produtoService.listCategoria(this.produtoCategoria).subscribe((res)=>{
       console.log(res[0]);
       this.produtos=res[0];

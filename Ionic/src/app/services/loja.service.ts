@@ -20,9 +20,9 @@ export class LojaService {
 
   constructor(public http:HttpClient, public router:Router) { }
 
-  // getLoja(id:number):Observable<any> {
-  //   return this.http.get(this.apiUrl + 'showStore/' + id);
-  // }
+   getLoja(id:number):Observable<any> {
+     return this.http.get(this.apiURL + 'showStore/' + id);
+   }
 
   registerStore(form:any):Observable<any> {
     return this.http.post(this.apiURL + 'registerStore', form, this.httpHeaders);

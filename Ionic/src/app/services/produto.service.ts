@@ -35,7 +35,7 @@ export class ProdutoService {
   }
 
   getProduto(id:number):Observable<any>{
-    return this.http.get(this.apiURL + 'showProduct' + id);
+    return this.http.get(this.apiURL + 'showProduct/' + id);
   }
 
   listRecentes():Observable<any> {

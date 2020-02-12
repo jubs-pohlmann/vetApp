@@ -8,6 +8,14 @@ import { Observable } from 'rxjs';
 export class UsuarioService {
 
   apiURL:string = 'http://localhost:8000/api/'
+
+  httpHeaders: any ={
+    headers:{
+      'Content-Type': 'application/json',
+      'Accept': 'apliccation/json'
+    }
+  }
+  
   constructor( public http: HttpClient ) { }
 
   // getUsers():Observable<any> {
@@ -15,6 +23,6 @@ export class UsuarioService {
   // }
 
   RegisterUser(form:any):Observable<any> {
-    return this.http.post(this.apiURL + 'registerClient', form);
+    return this.http.post(this.apiURL + 'registerClient', form, this.httpHeaders);
   }
 }

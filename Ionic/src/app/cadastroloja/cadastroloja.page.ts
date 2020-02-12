@@ -50,12 +50,14 @@ export class CadastrolojaPage implements OnInit {
   	
   	if ( registerStoreForm.status == "VALID" ) {
 
+    console.log(registerStoreForm.value)
+
   		this.lojaService.registerStore( registerStoreForm.value ).subscribe(
   			(res) => {
-          console.log( res );
-          console.log(res.success.token);
+      console.log( res );
+          //console.log(res.success.token);
   				localStorage.setItem( 'userToken', res.success.token );
-  				this.router.navigate(['/tabs/home']);
+  				this.router.navigate(['tabs/home']);
   			}
   		);
 

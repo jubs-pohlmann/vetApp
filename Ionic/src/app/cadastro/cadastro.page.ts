@@ -57,11 +57,11 @@ export class CadastroPage implements OnInit {
 	}); */
 	
 	RegisterUser( registerForm ) {
-		//console.log(registerForm.value)
+		console.log(registerForm.value)
 		let data=registerForm.value.birthdate.split("-")
 		//console.log(data)
 		let newData= data[2] + "/" + data[1] +"/" + data[0]
-		//console.log(newData)
+		console.log(newData)
 		registerForm.value.birthdate=newData
 		registerForm.value.phone =registerForm.value.phone.replace(" ","")
 		//console.log(registerForm.value.phone)
@@ -72,7 +72,7 @@ export class CadastroPage implements OnInit {
 			console.log( res );
 			//console.log(res.success.token);
 					localStorage.setItem( 'userToken', res.success.token );
-					this.router.navigate(['tabs/home']);
+					this.router.navigate(['/tabs/home']);
 				}
 			);
   

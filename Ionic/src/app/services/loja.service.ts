@@ -8,19 +8,26 @@ import { Router } from '@angular/router';
 })
 export class LojaService {
 
-  apiUrl: string = 'http://localhost/8000/api/'
+  apiUrl: string = 'http://localhost:8000/api/'
+
+  httpHeaders: any ={
+    headers:{
+      'Content-Type': 'application/json',
+      'Accept': 'apliccation/json'
+    }
+  }
   constructor(public http:HttpClient, public router:Router) { }
 
-  postLoja(form:any):Observable<any>{
-    return this.http.post(this.apiUrl + 'registerStore', form);
-  }
+  // //postLoja(form:any):Observable<any>{
+  //   return this.http.post(this.apiUrl + 'registerStore', form);
+  // }
 
-  getLoja(id:number):Observable<any> {
-    return this.http.get(this.apiUrl + 'showStore/' + id);
-  }
+  // getLoja(id:number):Observable<any> {
+  //   return this.http.get(this.apiUrl + 'showStore/' + id);
+  // }
 
   registerStore(form:any):Observable<any> {
-    return this.http.post(this.apiUrl + 'registerStore', form);
+    return this.http.post(this.apiUrl + 'registerStore', form,this.httpHeaders);
   }
 
 }

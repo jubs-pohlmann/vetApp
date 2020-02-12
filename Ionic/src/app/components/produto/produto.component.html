@@ -1,6 +1,6 @@
 
 <div class="produtoCard">
-  <img class="produtoImg" src="{{prodObj.photo}}" onerror="this.src='../../assets/images/imagemDefault.jpg'" alt="imagem do produto"/>
+  <ion-button (click)="produtoClick(prodObj.id)"><img class="produtoImg" src="{{prodObj.photo}}" onerror="this.src='../../assets/images/imagemDefault.jpg'" alt="imagem do produto"/>
   <div class="produtoTexto">
     <div class="produtoLoja">Loja nome</div>
     <div class="produtoNomePreco">
@@ -9,4 +9,5 @@
     </div>
     <div class="produtoDescricao">{{prodObj.description}}</div>
   </div>
+</ion-button>
 </div>

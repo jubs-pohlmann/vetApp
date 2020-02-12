@@ -13,8 +13,8 @@ export class ProdutoComponent implements OnInit {
 
   constructor(public router:Router) { }
 
-  public categoriaClick( i:string ){
-    this.router.navigate(['tabs/produto', {produtoCategoria: i}]);
+  public produtoClick( id:number ){
+    this.router.navigate(['tabs/produto', {produtoClick: id}]);
   }
 
   ngOnInit() {}

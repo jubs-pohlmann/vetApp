@@ -27,12 +27,11 @@ export class UsuarioService {
     return this.http.post(this.apiURL + 'registerClient', form, this.httpHeaders);
   }
 
-  logout() {
+  // logout() {
 
-    this.httpHeaders['headers']["Authorization"] = 'Bearer ' + localStorage.getItem('userToken');
+  //   this.httpHeaders['headers']["Authorization"] = 'Bearer ' + localStorage.getItem('userToken');
+  //   return this.http.get( this.apiUrl + 'logout',
+  //                         this.httpHeaders );
 
-    return this.http.get( this.apiUrl + 'logout',
-                          this.httpHeaders );
-
-  }
+  // }
 }

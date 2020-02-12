@@ -10,7 +10,10 @@
 
 <ion-content>
   <img class="categoriaImage" src="../../assets/images/{{produtoCategoria}}.jpg" />
+  
   <app-produto *ngFor="let produto of produtos" [prodObj]="produto" ></app-produto>
+
+
   <!-- ao clicar passar qual a categoria/animal clicada e mostrar essa imagem no topo da pagina -->
   <!-- <div *ngFor="let produto of produtos">
     <div class="produtoCard">

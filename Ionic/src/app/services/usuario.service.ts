@@ -9,13 +9,14 @@ export class UsuarioService {
 
   apiURL:string = 'http://localhost:8000/api/'
 
-  httpHeaders: any ={
-    headers:{
-      'Content-Type': 'application/json',
-      'Accept': 'apliccation/json'
-    }
+  httpHeaders: any = {
+  	headers: {
+  		'Content-Type': 'application/json',
+	  	'Accept': 'application/json',
+	  	'Authorization': 'Bearer',
+  	}
   }
-  
+
   constructor( public http: HttpClient ) { }
 
   // getUsers():Observable<any> {

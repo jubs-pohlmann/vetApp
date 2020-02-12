@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common'
-//import { Home } from '../home/home.page';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-homecategoria',
@@ -19,14 +19,26 @@ export class HomecategoriaPage implements OnInit {
   produtos=[];
   produtoCategoria:string;
 
+  // fazer switchcase com nomes
 
   ngOnInit() {
-    this.produtoService.listCategoria(this.produtoCategoria).subscribe((res)=>{
+
+    if(this.produtoCategoria=="health" || this.produtoCategoria=="food" || this.produtoCategoria=="bath" || this.produtoCategoria=="accessories"){
+      this.produtoService.listCategoria(this.produtoCategoria).subscribe((res)=>{
       console.log(res[0]);
       this.produtos=res[0];
     }, err=>{
       console.log('ERRO');
     });
+
+    } else{
+      this.produtoService.listAnimal(this.produtoCategoria).subscribe((res)=>{
+      console.log(res[0]);
+      this.produtos=res[0];
+    }, err=>{
+      console.log('ERRO');
+    });
+    }
   }
 
   backButton(){

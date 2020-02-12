@@ -8,14 +8,16 @@ import { Router } from '@angular/router';
 })
 export class LojaService {
 
-  apiUrl: string = 'http://localhost:8000/api/'
+  apiURL: string = 'http://localhost/8000/api/'
 
-  httpHeaders: any ={
-    headers:{
-      'Content-Type': 'application/json',
-      'Accept': 'apliccation/json'
-    }
+  httpHeaders: any = {
+  	headers: {
+  		'Content-Type': 'application/json',
+	  	'Accept': 'application/json',
+	  	'Authorization': 'Bearer',
+  	}
   }
+
   constructor(public http:HttpClient, public router:Router) { }
 
   // //postLoja(form:any):Observable<any>{
@@ -27,7 +29,7 @@ export class LojaService {
   // }
 
   registerStore(form:any):Observable<any> {
-    return this.http.post(this.apiUrl + 'registerStore', form,this.httpHeaders);
+    return this.http.post(this.apiURL + 'registerStore', form,this.httpHeaders);
   }
 
 }

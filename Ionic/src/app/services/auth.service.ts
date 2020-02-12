@@ -12,7 +12,8 @@ export class AuthService {
   httpHeaders: any ={
     headers:{
       'Content-Type': 'application/json',
-      'Accept': 'apliccation/json'
+      'Accept': 'apliccation/json',
+      'Authorization': 'Bearer'
     }
   }
 
@@ -22,4 +23,9 @@ export class AuthService {
   loginUser(form): Observable<any> {
     return this.http.post(this.apiUrl + 'login', form, this.httpHeaders)
   }
+
+  // logoutUser(){
+  //   this.httpHeaders['headers']["Authorization"] = 'Bearer' + 'localStorage'.getItem('userToken');
+  //   return this.http.get( this.apiUrl + 'logout', this.httpHeaders );
+  // }
 }

@@ -13,7 +13,7 @@ export class ProdutoService {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Authorization': 'Bearer ',
+      'Authorization': 'Bearer',
     }
   }
 
@@ -26,7 +26,7 @@ export class ProdutoService {
 
   updateProduto(id:number, newStock:any):Observable<any> {
     this.httpHeaders.headers["Authorization"] = "Bearer " + localStorage.getItem('token');
-    return this.http.put(this.apiURL + 'updateProduct/'+ id, newStock, this.httpHeaders);   
+    return this.http.put(this.apiURL + 'updateProduct/'+ id, newStock, this.httpHeaders);
   }
 
   buyProduto(id:number):Observable<any> {

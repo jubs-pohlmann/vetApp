@@ -24,7 +24,7 @@ export class CadastrolojaPage implements OnInit {
       delivery: [null, [Validators.required]],
       address: [null,[Validators.required, Validators.minLength(2)]],
       password: [null,[Validators.required, Validators.minLength(5)]],
-      passwordVerify: [null,[Validators.required,Validators.minLength(5)]]   
+      passwordVerify: [null,[Validators.required,Validators.minLength(5)]]
     });
    }
 
@@ -47,22 +47,20 @@ export class CadastrolojaPage implements OnInit {
 
   RegisterStore( registerStoreForm ) {
 
-  	
+
   	if ( registerStoreForm.status == "VALID" ) {
       if(registerStoreForm.value.delivery=="sim"){
         registerStoreForm.value.delivery=true;
       }else{
         registerStoreForm.value.delivery=false;
       }
-    
+
     console.log(registerStoreForm.value)
     registerStoreForm.value.phone =registerStoreForm.value.phone.replace(" ","")
 
   		this.lojaService.registerStore( registerStoreForm.value ).subscribe(
   			(res) => {
       console.log( res );
-          console.log(res);
-  				localStorage.setItem( 'token', res.success.token );
   				this.router.navigate(['/tabs/home']);
   			}
   		);

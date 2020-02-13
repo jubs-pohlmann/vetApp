@@ -71,8 +71,6 @@ export class CadastroPage implements OnInit {
 			this.usuarioService.RegisterUser( registerForm.value ).subscribe(
 				(res) => {
 			console.log( res );
-			console.log(res.success.token);
-					localStorage.setItem( 'token', res.success.token );
 					this.router.navigate(['/tabs/home']);
 				}
 			);

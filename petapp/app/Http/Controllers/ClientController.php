@@ -8,11 +8,11 @@ use App\Client;
 use App\User;
 use App\Store;
 use App\Product;
-use App\ClientProduct;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Notifications\confirmacaoCompra;
+use App\Notifications\buyConfirmation;
+use App\Notifications\saleConfirmation;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Notifications\Notifiable;
 
@@ -59,7 +59,7 @@ class ClientController extends Controller
   //Método para edição de dados do cliente
   public function updateClient(Request $request){
     $user = Auth::user();
-    $client = Client::where('user_id', $user->id);
+    $client = Client::where('user_id', '$user->id');
 
     if($request->birthdate || $request->cpf)
       $client->updateClient($request);
@@ -97,8 +97,12 @@ class ClientController extends Controller
     $client->save();
     $product->save();
 
-    $user->notify(new confirmacaoCompra($user, $delivery_day));
-    return response()->json(['Compra realizada', 'Data de entrega', $delivery_day]);
+    $store = Store::findOrFail($product->store_id);
+    $userStore = User::findOrFail($store->user_id);
+
+    $user->notify(new buyConfirmation($user, $delivery_day));
+    $userStore->notify(new saleConfirmation($userStore, $user, $product, $delivery_day));
+    return response()->json(['Compra realizada']);
   }
 
   //Método responsável por listar os produtos comprados pelo client logado
@@ -126,10 +130,4 @@ class ClientController extends Controller
     $client = Client::where('user_id', $user->id)->first();
     return response()->json($client->stores);
   }
-quem é a republic 
-republic->media = avg de col notas cometn
-
-pegar coluna d coments
-fazer média
-salvar em stores
 }

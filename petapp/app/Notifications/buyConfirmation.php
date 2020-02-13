@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use App\User;
 
-class confirmacaoCompra extends Notification
+class buyConfirmation extends Notification
 {
     use Queueable;
     public $date;

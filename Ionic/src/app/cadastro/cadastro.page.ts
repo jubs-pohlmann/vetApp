@@ -14,7 +14,7 @@ export class CadastroPage implements OnInit {
 	registerForm: FormGroup;
 	verificationError:boolean;
 
-	constructor(public router: Router, public formbuilder: FormBuilder, public usuarioService: UsuarioService, private _location: Location) { 
+	constructor(public router: Router, public formbuilder: FormBuilder, public usuarioService: UsuarioService, private _location: Location) {
 		this.registerForm = this.formbuilder.group({
 			name: [null, [Validators.required, Validators.minLength(3)]],
 			email: [null, [Validators.required, Validators.email]],
@@ -34,7 +34,7 @@ export class CadastroPage implements OnInit {
 		  this.verificationError = false;
 		}
  	}
-	
+
    submitForm(form) {
 		this.usuarioService.RegisterUser(form.value).subscribe( (res) => {
 			this.router.navigateByUrl('tabs/home');
@@ -55,29 +55,28 @@ export class CadastroPage implements OnInit {
 			Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
 		]))
 	}); */
-	
+
 	RegisterUser( registerForm ) {
-		console.log(registerForm.value)
+		console.log(registerForm.value);
 		let data=registerForm.value.birthdate.split("-");
-		
+
 		let newData= data[2] + "/" + data[1] +"/" + data[0];
 		//reorganiza a data para o formato do back
-		console.log(newData)
-		registerForm.value.birthdate=newData
-		registerForm.value.phone =registerForm.value.phone.replace(" ","")
-		
+		console.log(newData);
+		registerForm.value.birthdate=newData;
+		registerForm.value.phone =registerForm.value.phone.replace(" ","");
+
 		if ( registerForm.status == "VALID" ) {
-  
+
 			this.usuarioService.RegisterUser( registerForm.value ).subscribe(
 				(res) => {
-			console.log( res );
-					this.router.navigate(['/tabs/home']);
+             this.router.navigate(['/tabs/home']);
 				}
 			);
-  
+
 		}
 	}
-	
+
   ngOnInit() {
   }
 

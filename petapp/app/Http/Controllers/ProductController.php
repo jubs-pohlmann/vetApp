@@ -53,20 +53,19 @@ class ProductController extends Controller
 
   //Método responsável por ordenar os produtos do forma decrescente
   public function orderBy(){
-    $productOnStock = Product::where('stock', '>=', 1)->orderBy('id', 'desc')->get();
-    //$desc = Product::orderBy('id', 'desc')->get();
+    $productOnStock = Product::where('stock', '>=', 1)->orderBy('id', 'desc')->with('store')->get();
     return response()->json([$productOnStock]);
   }
 
   //Método responsável por ordenar os produtos por animal
   public function animal($animal){
-    $string = Product::where('animal', $animal)->where('stock', '>=', 1)->get();
+    $string = Product::where('animal', $animal)->where('stock', '>=', 1)->with('store')->get();
     return response()->json([$string]);
   }
 
   //Método responsável por ordenar os produtos por categoria
   public function category($categoria){
-    $string = Product::where('category', $categoria)->where('stock', '>=', 1)->get();
+    $string = Product::where('category', $categoria)->where('stock', '>=', 1)->with('store')->get();
     return response()->json([$string]);
   }
 }

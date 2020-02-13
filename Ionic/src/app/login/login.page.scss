@@ -12,8 +12,14 @@
   font-size: 1.4em;
   line-height: 1em;
   color: #333333;
-  
-  
+
+}
+.corTopo{
+  --background: #a8e6cf;
+}
+
+.button {
+    margin-left: 5vw;
 }
 
 .formPlaceholder{
@@ -24,22 +30,22 @@
   line-height:1.2em;
   color: #999999;
   border-bottom: 1px solid #A8E6CF;
-  
-  
+
+
 }
 
 .formButton{
   //TEXT
   --color: #333333;
   font-family: 'Josefin Sans', sans-serif;
-  
+
   font-weight: bold;
   //BOX
- 
+
   --background: white;
   --box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   --border-radius: 5px;
- } 
+ }
 
  .logoutButton{
    //TEXT

@@ -1,14 +1,18 @@
 <html>
+  <ion-header>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-
-	<ion-toolbar>
-    <!-- //BACK-BUTTON// -->
-    <ion-icon name='arrow-back' (click)='backButton()'></ion-icon>
-    <!-- NOME DO PRODUTO -->
-    <ion-title class="nomeDoProdutoTitulo">{{produto.name}}</ion-title>
-  </ion-toolbar>
-
+  	<ion-toolbar class="corTopo">
+      <ion-row>
+        <ion-col size="2">
+           <ion-icon size="large" name='arrow-back' (click)='backButton()' ></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-title>{{produto.name}}</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-header>
   <ion-content scroll-y="true">
 
     <!-- NOME DA LOJA -->

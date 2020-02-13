@@ -1,9 +1,15 @@
 
 <ion-header>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-  <ion-toolbar>
-    <ion-icon name='arrow-back' (click)='backButton()' ></ion-icon>
-    <ion-title>{{produtoCategoria}}</ion-title>
+  <ion-toolbar class="corTopo">
+    <ion-row>
+      <ion-col size="2">
+         <ion-icon size="large" name='arrow-back' (click)='backButton()' ></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-title>{{produtoCategoria}}</ion-title>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 

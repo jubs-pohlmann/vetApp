@@ -4,7 +4,6 @@ import { ProdutoService } from '../services/produto.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-
 @Component({
   selector: 'app-anunciar-produto',
   templateUrl: './anunciar-produto.page.html',

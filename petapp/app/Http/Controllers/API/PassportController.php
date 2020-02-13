@@ -93,7 +93,12 @@ class PassportController extends Controller
     if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
       $user = Auth::user();
       $success['token'] = $user->createToken('MyApp')->accessToken;
-      $success['user'] = $user;
+      $store = Store::where('user_id',$user->id)->get();
+      if($store)
+        $status = true;
+      else
+        $status = false;
+      $success['status'] = $status;
       return response()->json(['success' => $success], $this->successStatus);
     }
     else{

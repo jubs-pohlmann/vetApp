@@ -72,13 +72,13 @@ export class HomePage implements OnInit {
     this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);
   }
 
-  public checkIfLoja(user){
-    if(localStorage.getItem(user.cnpj)===null){
-      return true;
-    }else{
-      return false;
-    }
-  }
+  // public checkIfLoja(status){
+  //   if(true){
+  //     return true;
+  //   }else{
+  //     return false;
+  //   }
+  // }
 
   irParaAnunciarProduto(){
     this.router.navigate(['tabs/anunciar-produto']);

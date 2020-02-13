@@ -54,7 +54,18 @@ export class ProdutoPage implements OnInit {
     	const toast = await this.toastController.create({
         message: 'Solicitação de compra enviada para o vendedor. Aguarde a confirmação.',
         cssClass: "toastClass",
-    		duration: 3000
+    		duration: 1000
+    	});
+
+    	toast.present();
+    }
+
+    async presentToastErroCompra() {
+      
+    	const toast = await this.toastController.create({
+        message: 'Você não está logado, por favor entre com sua conta!',
+        cssClass: "toastClass",
+    		duration: 1000
     	});
 
     	toast.present();
@@ -63,12 +74,14 @@ export class ProdutoPage implements OnInit {
   public compra(id:number){
     this.produtoservice.buyProduto(id).subscribe(
       (res)=>{
-      console.log('oioi')
-    },error=>{
+      console.log(res)
       this.router.navigate(['tabs/home']);
+      this.presentToast();
+    },error=>{
       console.log(error);
+      this.router.navigate(['tabs/login']);
+      this.presentToastErroCompra();
     });
-
   }
 
   async carrega() {

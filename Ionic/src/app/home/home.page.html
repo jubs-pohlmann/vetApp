@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-fab *ngIf="checkIfLoja('user')" vertical="start" horizontal="end" slot="fixed" (click)="irParaAnunciarProduto()">
+  <ion-fab *ngIf="status" vertical="start" horizontal="end" slot="fixed" (click)="irParaAnunciarProduto()">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

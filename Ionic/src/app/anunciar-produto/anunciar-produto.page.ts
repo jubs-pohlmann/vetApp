@@ -30,22 +30,16 @@ export class AnunciarProdutoPage implements OnInit {
   }
 
   submitForm(registerForm) {
-
-    if ( registerForm.status == "VALID" ) {
-
-
-
+    if ( registerForm.status == "VALID" ) {  
     console.log(registerForm);
     console.log(registerForm.value);
-
 		this.produtoService.postProduto(registerForm.value).subscribe(
       (res) => {
-
-			  this.router.navigate(['tabs/home']);
+			  this.router.navigate(['/tabs/home']);
       },
       (error) => {
         console.log(error);
-      } );
+      });
     }
   }
 

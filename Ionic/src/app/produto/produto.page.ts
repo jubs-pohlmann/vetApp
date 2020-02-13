@@ -50,7 +50,7 @@ export class ProdutoPage implements OnInit {
    }
 
     async presentToast() {
-      
+
     	const toast = await this.toastController.create({
         message: 'Solicitação de compra enviada para o vendedor. Aguarde a confirmação.',
         cssClass: "toastClass",

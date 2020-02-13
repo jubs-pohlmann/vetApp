@@ -12,7 +12,6 @@ import { Location } from '@angular/common';
 export class HomecategoriaPage implements OnInit {
 
   constructor(private router: ActivatedRoute, public produtoService: ProdutoService, private _location: Location) {
-    console.log('aaaaaaaaaaa');
     this.produtoCategoria = this.router.snapshot.params["produtoCategoria"];
   }
 

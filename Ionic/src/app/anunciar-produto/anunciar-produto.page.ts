@@ -33,6 +33,7 @@ export class AnunciarProdutoPage implements OnInit {
     if ( registerForm.status == "VALID" ) {  
     console.log(registerForm);
     console.log(registerForm.value);
+    
 		this.produtoService.postProduto(registerForm.value).subscribe(
       (res) => {
 			  this.router.navigate(['/tabs/home']);

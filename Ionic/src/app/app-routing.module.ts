@@ -34,7 +34,11 @@ const routes: Routes = [
   {
     path: 'homecategoria',
     loadChildren: () => import('./homecategoria/homecategoria.module').then( m => m.HomecategoriaPageModule)
+  },  {
+    path: 'perfil-loja',
+    loadChildren: () => import('./perfil-loja/perfil-loja.module').then( m => m.PerfilLojaPageModule)
   },
+
 
 ];
 @NgModule({

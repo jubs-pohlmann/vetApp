@@ -20,12 +20,17 @@
         <ion-chip class="chipLoja">
           <ion-label>Vendido por <span class="nomeDaLoja">{{loja.user[0].name}}</span></ion-label>
         </ion-chip>  
-        
-        <!-- <div *ngIf class="classify">
-          <ion-icon name="airplane-outline"></ion-icon>
-          <p class=></p>
-        </div> -->
-       
+
+        <div *ngIf="produto.stock==2">
+         <ion-row class="ion-justify-content-center">
+           <img class="caminhaodelivery" src="../../assets/images/cami.png">
+           </ion-row>
+           <ion-row class="ion-justify-content-center">
+           <p class="classify1"> Delivery</p>
+         </ion-row>
+        </div>
+          
+
          <p class="descrever">Descrição</p>
          <div class= "descricao">
           <p>{{produto.description}}</p>           

@@ -61,11 +61,9 @@ export class ProdutoPage implements OnInit {
     }
 
   public compra(id:number){
-    // this.produtoservice.getProduto(id).subscribe((res)=>{
-    //   res.stock--;
-    //   this.produtoservice.updateProduto(id, {stock:res.stock});
-    // });
+
     this.produtoservice.buyProduto(id).subscribe((res)=>{
+      console.log('flag')
       this.router.navigateByUrl('tabs/home');
     });
 

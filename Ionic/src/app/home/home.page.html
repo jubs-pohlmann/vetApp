@@ -30,7 +30,7 @@
   
 
   <ion-label class="title">Para o seu animal</ion-label>
-  <ion-slides  [options]="slideOpts">
+  <ion-slides class="slide" pager="true" [options]="slideOpts">
     <ion-slide *ngFor ="let animal of animais">
       <ion-card class="categoriaCard" (click)="categoriaClick( animal.name )">
         <img src={{animal.imagem}} />

@@ -6,7 +6,7 @@
     <!-- //BACK-BUTTON// -->
     <ion-icon name='arrow-back' (click)='backButton()'></ion-icon>
     <!-- NOME DO PRODUTO -->
-    <ion-title class='nomeDoProdutoTitulo'>{{produto.name}}</ion-title>
+    <ion-title class="nomeDoProdutoTitulo">{{produto.name}}</ion-title>
   </ion-toolbar>
 
   <ion-content scroll-y="true">
@@ -18,17 +18,16 @@
         <img class="image" src="" onerror="this.src='../../assets/images/imagemDefault.jpg' "> 
 
         <ion-chip>
-          <ion-label class-='porloja'>Por <span class='nomeDaLoja'>{{loja.user[0].name}}</span></ion-label>
+          <ion-label class="porloja">Vendido por <span class="nomedaLoja">{{loja.user[0].name}}</span></ion-label>
         </ion-chip>  
         
         <!-- <div *ngIf class="classify">
           <ion-icon name="airplane-outline"></ion-icon>
           <p class=></p>
         </div> -->
-         <!-- DESCRIÇÃO DO PRODUTO COM MÁXIMO DE 160 CARACTERES -->
        
          <p class="descrever">Descrição</p>
-         <div class= "descricao">
+         <div class="descricao">
           <p>{{produto.description}}</p>           
         </div>      
     </div>

@@ -22,7 +22,7 @@ class CheckClient
       $user = Auth::user();
       $client = Client::where('user_id', $user->id)->get();
 
-      if($client->isNotEmpyt())
+      if($client->isNotEmpty())
         return $next($request);
       else{
         return response()->json('Acesso negado.');

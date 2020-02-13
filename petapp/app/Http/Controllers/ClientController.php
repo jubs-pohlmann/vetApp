@@ -91,8 +91,6 @@ class ClientController extends Controller
     $delivery_day = $delivery_day->format('d-m-Y');
 
     $product->stock--;
-    if(($product->stock) == 0 )
-      Product::destroy($product->id);
 
     $client->save();
     $product->save();

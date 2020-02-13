@@ -65,7 +65,7 @@ export class CadastroPage implements OnInit {
 		console.log(newData)
 		registerForm.value.birthdate=newData
 		registerForm.value.phone =registerForm.value.phone.replace(" ","")
-		
+		console.log(registerForm.value.phone.replace(" ",""))
 		if ( registerForm.status == "VALID" ) {
   
 			this.usuarioService.RegisterUser( registerForm.value ).subscribe(

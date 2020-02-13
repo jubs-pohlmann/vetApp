@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ProdutoService } from '../services/produto.service';
 import { LojaService } from '../services/loja.service';
 import { ProdutoComponent } from '../components/produto/produto.component';
-
+import { IonSlides } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -12,6 +12,12 @@ import { ProdutoComponent } from '../components/produto/produto.component';
 export class HomePage implements OnInit {
 
   produtos:any =[];
+  
+
+
+  slideOpts={
+    slidesPerView:2
+  }
 
   public categorias = [
     {
@@ -59,7 +65,10 @@ export class HomePage implements OnInit {
     }
   ];
 
-  constructor(public router: Router, public produtoService: ProdutoService) { }
+  constructor(public router: Router, public produtoService: ProdutoService) {
+
+
+   }
 
   public categoriaClick( i:string ){
     this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);

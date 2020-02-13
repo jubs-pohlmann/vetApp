@@ -20,19 +20,19 @@ export class ProdutoService {
   constructor( public http: HttpClient ) { }
 
   postProduto(form:any):Observable<any> {
-    this.httpHeaders.headers["Authorization"] = "Bearer " + localStorage.getItem('token');
+    this.httpHeaders.headers["Authorization"] = "Bearer" + localStorage.getItem('token');
     return this.http.put(this.apiURL + 'createProduct', form, this.httpHeaders);
   }
 
   updateProduto(id:number, newStock:any):Observable<any> {
-    this.httpHeaders.headers["Authorization"] = "Bearer " + localStorage.getItem('token');
+    this.httpHeaders.headers["Authorization"] = "Bearer" + localStorage.getItem('token');
     return this.http.put(this.apiURL + 'updateProduct/'+ id, newStock, this.httpHeaders);   
   }
 
   buyProduto(id:number):Observable<any> {
-    this.httpHeaders.headers["Authorization"] = "Bearer " + localStorage.getItem('token');
+    this.httpHeaders.headers["Authorization"] = "Bearer" + localStorage.getItem('token');
     console.log(this.httpHeaders);
-    return this.http.put(this.apiURL + 'sale/'+ id, this.httpHeaders);
+    return this.http.put(this.apiURL + 'sale/'+ id, null, this.httpHeaders);
   }
 
   getProduto(id:number):Observable<any>{

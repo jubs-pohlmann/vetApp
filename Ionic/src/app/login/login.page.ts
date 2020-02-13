@@ -67,13 +67,10 @@ export class LoginPage implements OnInit {
   }
 
   logout(){
-    this.authService.logoutUser().subscribe(
-      (res) => {
+    this.authService.logoutUser();
         localStorage.removeItem('token');
         this.router.navigate(['/tabs/home']);
         this.presentToast();
-      }
-    )
   }
 
   ngOnInit() {

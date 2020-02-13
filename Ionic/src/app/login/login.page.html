@@ -43,15 +43,15 @@
     </ion-row>
     <img class="image" src='../../assets/imagens/ondas.png'>
   </div>
+
+
   <div *ngIf="!check('token')">
-    <ion-label>Vamos sentir saudade!</ion-label>
+    <ion-label class="logoutTitle">Vamos sentir saudade!</ion-label>
 
     <ion-row class='ion-justify-content-center'>
-      <ion-button class='formButton' type='button' shape='default' (click)='logout()'>Logout</ion-button>
+      <ion-button class="logoutButton" type='button' shape='default' (click)='logout()'>Logout</ion-button>
      </ion-row>
   </div>
-
-
   <img class="image" src='../../assets/imagens/ondas.png'>
     
  </ion-content>

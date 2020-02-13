@@ -50,12 +50,13 @@ export class CadastrolojaPage implements OnInit {
         registerStoreForm.value.delivery=false;
       }
 
-    registerStoreForm.value.phone = registerStoreForm.value.phone.replace(" ","")
+    registerStoreForm.value.phone = registerStoreForm.value.phone.replace(" ","");
     console.log(registerStoreForm.value)
+
 
   		this.lojaService.registerStore( registerStoreForm.value ).subscribe(
   			(res) => {
-      console.log( res );
+          console.log( res );
   				this.router.navigate(['/tabs/home']);
   			}
   		);

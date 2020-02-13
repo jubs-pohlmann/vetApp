@@ -45,7 +45,7 @@ class saleConfirmation extends Notification
      */
     public function toMail($notifiable)
     {
-      $url = url('localhost:8000/tabs/home');
+      $url = url('localhost:8100/tabs/anunciar-produto');
         return (new MailMessage)
                     ->greeting('Nova venda realizada!')
                     ->line('Olá, '.$this->store->name)

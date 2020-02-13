@@ -1,5 +1,6 @@
 
 .produtoCard{
+    overflow: nowrap;
     display:flex;
     height: 15%;
     margin: 1em 1em;
@@ -26,10 +27,14 @@
 }
 
 .produtoLoja{
+    text-overflow: ellipsis;
+    overflow:hidden;
     color: #FF8B94;
 }
 
 .produtoNomePreco{
+    text-overflow: ellipsis;
+    overflow:hidden;
     font-weight: 600;  
     margin: 2% 0%;
     display: flex;

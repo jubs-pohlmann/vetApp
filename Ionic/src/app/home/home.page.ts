@@ -13,8 +13,6 @@ export class HomePage implements OnInit {
 
   produtos:any =[];
   
-
-
   slideOpts={
     slidesPerView:2
   }
@@ -74,15 +72,17 @@ export class HomePage implements OnInit {
     this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);
   }
 
-  // lojaLogin(){
-  //   // if(localStorage.getItem('loja'))
-  // }
-
-  
+  public check(condition){
+    if(localStorage.getItem(condition)===null){
+      return true;
+    }else{
+      return false;
+    }
+  }
 
   ngOnInit(){
     this.produtoService.listRecentes().subscribe((res)=>{
-      //console.log(res[0]);
+      console.log(res[0]);
       this.produtos=res[0];
     }, error=>{
       console.log(error);

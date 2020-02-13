@@ -9,7 +9,7 @@ import { LojaService } from '../../services/loja.service';
 })
 export class ProdutoComponent implements OnInit {
 
-  @Input() prodObj = { }
+  @Input() prodObj: [];
   loja:any;
 
   constructor(public router:Router, public lojaService:LojaService) { }
@@ -18,12 +18,15 @@ export class ProdutoComponent implements OnInit {
     this.router.navigate(['tabs/produto', {produtoClick: id}]);
   }
 
-  // public getLoja( id: number ){
-  //   return this.lojaService.getLoja(id);
+  // public getLoja( id:number ){
+  //   return this.lojaService.getLoja(id).subscribe((res)=>{
+  //     this.loja = res;
+  //     //console.log(this.loja);
+  //   });
   // }
 
   ngOnInit() {
-    //this.loja = this.lojaService.getLoja(this.prodObj.store_id);
+    
   }
 
 }

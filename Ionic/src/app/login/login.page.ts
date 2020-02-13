@@ -59,6 +59,7 @@ export class LoginPage implements OnInit {
   			(res) => {
           //console.log( res );
           console.log(res.success.token);
+          // localStorage.setItem('')
   				localStorage.setItem( 'token', res.success.token );
   				this.router.navigate(['/tabs/home']);
   			}

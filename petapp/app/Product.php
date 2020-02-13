@@ -12,7 +12,7 @@ class Product extends Model
 {
   //Relacionamentos
   public function store(){
-    return $this->belongsTo('App\Store');
+    return $this->belongsTo('App\Store')->with('user');
   }
 
   public function clients(){

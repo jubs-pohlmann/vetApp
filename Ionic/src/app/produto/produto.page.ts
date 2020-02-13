@@ -61,12 +61,12 @@ export class ProdutoPage implements OnInit {
     }
 
   public compra(id:number){
-    // this.produtoservice.getProduto(id).subscribe((res)=>{
-    //   res.stock--;
-    //   this.produtoservice.updateProduto(id, {stock:res.stock});
-    // });
-    this.produtoservice.buyProduto(id).subscribe((res)=>{
-      this.router.navigateByUrl('tabs/home');
+    this.produtoservice.buyProduto(id).subscribe(
+      (res)=>{
+      console.log('oioi')
+      this.router.navigate(['tabs/home']);
+    },error=>{
+      console.log(error);
     });
 
   }
@@ -74,10 +74,10 @@ export class ProdutoPage implements OnInit {
   async carrega() {
     await this.produtoservice.getProduto(this.produtoClick).subscribe((res)=>{
       this.produto=res[0];
-      console.log(res)
-      console.log(this.produto)
+      //console.log(res)
+      //console.log(this.produto)
       this.lojaservice.getLoja(res[0].store_id).subscribe((resLoja)=>{
-        console.log(resLoja)
+        //console.log(resLoja)
         this.loja=resLoja[0];
       });
     });

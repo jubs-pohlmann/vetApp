@@ -23,7 +23,7 @@ export class ProdutoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loja = this.lojaService.getLoja(this.prodObj.store_id);
+    //this.loja = this.lojaService.getLoja(this.prodObj.store_id);
   }
 
 }

@@ -21,7 +21,7 @@ export class AuthService {
 
 
   loginUser(form): Observable<any> {
-    return this.http.post(this.apiUrl + 'login', form, this.httpHeaders);
+    return this.http.post(this.apiUrl + 'login', form);
   }
 
   // logoutUser(){

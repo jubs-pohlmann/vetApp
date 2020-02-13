@@ -72,12 +72,16 @@ export class HomePage implements OnInit {
     this.router.navigate(['tabs/homecategoria', {produtoCategoria: i}]);
   }
 
-  public check(condition){
-    if(localStorage.getItem(condition)===null){
+  public checkIfLoja(user){
+    if(localStorage.getItem(user.cnpj)===null){
       return true;
     }else{
       return false;
     }
+  }
+
+  irParaAnunciarProduto(){
+    this.router.navigate(['tabs/anunciar-produto']);
   }
 
   ngOnInit(){

@@ -64,8 +64,8 @@ export class ProdutoPage implements OnInit {
     this.produtoservice.buyProduto(id).subscribe(
       (res)=>{
       console.log('oioi')
-      this.router.navigate(['tabs/home']);
     },error=>{
+      this.router.navigate(['tabs/home']);
       console.log(error);
     });
 

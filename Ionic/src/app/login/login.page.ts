@@ -57,10 +57,10 @@ export class LoginPage implements OnInit {
   	if ( loginForm.status == "VALID" ) {
   		this.authService.loginUser( loginForm.value ).subscribe(
   			(res) => {
-          //console.log( res );
-          console.log(res.success.token);
-          // localStorage.setItem('')
-  				localStorage.setItem( 'token', res.success.token );
+          console.log( res );
+          //console.log(res.success.token);
+          localStorage.setItem( 'token', res.success.token );
+          localStorage.setItem( 'user' , JSON.stringify(res.success.user));
   				this.router.navigate(['/tabs/home']);
   			}
   		);

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { LojaService } from '../../services/loja.service';
 
 @Component({
   selector: 'app-produto',
@@ -9,14 +10,20 @@ import { Router } from '@angular/router';
 export class ProdutoComponent implements OnInit {
 
   @Input() prodObj = { }
+  loja:any;
 
-
-  constructor(public router:Router) { }
+  constructor(public router:Router, public lojaService:LojaService) { }
 
   public produtoClick( id:number ){
     this.router.navigate(['tabs/produto', {produtoClick: id}]);
   }
 
-  ngOnInit() {}
+  public getLoja( id: number ){
+    return this.lojaService.getLoja(id);
+  }
+
+  ngOnInit() {
+    this.loja = this.lojaService.getLoja(this.prodObj.store_id);
+  }
 
 }

@@ -67,16 +67,6 @@ const routes: Routes = [
            }
         ]
       },
-       {
-         path: 'cadastro2',
-         children: [
-           {
-             path: '',
-             loadChildren: () =>
-               import('../cadastro2/cadastro2.module').then(m => m.Cadastro2PageModule)
-           }
-        ]
-      },
       {
         path: 'cadastroloja',
         children: [
@@ -87,26 +77,6 @@ const routes: Routes = [
           }
        ]
      },
-     {
-      path: 'cadastroloja2',
-      children: [
-        {
-          path: '',
-          loadChildren: () =>
-            import('../cadastroloja2/cadastroloja2.module').then(m => m.Cadastroloja2PageModule)
-        }
-     ]
-   },
-   {
-      path: 'cadastroloja2',
-      children: [
-        {
-          path: '',
-          loadChildren: () =>
-            import('../cadastroloja2/cadastroloja2.module').then(m => m.Cadastroloja2PageModule)
-        }
-     ]
-   },
    {
     path: 'anunciar-produto',
     children: [

@@ -44,11 +44,9 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/tabs/cadastro'])
    } 
 
-  loginUser( loginForm ) {
+  loginUser( loginForm ) { 	
 
-  	
   	if ( loginForm.status == "VALID" ) {
-
   		this.authService.loginUser( loginForm.value ).subscribe(
   			(res) => {
           //console.log( res );
@@ -57,10 +55,8 @@ export class LoginPage implements OnInit {
   				this.router.navigate(['/tabs/home']);
   			}
   		);
-
   	}
   }
-
 
   ngOnInit() {
   }

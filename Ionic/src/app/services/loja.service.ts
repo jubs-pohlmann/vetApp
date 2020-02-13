@@ -14,7 +14,7 @@ export class LojaService {
   	headers: {
   		'Content-Type': 'application/json',
 	  	'Accept': 'application/json',
-	  	'Authorization': 'Bearer',
+	  	'Authorization': 'Bearer ',
   	}
   }
 

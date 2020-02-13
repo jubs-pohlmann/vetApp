@@ -13,7 +13,7 @@ export class UsuarioService {
   	headers: {
   		'Content-Type': 'application/json',
 	  	'Accept': 'application/json',
-	  	'Authorization': 'Bearer',
+	  	'Authorization': 'Bearer ',
   	}
   }
 
@@ -26,12 +26,4 @@ export class UsuarioService {
   RegisterUser(form:any):Observable<any> {
     return this.http.post(this.apiURL + 'registerClient', form, this.httpHeaders);
   }
-
-  // logout() {
-
-  //   this.httpHeaders['headers']["Authorization"] = 'Bearer ' + localStorage.getItem('userToken');
-  //   return this.http.get( this.apiUrl + 'logout',
-  //                         this.httpHeaders );
-
-  // }
 }

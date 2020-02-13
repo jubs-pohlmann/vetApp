@@ -28,11 +28,6 @@ export class CadastrolojaPage implements OnInit {
     });
    }
 
-   submitForm(form){
-     console.log(form);
-     console.log(form.value);
-   }
-
    passwordVerification(form){
     if(form.value.password != form.value.passwordVerify){
       this.verificationError = true;
@@ -45,28 +40,25 @@ export class CadastrolojaPage implements OnInit {
     this._location.back();
   }
 
-  RegisterStore( registerStoreForm ) {
+  RegisterStore( registerStoreForm ) { 	
 
-  	
   	if ( registerStoreForm.status == "VALID" ) {
+      
       if(registerStoreForm.value.delivery=="sim"){
         registerStoreForm.value.delivery=true;
       }else{
         registerStoreForm.value.delivery=false;
       }
     
+    registerStoreForm.value.phone = registerStoreForm.value.phone.replace(" ","")
     console.log(registerStoreForm.value)
-    registerStoreForm.value.phone =registerStoreForm.value.phone.replace(" ","")
 
   		this.lojaService.registerStore( registerStoreForm.value ).subscribe(
   			(res) => {
-      console.log( res );
-          console.log(res);
-  				localStorage.setItem( 'token', res.success.token );
+          console.log( res );
   				this.router.navigate(['/tabs/home']);
   			}
   		);
-
   	}
   }
 

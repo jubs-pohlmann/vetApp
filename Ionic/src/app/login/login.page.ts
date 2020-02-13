@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginPage implements OnInit {
   
   loginForm: FormGroup;
 
-  constructor(public formbuilder: FormBuilder, public router: Router, public authService: AuthService) {
+  constructor(public formbuilder: FormBuilder, public router: Router, public toastController: ToastController, public authService: AuthService) {
 
     this.loginForm = this.formbuilder.group({
       
@@ -24,6 +25,16 @@ export class LoginPage implements OnInit {
     });
   }
 
+  
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Logout realizado. Volte logo!',
+      duration: 3000
+    });
+
+    toast.present();
+  }
+
   public check(condition){
     if(localStorage.getItem(condition)===null){
       return true;
@@ -31,10 +42,7 @@ export class LoginPage implements OnInit {
       return false;
     }
   }
-  submitForm(form){
-    //console.log(form);
-    //console.log(form.value);
-  }
+// checa se o usuario esta logado ou nao
 
    navegarCadastroLoja(){
      this.router.navigate(['/tabs/cadastroloja'])
@@ -56,6 +64,16 @@ export class LoginPage implements OnInit {
   			}
   		);
   	}
+  }
+
+  logout(){
+    this.authService.logoutUser().subscribe(
+      (res) => {
+        localStorage.removeItem('token');
+        this.router.navigate(['/tabs/home']);
+        this.presentToast();
+      }
+    )
   }
 
   ngOnInit() {

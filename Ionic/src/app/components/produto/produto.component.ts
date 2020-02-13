@@ -18,12 +18,13 @@ export class ProdutoComponent implements OnInit {
     this.router.navigate(['tabs/produto', {produtoClick: id}]);
   }
 
-  public getLoja( id: number ){
-    return this.lojaService.getLoja(id);
-  }
+  // public getLoja( id: number ){
+  //   return this.lojaService.getLoja(id);
+  // }
 
   ngOnInit() {
-    this.loja = this.lojaService.getLoja(this.prodObj.store_id);
+    
+
   }
 
 }

@@ -22,11 +22,11 @@ export class AuthService {
 
   loginUser(form): Observable<any> {
     console.log(form);
-    return this.http.post(this.apiUrl + 'login', form, this.httpHeaders)
+    return this.http.post(this.apiUrl + 'login', form)
   }
 
-  // logoutUser(){
-  //   this.httpHeaders['headers']["Authorization"] = 'Bearer' + 'localStorage'.getItem('userToken');
-  //   return this.http.get( this.apiUrl + 'logout', this.httpHeaders );
-  // }
+  logoutUser(){
+    this.httpHeaders['headers']["Authorization"] = 'Bearer' + localStorage.getItem('userToken');
+    return this.http.get( this.apiUrl + 'logout', this.httpHeaders );
+  }
 }

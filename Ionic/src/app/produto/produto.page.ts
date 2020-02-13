@@ -66,7 +66,7 @@ export class ProdutoPage implements OnInit {
     //   this.produtoservice.updateProduto(id, {stock:res.stock});
     // });
     this.produtoservice.buyProduto(id).subscribe((res)=>{
-      this.router.navigateByUrl('tabs/home');
+      this.router.navigate(['/tabs/home']);
     });
 
   }

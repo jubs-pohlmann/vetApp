@@ -8,7 +8,16 @@
 	margin-left: 1em;
 	margin-right: 1em;
 	color: #333333;
- 
+
+}
+
+.corTopo{
+  --background: #a8e6cf;
+}
+
+.button {
+	display:flex;
+	justify-content:center;
 }
 
 .formItem {
@@ -37,7 +46,7 @@
 
 .buttonCentralizer{
 	margin: 5vh 0vh;
-	
+
 	display: flex;
 	justify-content: center;
 }
@@ -72,4 +81,3 @@
 		border-bottom: 1px solid #FF8B94;
 	}
 }
-

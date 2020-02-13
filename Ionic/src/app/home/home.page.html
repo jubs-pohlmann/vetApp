@@ -1,7 +1,10 @@
-<html >
+<html>
+
 <ion-nav [root]="rootPage"></ion-nav>
-<ion-header >
-  
+<ion-header>
+  <ion-toolbar class="corTopo">
+    <ion-title >Home</ion-title>
+  </ion-toolbar>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
 </ion-header>
@@ -23,7 +26,7 @@
       </ion-card>
     </ion-slide>
   </ion-slides>
-  
+
 
   <ion-label class="title">Para o seu animal</ion-label>
   <ion-slides class="slide" pager="true" [options]="slideOpts">
@@ -37,7 +40,7 @@
 
   <ion-label class="title" id="titleMargin">Adicionados recentemente</ion-label>
   <app-produto *ngFor="let produto of produtos" [prodObj]="produto" ></app-produto>
-  
+
 
 </ion-content>
 

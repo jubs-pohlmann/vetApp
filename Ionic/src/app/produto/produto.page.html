@@ -1,21 +1,25 @@
 <html>
-	
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-  
-	<ion-toolbar>
-    <!-- //BACK-BUTTON// -->
-    <ion-icon name='arrow-back' (click)='backButton()'></ion-icon>
-    <!-- NOME DO PRODUTO -->
-    <ion-title class="nomeDoProdutoTitulo">{{produto.name}}</ion-title>
-  </ion-toolbar>
+  <ion-header>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 
+  	<ion-toolbar class="corTopo">
+      <ion-row>
+        <ion-col size="2">
+           <ion-icon size="large" name='arrow-back' (click)='backButton()' ></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-title>{{produto.name}}</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-header>
   <ion-content scroll-y="true">
 
     <!-- NOME DA LOJA -->
-    
+
     <div class="conteudoDoAnuncio">
         <!-- FOTO DO PRODUTO OU IMAGEM DEFAULT ALTERNATIVA -->
-        <img class="image" src="" onerror="this.src='../../assets/images/imagemDefault.jpg' "> 
+        <img class="image" src=  '{{produto.photo}}' onerror="this.src='../../assets/images/imagemDefault.jpg' ">
 
         <ion-chip class="chipLoja">
           <ion-label>Vendido por <span class="nomeDaLoja">{{loja.user[0].name}}</span></ion-label>
@@ -33,15 +37,15 @@
 
          <p class="descrever">Descrição</p>
          <div class= "descricao">
-          <p>{{produto.description}}</p>           
-        </div>      
+          <p>{{produto.description}}</p>
+        </div>
     </div>
-   
+
     <!-- FILTRO DE CATEGORIAS -->
     <div class="filtro">
       <ion-label>Categorias</ion-label>
     </div>
-    
+
     <div class="categoria">
        <ion-label>Espécie</ion-label>
        <div class="category">{{produto.animal}}</div>
@@ -51,13 +55,11 @@
       <ion-label>Tipo</ion-label>
       <div class="category">{{produto.category}}</div>
     </div>
-  
+
       <!-- BOTÃO PARA REALIZAR SOLICITAÇÃO DE COMPRAR -->
     <ion-row class="ion-justify-content-center">
-      <ion-button (click)="compra(produto.id)" class="formButton" type='button' shape='default'  >Comprar (18,50)</ion-button>
+      <ion-button (click)="compra(produto.id)" class="formButton" type='button' shape='default'>Comprar({{ produto.price}})</ion-button>
     </ion-row>
 
   </ion-content>
-</html>  
-
-
+</html>

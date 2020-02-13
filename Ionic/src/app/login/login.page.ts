@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginPage implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(public formbuilder: FormBuilder, public router: Router, public toastController: ToastController, public authService: AuthService) {
+  constructor(public _location:Location, public formbuilder: FormBuilder, public router: Router, public toastController: ToastController, public authService: AuthService) {
 
     this.loginForm = this.formbuilder.group({
 
@@ -25,7 +26,7 @@ export class LoginPage implements OnInit {
     });
   }
 
-  
+
   async presentToast() {
     const toast = await this.toastController.create({
       message: 'Logout realizado. Volte logo!',
@@ -45,11 +46,11 @@ export class LoginPage implements OnInit {
 // checa se o usuario esta logado ou nao
 
    navegarCadastroLoja(){
-     this.router.navigate(['/tabs/cadastroloja'])
+     this.router.navigate(['/tabs/cadastroloja']);
   }
 
    navegarCadastroUsuario(){
-    this.router.navigate(['/tabs/cadastro'])
+    this.router.navigate(['/tabs/cadastro']);
    }
 
   loginUser( loginForm ) {
@@ -67,6 +68,9 @@ export class LoginPage implements OnInit {
   			}
   		);
   	}
+  }
+  backButton(){
+    this._location.back();
   }
 
   logout(){

@@ -11,17 +11,17 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  
-  
+
+
   loginForm: FormGroup;
 
   constructor(public formbuilder: FormBuilder, public router: Router, public toastController: ToastController, public authService: AuthService) {
 
     this.loginForm = this.formbuilder.group({
-      
+
       email:[null,[Validators.required,Validators.email]],
       password:[null,[Validators.required,Validators.maxLength(5)]],
-         
+
     });
   }
 
@@ -50,9 +50,9 @@ export class LoginPage implements OnInit {
 
    navegarCadastroUsuario(){
     this.router.navigate(['/tabs/cadastro'])
-   } 
+   }
 
-  loginUser( loginForm ) { 	
+  loginUser( loginForm ) {
 
   	if ( loginForm.status == "VALID" ) {
   		this.authService.loginUser( loginForm.value ).subscribe(

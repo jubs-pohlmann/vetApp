@@ -13,7 +13,7 @@ import { LojaService } from '../services/loja.service';
 })
 export class ProdutoPage implements OnInit {
   @Input() prodObj = { }
-  
+
   produto:any = {
     id: 1,
     photo: null,
@@ -46,7 +46,7 @@ export class ProdutoPage implements OnInit {
   constructor(public router: Router, public toastController: ToastController, public _location: Location, public produtoservice: ProdutoService, public lojaservice: LojaService, private inputRouter :ActivatedRoute) {
 
     this.produtoClick= this.inputRouter.snapshot.params["produtoClick"];
-    
+
    }
 
     async presentToast() {
@@ -68,7 +68,7 @@ export class ProdutoPage implements OnInit {
     this.produtoservice.buyProduto(id).subscribe((res)=>{
       this.router.navigateByUrl('tabs/home');
     });
-    
+
   }
 
   async carrega() {
@@ -82,11 +82,11 @@ export class ProdutoPage implements OnInit {
       });
     });
   }
-  
+
   ngOnInit() {
     console.log(this.produtoClick)
     this.carrega();
-    
+
   }
 
   backButton(){

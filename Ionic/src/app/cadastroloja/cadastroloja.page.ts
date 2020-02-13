@@ -24,7 +24,7 @@ export class CadastrolojaPage implements OnInit {
       delivery: [null, [Validators.required]],
       address: [null,[Validators.required, Validators.minLength(2)]],
       password: [null,[Validators.required, Validators.minLength(5)]],
-      passwordVerify: [null,[Validators.required,Validators.minLength(5)]]   
+      passwordVerify: [null,[Validators.required,Validators.minLength(5)]]
     });
    }
 
@@ -40,18 +40,19 @@ export class CadastrolojaPage implements OnInit {
     this._location.back();
   }
 
-  RegisterStore( registerStoreForm ) { 	
+  RegisterStore( registerStoreForm ) {
 
   	if ( registerStoreForm.status == "VALID" ) {
-      
+
       if(registerStoreForm.value.delivery=="sim"){
         registerStoreForm.value.delivery=true;
       }else{
         registerStoreForm.value.delivery=false;
       }
-    
-    registerStoreForm.value.phone = registerStoreForm.value.phone.replace(" ","")
+
+    registerStoreForm.value.phone = registerStoreForm.value.phone.replace(" ","");
     console.log(registerStoreForm.value)
+
 
   		this.lojaService.registerStore( registerStoreForm.value ).subscribe(
   			(res) => {

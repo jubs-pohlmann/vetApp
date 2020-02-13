@@ -12,7 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
-use App\Notifications\confirmacaoCompra;
+use App\Notifications\buyConfirmation;
 use Illuminate\Notifications\Notifiable;
 
 class StoreController extends Controller

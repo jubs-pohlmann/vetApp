@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   async presentToast() {
     const toast = await this.toastController.create({
       message: 'Logout realizado. Volte logo!',
-      duration: 3000
+      duration: 1000
     });
 
     toast.present();
@@ -72,6 +72,7 @@ export class LoginPage implements OnInit {
   logout(){
     this.authService.logoutUser();
         localStorage.removeItem('token');
+        localStorage.removeItem('status');
         this.router.navigate(['/tabs/home']);
         this.presentToast();
   }

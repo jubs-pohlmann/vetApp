@@ -17,8 +17,8 @@
         <!-- FOTO DO PRODUTO OU IMAGEM DEFAULT ALTERNATIVA -->
         <img class="image" src="" onerror="this.src='../../assets/images/imagemDefault.jpg' "> 
 
-        <ion-chip>
-          <ion-label class="porloja">Vendido por <span class="nomedaLoja">{{loja.user[0].name}}</span></ion-label>
+        <ion-chip class="chipLoja">
+          <ion-label>Vendido por <span class="nomeDaLoja">{{loja.user[0].name}}</span></ion-label>
         </ion-chip>  
         
         <!-- <div *ngIf class="classify">
@@ -27,24 +27,24 @@
         </div> -->
        
          <p class="descrever">Descrição</p>
-         <div class="descricao">
+         <div class= "descricao">
           <p>{{produto.description}}</p>           
         </div>      
     </div>
    
     <!-- FILTRO DE CATEGORIAS -->
     <div class="filtro">
-      <p>Categorias</p>
+      <ion-label>Categorias</ion-label>
     </div>
     
     <div class="categoria">
-       <p>Espécie</p>
-       <p class="category">{{produto.animal}}</p>
+       <ion-label>Espécie</ion-label>
+       <div class="category">{{produto.animal}}</div>
     </div>
 
     <div class="categoria">
-      <p>Tipo</p>
-      <p class="category">{{produto.category}}</p>
+      <ion-label>Tipo</ion-label>
+      <div class="category">{{produto.category}}</div>
     </div>
   
       <!-- BOTÃO PARA REALIZAR SOLICITAÇÃO DE COMPRAR -->

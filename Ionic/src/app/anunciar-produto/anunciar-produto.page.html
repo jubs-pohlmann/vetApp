@@ -1,3 +1,4 @@
+
 <ion-header>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
   <ion-toolbar>
@@ -26,7 +27,7 @@
 
     <div class="formItem" [class.invalid]="registerForm.controls.description.invalid && registerForm.controls.description.touched">
       <ion-label class="formTitle" position="stacked">Descreva o produto</ion-label>
-      <ion-input class="formPlaceholder" maxLength="300" formControlName="description" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Uma coleira rosa de couro, tamanho ajustável para Cães grandes e pequenos."></ion-input>
+      <ion-input class="formPlaceholder" maxLength="300" formControlName="description" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Uma coleira rosa de couro, tamanho ajustável para cachorros grandes e pequenos."></ion-input>
     </div>
 
       <div class="radioText">
@@ -34,25 +35,25 @@
         <ion-radio-group class="delivery" formControlName="animal">
     
           <div class="radioMargin">
-            <ion-radio mode="md" slot="start" value="Cães" checked></ion-radio>
-          <ion-label>Cães</ion-label>
+            <ion-radio mode="md" slot="start" value="dogs" checked></ion-radio>
+          <ion-label>Cachorros</ion-label>
           
           </div>
         
           <div class="radioMargin">
-            <ion-radio mode="md" slot="start" value="Gatos"></ion-radio>
+            <ion-radio mode="md" slot="start" value="cats"></ion-radio>
           <ion-label>Gatos</ion-label>
           
           </div>
   
           <div class="radioMargin">
-            <ion-radio mode="md" slot="start" value="Aves"></ion-radio>
+            <ion-radio mode="md" slot="start" value="birds"></ion-radio>
             <ion-label>Aves</ion-label>
             
           </div>
   
             <div class="radioMargin">
-              <ion-radio mode="md" slot="start" value="Peixes"></ion-radio>
+              <ion-radio mode="md" slot="start" value="fishes"></ion-radio>
               <ion-label>Peixes</ion-label>
               
             </div>     
@@ -64,25 +65,25 @@
           <ion-radio-group class="delivery" formControlName="category">
             
             <div class="radioMargin">
-              <ion-radio mode="md" slot="start" value="Acessórios" checked></ion-radio>
+              <ion-radio mode="md" slot="start" value="accessories" checked></ion-radio>
             <ion-label>Acessórios</ion-label>
             
             </div>
           
             <div class="radioMargin">
-              <ion-radio mode="md" slot="start" value="Saúde"></ion-radio>
+              <ion-radio mode="md" slot="start" value="health"></ion-radio>
             <ion-label>Saúde</ion-label>
             
             </div>
     
             <div class="radioMargin">
-              <ion-radio mode="md" slot="start" value="Alimentos"></ion-radio>
-              <ion-label>Alimentos</ion-label>
+              <ion-radio mode="md" slot="start" value="food"></ion-radio>
+              <ion-label>Alimentação</ion-label>
               
             </div>
     
               <div class="radioMargin">
-                <ion-radio mode="md" slot="start" value="Higiene"></ion-radio>
+                <ion-radio mode="md" slot="start" value="bath"></ion-radio>
                 <ion-label>Higiene</ion-label>
                
               </div>      

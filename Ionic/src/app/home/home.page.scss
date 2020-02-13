@@ -15,7 +15,7 @@
 
 .categoriaCard{
     position: relative;
-    width: 50%;
+    width: 70%;
     height: auto; 
 }
 
@@ -31,5 +31,10 @@
 #titleMargin{
     margin-bottom: 1em;
 }
+.swiper-pagination{
+   position:inherit;
 
-
+}
+.slide{
+    height:30%;
+}

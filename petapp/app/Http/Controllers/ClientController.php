@@ -59,7 +59,7 @@ class ClientController extends Controller
   //Método para edição de dados do cliente
   public function updateClient(Request $request){
     $user = Auth::user();
-    $client = Client::where('user_id', $user->id);
+    $client = Client::where('user_id', '$user->id');
 
     if($request->birthdate || $request->cpf)
       $client->updateClient($request);

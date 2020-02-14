@@ -97,7 +97,7 @@ export class ProdutoPage implements OnInit {
   }
 
    encaminhaParaLoja( i:number ){
-    this.router.navigate(['/tabs/perfil-loja', {loja:i}])
+    this.router.navigate(['/tabs/perfil-loja', {store:i}])
   }
 
   ngOnInit() {

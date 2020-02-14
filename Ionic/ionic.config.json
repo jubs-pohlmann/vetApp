@@ -1,5 +1,7 @@
 {
   "name": "vet-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

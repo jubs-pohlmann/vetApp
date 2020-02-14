@@ -1,0 +1,65 @@
+<html>
+  <ion-header>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  	<ion-toolbar class="corTopo">
+      <ion-row>
+        <ion-col size="2">
+           <ion-icon size="large" name='arrow-back' (click)='backButton()' ></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-title>{{produto.name}}</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content scroll-y="true">
+
+    <!-- NOME DA LOJA -->
+
+    <div class="conteudoDoAnuncio">
+        <!-- FOTO DO PRODUTO OU IMAGEM DEFAULT ALTERNATIVA -->
+        <img class="image" src= "http://localhost:8000/{{produto.photo}}" onerror="this.src='../../assets/images/imagemDefault.jpg' ">
+
+        <ion-chip class="chipLoja" (click)="encaminhaParaLoja(prodObj.store.id)">
+          <ion-label>Vendido por <span class="nomeDaLoja">{{loja.user[0].name}}</span></ion-label>
+        </ion-chip>
+
+        <div *ngIf="produto.stock==2">
+         <ion-row class="ion-justify-content-center">
+           <img class="caminhaodelivery" src="../../assets/images/cami.png">
+           </ion-row>
+           <ion-row class="ion-justify-content-center">
+           <p class="classify1"> Delivery</p>
+         </ion-row>
+        </div>
+
+
+         <p class="descrever">Descrição</p>
+         <div class= "descricao">
+          <p>{{produto.description}}</p>
+        </div>
+    </div>
+
+    <!-- FILTRO DE CATEGORIAS -->
+    <div class="filtro">
+      <ion-label>Categorias</ion-label>
+    </div>
+
+    <div class="categoria">
+       <ion-label>Espécie</ion-label>
+       <div class="category">{{produto.animal}}</div>
+    </div>
+
+    <div class="categoria">
+      <ion-label>Tipo</ion-label>
+      <div class="category">{{produto.category}}</div>
+    </div>
+
+      <!-- BOTÃO PARA REALIZAR SOLICITAÇÃO DE COMPRAR -->
+    <ion-row class="ion-justify-content-center">
+      <ion-button [disabled]="check('status')" (click)="compra(produto.id)" class="formButton" type='button' shape='default'>Comprar({{ produto.price}})</ion-button>
+    </ion-row>
+
+  </ion-content>
+</html>

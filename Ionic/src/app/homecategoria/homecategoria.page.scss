@@ -1,0 +1,22 @@
+.categoriaImage{
+    margin-bottom: 1em;
+    border-bottom-right-radius: 1%;
+    border-bottom-left-radius: 1%;
+    width: 100%;
+    height: auto;
+    display:flex;
+    justify-content: center;
+}
+
+.title{
+    font-family: 'Josefin Sans', sans-serif;
+    color: #222222;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    text-align: right;
+    margin-left: 1em;
+}
+.corTopo{
+  --background: #a8e6cf;
+
+}

@@ -1,0 +1,22 @@
+
+<ion-header class="header">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <ion-toolbar class="corTopo">
+    <ion-row>
+      <ion-col size="2">
+         <ion-icon size="large" name='arrow-back' (click)='backButton()' ></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-title>{{produtoCategoria}}</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <img class="categoriaImage" src="../../assets/images/{{produtoCategoria}}.jpg" />
+  <ion-label class="title">Recentemente na categoria</ion-label>
+  <app-produto *ngFor="let produto of produtos" [prodObj]="produto" ></app-produto>
+
+</ion-content>

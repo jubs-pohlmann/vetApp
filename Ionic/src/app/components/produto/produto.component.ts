@@ -11,7 +11,7 @@ export class ProdutoComponent implements OnInit {
 
   @Input() prodObj: [];
   @Input() prodObjStore: [];
-  loja:any;
+  
 
   constructor(public router:Router, public lojaService:LojaService) { }
 
@@ -29,7 +29,7 @@ export class ProdutoComponent implements OnInit {
   //    this.router.navigate(['/tabs/perfil-loja/' + store])
   //  }
   ngOnInit() {
-    
+
   }
 
 }

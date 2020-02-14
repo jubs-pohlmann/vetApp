@@ -61,7 +61,7 @@ export class ProdutoPage implements OnInit {
     }
 
     async presentToastErroCompra() {
-      
+
     	const toast = await this.toastController.create({
         message: 'Você não está logado, por favor entre com sua conta!',
         cssClass: "toastClass",
@@ -96,18 +96,23 @@ export class ProdutoPage implements OnInit {
     });
   }
 
-  encaminhaParaLoja( store:number ){
-    this.router.navigate(['/tabs/perfil-loja/' + store])
+// desativa o botao para a loja
+  public check(condition){
+    if(localStorage.getItem(condition)=='true'){
+      return true;
+    }else{
+      return false;
+    }
   }
+
+    backButton(){
+      this._location.back();
+    }
 
   ngOnInit() {
     console.log(this.produtoClick)
     this.carrega();
 
-  }
-
-  backButton(){
-    this._location.back();
   }
 
 }

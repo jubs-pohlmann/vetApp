@@ -107,17 +107,6 @@ const routes: Routes = [
           }
         ]
       },
-
-      {
-        path:'perfil-loja/:store',
-        children: [
-          {
-            path:'',
-            loadChildren:() =>
-            import('../perfil-loja/perfil-loja.module').then(m => m.PerfilLojaPageModule)
-          }
-        ]
-      },
     ]
   },
   {

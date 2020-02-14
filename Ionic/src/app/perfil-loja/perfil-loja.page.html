@@ -24,5 +24,9 @@
 		<div class="populares">
 			<p>Mais Populares</p>
 		</div>
+
+		<ion-label class="title" id="titleMargin">Produtos da Loja </ion-label>
+  		<app-produto *ngFor="let produto of produtos" [prodObjStore]="produto" ></app-produto>
+
 	</ion-content>
 </html>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ComponentsModule } from '../components.module';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,7 +14,8 @@ import { PerfilLojaPage } from './perfil-loja.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    PerfilLojaPageRoutingModule
+    PerfilLojaPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [PerfilLojaPage]
 })

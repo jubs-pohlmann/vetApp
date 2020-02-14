@@ -109,7 +109,7 @@ const routes: Routes = [
       },
 
       {
-        path:'perfil-loja',
+        path:'perfil-loja/:store',
         children: [
           {
             path:'',

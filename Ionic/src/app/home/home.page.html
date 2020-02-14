@@ -2,15 +2,14 @@
 
 <ion-nav [root]="rootPage"></ion-nav>
 <ion-header>
-  <ion-toolbar class="corTopo">
-    <ion-title >Home</ion-title>
-  </ion-toolbar>
+  
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
 </ion-header>
-<img src ="../../assets/images/PetApp.png">
 
 <ion-content>
+
+  <img  class="logoHome" src ="../../assets/images/PetApp.png">
   <ion-fab *ngIf="check('status')" vertical="start" horizontal="end" slot="fixed" (click)="irParaAnunciarProduto()">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>

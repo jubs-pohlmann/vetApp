@@ -27,5 +27,8 @@ export class LojaService {
   registerStore(form:any):Observable<any> {
     return this.http.post(this.apiURL + 'registerStore', form, this.httpHeaders);
   }
-
+ 
+  getProdutos(user_id:number):Observable<any> {
+    return this.http.get(this.apiURL + 'listProductStore/' + user_id)
+  }
 }

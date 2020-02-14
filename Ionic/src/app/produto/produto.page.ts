@@ -96,6 +96,10 @@ export class ProdutoPage implements OnInit {
     });
   }
 
+  encaminhaParaLoja( store:number ){
+    this.router.navigate(['/tabs/perfil-loja/' + store])
+  }
+
   ngOnInit() {
     console.log(this.produtoClick)
     this.carrega();

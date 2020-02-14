@@ -10,12 +10,13 @@ import { LojaService } from '../../services/loja.service';
 export class ProdutoComponent implements OnInit {
 
   @Input() prodObj: [];
+  @Input() prodObjStore: [];
   loja:any;
 
   constructor(public router:Router, public lojaService:LojaService) { }
 
   public produtoClick( id:number ){
-    this.router.navigate(['tabs/produto', {produtoClick: id}]);
+    this.router.navigate(['/tabs/produto', {produtoClick: id}]);
   }
 
   // public getLoja( id:number ){
@@ -24,7 +25,9 @@ export class ProdutoComponent implements OnInit {
   //     //console.log(this.loja);
   //   });
   // }
-
+  //  encaminhaParaLoja( store:number ){
+  //    this.router.navigate(['/tabs/perfil-loja/' + store])
+  //  }
   ngOnInit() {
     
   }

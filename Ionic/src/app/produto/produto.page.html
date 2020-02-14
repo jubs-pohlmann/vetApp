@@ -19,7 +19,7 @@
 
     <div class="conteudoDoAnuncio">
         <!-- FOTO DO PRODUTO OU IMAGEM DEFAULT ALTERNATIVA -->
-        <img class="image" src=  '{{produto.photo}}' onerror="this.src='../../assets/images/imagemDefault.jpg' ">
+        <img class="image" src= "http://localhost:8000/{{produto.photo}}" onerror="this.src='../../assets/images/imagemDefault.jpg' ">
 
         <ion-chip class="chipLoja" (click)="encaminhaParaLoja(prodObj.store.id)">
           <ion-label>Vendido por <span class="nomeDaLoja">{{loja.user[0].name}}</span></ion-label>

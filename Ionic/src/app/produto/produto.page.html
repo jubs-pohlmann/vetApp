@@ -21,7 +21,7 @@
         <!-- FOTO DO PRODUTO OU IMAGEM DEFAULT ALTERNATIVA -->
         <img class="image" src=  '{{produto.photo}}' onerror="this.src='../../assets/images/imagemDefault.jpg' ">
 
-        <ion-chip class="chipLoja" (click)="encaminhaParaLoja(prodObj.store.id)">
+        <ion-chip class="chipLoja" (click)="encaminhaParaLoja(produto.user_id)">
           <ion-label>Vendido por <span class="nomeDaLoja">{{loja.user[0].name}}</span></ion-label>
         </ion-chip>  
 

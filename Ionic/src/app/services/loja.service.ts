@@ -29,6 +29,6 @@ export class LojaService {
   }
  
   getProdutos(user_id:number):Observable<any> {
-    return this.http.get(this.apiURL + 'listProductStore/' + user_id)
+    return this.http.get(this.apiURL + 'listProductStore/' + user_id);
   }
 }

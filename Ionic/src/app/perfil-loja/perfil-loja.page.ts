@@ -17,7 +17,7 @@ export class PerfilLojaPage implements OnInit {
     this.store=this.router.snapshot.params["store"];
   }
 
-  store:any;
+  store:number;
   produtos:any=[]
 
   backButton(){
@@ -25,7 +25,7 @@ export class PerfilLojaPage implements OnInit {
   }
 
   ngOnInit() {
-    this.lojaservice.getProdutos( this.store.id).subscribe((res)=>{
+    this.lojaservice.getProdutos( this.store).subscribe((res)=>{
       console.log(res[0]);
       this.produtos=res[0];
     }, error=>{

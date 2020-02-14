@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PerfilLojaPage implements OnInit {
 
-  constructor( private _location: Location, public lojaservice: LojaService, private router: ActivatedRoute) { 
+  constructor( private _location: Location, public lojaservice: LojaService, private router: ActivatedRoute) {
     this.store=this.router.snapshot.params["store"];
   }
 
@@ -24,13 +24,23 @@ export class PerfilLojaPage implements OnInit {
     this._location.back();
   }
 
-  ngOnInit() {
-    this.lojaservice.getProdutos( this.store).subscribe((res)=>{
-      console.log(res[0]);
-      this.produtos=res[0];
-    }, error=>{
-      console.log(error);
+  async carrega(store_id:number) {
+    await this.lojaservice.getLoja(store_id).subscribe((res)=>{
+      console.log('oi')
+      console.log(res)
+      this.store=res[0];
+      //console.log(res)
+      //console.log(this.produto)
+      this.lojaservice.getProdutos(this.store).subscribe((resLoja)=>{
+        //console.log(resLoja)
+        this.produto=resLoja[0];
+      });
     });
+  }
+
+  ngOnInit() {
+    console.log(this.store)
+    this.carrega();
   }
 
 }

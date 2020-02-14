@@ -29,7 +29,7 @@ export class ProdutoComponent implements OnInit {
   //    this.router.navigate(['/tabs/perfil-loja/' + store])
   //  }
   ngOnInit() {
-    
+
   }
 
 }

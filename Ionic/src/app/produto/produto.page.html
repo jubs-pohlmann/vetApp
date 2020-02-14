@@ -21,9 +21,9 @@
         <!-- FOTO DO PRODUTO OU IMAGEM DEFAULT ALTERNATIVA -->
         <img class="image" src=  '{{produto.photo}}' onerror="this.src='../../assets/images/imagemDefault.jpg' ">
 
-        <ion-chip class="chipLoja" (click)="encaminhaParaLoja(produto.user_id)">
+        <ion-chip class="chipLoja" (click)="encaminhaParaLoja(produto.store_id)">
           <ion-label>Vendido por <span class="nomeDaLoja">{{loja.user[0].name}}</span></ion-label>
-        </ion-chip>  
+        </ion-chip>
 
         <div *ngIf="produto.stock==2">
          <ion-row class="ion-justify-content-center">
@@ -33,7 +33,7 @@
            <p class="classify1"> Delivery</p>
          </ion-row>
         </div>
-          
+
 
          <p class="descrever">Descrição</p>
          <div class= "descricao">

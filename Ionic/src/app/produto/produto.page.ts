@@ -61,7 +61,7 @@ export class ProdutoPage implements OnInit {
     }
 
     async presentToastErroCompra() {
-      
+
     	const toast = await this.toastController.create({
         message: 'Você não está logado, por favor entre com sua conta!',
         cssClass: "toastClass",
@@ -97,7 +97,7 @@ export class ProdutoPage implements OnInit {
   }
 
    encaminhaParaLoja( i:number ){
-    this.router.navigate(['/tabs/perfil-loja', {store:i}])
+    this.router.navigate(['/tabs/perfil-loja/'+ i])
   }
 
   ngOnInit() {

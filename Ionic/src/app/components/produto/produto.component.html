@@ -4,9 +4,27 @@
   <div class="produtoTexto">
     <div class="produtoLoja">{{prodObj.store.user.name}}</div>
     <div class="produtoNomePreco">
-      <div>{{prodObj.name}}</div>
-      <div>R${{prodObj.price}}</div>
+      <div class="produtoNome">{{prodObj.name}}</div>
     </div>
+
+    <div class="preco">R${{prodObj.price}}</div>
     <div class="produtoDescricao">{{prodObj.description}}</div>
   </div>
 </div>
+<!--
+<ion-row>
+<ion-col size="11">{{prodObj.name}}</ion-col>
+<ion-col size="2">R${{prodObj.price}}</ion-col>
+</ion-row> -->
+
+<!-- <div class="produtoCard" (click)="produtoClick(prodObj.id)">
+  <img class="produtoImg" src="{{prodObj.photo}}" onerror="this.src='../../assets/images/imagemDefault.jpg'" alt="imagem do produto"/>
+  <div class="produtoTexto">
+    <ion-row class="produtoLoja">{{prodObj.store.user.name}}</ion-row>
+    <ion-row class="produtoNomePreco ion-justify-content-between">
+      <ion-col size="9">{{prodObj.name}}</ion-col>
+      <ion-col size="3">R${{prodObj.price}}</ion-col>
+    </ion-row>
+    <ion-row class="produtoDescricao">{{prodObj.description}}</ion-row>
+  </div>
+</div> -->

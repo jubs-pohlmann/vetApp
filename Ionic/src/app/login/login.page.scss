@@ -47,20 +47,6 @@
   --border-radius: 5px;
  }
 
- .logoutButton{
-   //TEXT
-  --color: #333333;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold;
-  //BOX
-  margin-top: 50%;
-  line-height: 15em;
-  width: 50%;
-  --background: white;
-  --box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  --border-radius: 5px;
- }
-
 .logoutTitle{
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
@@ -71,8 +57,23 @@
   color: #333333;
   display: flex;
   justify-content: center;
+  margin-top: 10%;
 }
 
+ .logoutButton{
+   //TEXT
+  --color: #333333;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  //BOX
+  margin-top: 50%;
+  margin-bottom: 30%;
+  line-height: 15em;
+  width: 50%;
+  --background: white;
+  --box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  --border-radius: 5px;
+ }
 
 .formText{
   text-align: center;

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { LojaService } from '../../services/loja.service';
+import { IonicModule } from '@angular/core';
 
 @Component({
   selector: 'app-produto',
@@ -11,7 +12,7 @@ export class ProdutoComponent implements OnInit {
 
   @Input() prodObj: [];
   @Input() prodObjStore: [];
-  
+
 
   constructor(public router:Router, public lojaService:LojaService) { }
 

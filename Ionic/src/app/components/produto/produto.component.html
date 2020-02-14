@@ -1,6 +1,6 @@
 
 <div class="produtoCard" (click)="produtoClick(prodObj.id)">
-  <img class="produtoImg" src="{{prodObj.photo}}" onerror="this.src='../../assets/images/imagemDefault.jpg'" alt="imagem do produto"/>
+  <img class="produtoImg" src="http://localhost:8000/{{prodObj.photo}}" onerror="this.src='../../assets/images/imagemDefault.jpg'" alt="imagem do produto"/>
   <div class="produtoTexto">
     <div class="produtoLoja">{{prodObj.store.user.name}}</div>
     <div class="produtoNomePreco">

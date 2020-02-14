@@ -18,6 +18,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor banana',
         'stock'=> 40,
         'store_id'=>1,
+        'photo' => 'Photo/racao.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -28,6 +29,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor banana',
         'stock'=> 40,
         'store_id'=>1,
+        'photo' => 'Photo/racao.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -38,6 +40,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Coleira tamanho P rosa',
         'stock'=> 5,
         'store_id'=>1,
+        'photo' => 'Photo/coleira.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -48,6 +51,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Medicina e Saúde 100% indicado',
         'stock'=> 10,
         'store_id'=>2,
+        'photo' => 'Photo/antipulga.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -58,6 +62,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Gaiola grande usada para aves de grande porte',
         'stock'=> 1,
         'store_id'=>2,
+        'photo' => 'Photo/gaiola.jpg',
         'animal'=> 'Aves'
       ]);
 
@@ -69,6 +74,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor sardinha',
         'stock'=> 40,
         'store_id'=>3,
+        'photo' => 'Photo/racao.jpg',
         'animal'=> 'Peixes'
       ]);
 
@@ -79,6 +85,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor banana',
         'stock'=> 40,
         'store_id'=>4,
+        'photo' => 'Photo/racao.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -89,6 +96,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Roupa de gato filhote',
         'stock'=> 5,
         'store_id'=>5,
+        'photo' => 'Photo/camisa.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -99,6 +107,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Cama confortável',
         'stock'=> 4,
         'store_id'=>6,
+        'photo' => 'Photo/cama.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -109,6 +118,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Mordedor flexivel',
         'stock'=> 40,
         'store_id'=>7,
+        'photo' => 'Photo/mordedor.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -120,6 +130,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Escova macia',
         'stock'=> 4,
         'store_id'=>8,
+        'photo' => 'Photo/escova.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -130,6 +141,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Sapato tamanho 42',
         'stock'=> 10,
         'store_id'=>9,
+        'photo' => 'Photo/sapato.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -140,6 +152,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Indicado para filhotes',
         'stock'=> 40,
         'store_id'=>10,
+        'photo' => 'Photo/vitamina.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -150,6 +163,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Cheirinho de nenem',
         'stock'=> 40,
         'store_id'=>2,
+        'photo' => 'Photo/shampoo.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -160,6 +174,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Cambuca para colocar a ração',
         'stock'=> 10,
         'store_id'=>10,
+        'photo' => 'Photo/comedouro.jpg',
         'animal'=> 'Cães'
       ]);
       DB::table('products')->insert([
@@ -169,6 +184,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor banana',
         'stock'=> 40,
         'store_id'=>1,
+        'photo' => 'Photo/racao.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -179,6 +195,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor banana',
         'stock'=> 40,
         'store_id'=>1,
+        'photo' => 'Photo/racao.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -189,6 +206,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Coleira tamanho P rosa',
         'stock'=> 5,
         'store_id'=>1,
+        'photo' => 'Photo/coleira.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -199,6 +217,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Medicina e Saúde 100% indicado',
         'stock'=> 10,
         'store_id'=>2,
+        'photo' => 'Photo/antipulga.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -209,6 +228,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Gaiola grande usada para aves de grande porte',
         'stock'=> 1,
         'store_id'=>2,
+        'photo' => 'Photo/gaiola.jpg',
         'animal'=> 'Aves'
       ]);
 
@@ -220,6 +240,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor sardinha',
         'stock'=> 40,
         'store_id'=>3,
+        'photo' => 'Photo/racao.jpg',
         'animal'=> 'Peixes'
       ]);
 
@@ -230,6 +251,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Comida deliciosa sabor banana',
         'stock'=> 40,
         'store_id'=>4,
+        'photo' => 'Photo/racao.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -240,6 +262,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Roupa de gato filhote',
         'stock'=> 5,
         'store_id'=>5,
+        'photo' => 'Photo/camisa.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -250,6 +273,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Cama confortável',
         'stock'=> 4,
         'store_id'=>6,
+        'photo' => 'Photo/cama.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -260,6 +284,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Mordedor flexivel',
         'stock'=> 40,
         'store_id'=>7,
+        'photo' => 'Photo/mordedor.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -271,6 +296,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Escova macia',
         'stock'=> 4,
         'store_id'=>8,
+        'photo' => 'Photo/escova.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -281,6 +307,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Sapato tamanho 42',
         'stock'=> 10,
         'store_id'=>9,
+        'photo' => 'Photo/sapato.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -291,6 +318,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Indicado para filhotes',
         'stock'=> 40,
         'store_id'=>10,
+        'photo' => 'Photo/vitamina.jpg',
         'animal'=> 'Gatos'
       ]);
 
@@ -301,6 +329,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Cheirinho de nenem',
         'stock'=> 40,
         'store_id'=>2,
+        'photo' => 'Photo/shampoo.jpg',
         'animal'=> 'Cães'
       ]);
 
@@ -311,6 +340,7 @@ class ProductSeeder extends Seeder
         'description'=> 'Cambuca para colocar a ração',
         'stock'=> 10,
         'store_id'=>10,
+        'photo' => 'Photo/comedouro.jpg',
         'animal'=> 'Cães'
       ]);
     }

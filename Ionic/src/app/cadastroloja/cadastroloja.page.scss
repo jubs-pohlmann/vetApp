@@ -1,0 +1,179 @@
+.sc-ion-input-ios-h{
+	--padding-bottom:0px;
+	--padding-top: 2px;
+  }
+
+.titleText{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.25em;
+    line-height: 1.25em;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: -15vh;
+	color: #333333;
+
+}
+.corTopo{
+  --background: #a8e6cf;
+}
+.form{
+	margin-top: -2vh;
+	margin-left: 1em;
+	margin-right: 1em;
+	color: #333333;
+
+}
+
+.formItem {
+	padding-top: 3vh;
+	--color: #333333;
+}
+
+.formTitle {
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.12em;
+	line-height: 1.12em;
+	color: #333333;
+}
+
+.formPlaceholder{
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.12em;
+	line-height: 1.12em;
+	color: #999999;
+	border-bottom: 1px solid #A8E6CF;
+}
+
+.buttonCentralizer{
+	margin: 1vh 0vh;
+	margin-bottom: 3.5vh;
+	display: flex;
+	justify-content: center;
+}
+
+.button{
+	//TEXT
+	--color: #333333;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.25em;
+	font-weight: bold;
+	//BOX
+	margin-bottom: 1.875em;
+	--background: white;
+	--box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+	--border-radius: 5px;
+	width: 42.39vw;
+	height: 5.55vh;
+}
+
+.buttonText{
+	margin: 2.7vw 4.8vh;
+	text-transform: lowercase;
+}
+
+.invalid{
+	ion-label{
+		--color: #FF8B94;
+	}
+
+	ion-input {
+		border-bottom: 1px solid #FF8B94;
+	}
+}
+
+.sc-ion-input-ios-h{
+	--padding-bottom:0px;
+	--padding-top: 2px;
+  }
+
+.list-ios{
+	margin-bottom:0px;
+}//magias pra tirar margens que surgem fora do meu controle
+
+
+
+.delivery{
+	display: flex;
+	justify-content: center;
+	margin-top: 5px;
+}
+
+.radioMargin{
+	margin-left:5.4vw;
+}
+
+.radioText{
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 600;
+	font-size: 1.11em;
+	line-height: 1.11em;
+	color: #333333;
+	margin-top:3vh;
+	margin-left:2.7vw;
+}
+
+.form{
+	margin-left: 1em;
+	margin-right: 1em;
+	color: #333333;
+
+}
+
+.formItem {
+	padding-top: 3vh;
+	--color: #333333;
+}
+
+.formTitle {
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.12em;
+	line-height: 1.12em;
+	color: #333333;
+}
+
+.formPlaceholder{
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.12em;
+	line-height: 1.12em;
+	color: #999999;
+	border-bottom: 1px solid #A8E6CF;
+}
+
+.buttonCentralizer{
+	margin: 5vh 0vh;
+	margin-bottom: 3.5vh;
+	display: flex;
+	justify-content: center;
+}
+
+.button{
+	//TEXT
+	--color: #333333;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.25em;
+	font-weight: bold;
+	//BOX
+	margin-bottom: 1.875em;
+	--background: white;
+	--box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+	--border-radius: 5px;
+	width: 42.39vw;
+	height: 5.55vh;
+}
+
+.buttonText{
+	margin: 2.7vw 4.8vh;
+	text-transform: lowercase;
+}

@@ -1,0 +1,82 @@
+<html>
+	<ion-header>
+			<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+			<ion-toolbar class="corTopo">
+				<ion-row>
+		      <ion-col (click)='backButton()' size="2">
+		         <ion-icon size="large" name='arrow-back'  ></ion-icon>
+		      </ion-col>
+		      <ion-col>
+						<ion-title>Cadastro Loja</ion-title>
+					</ion-col>
+		    </ion-row>
+			</ion-toolbar>
+	</ion-header>
+	<ion-content>
+
+		<img src="../../assets/images/aquarela+cao.jpg" alt="cachorro correndo" no-repeat/>
+    <div class="titleText">Insira informações pertinentes à loja, apenas!</div>
+
+    <form class=form [formGroup]="registerStoreForm" (ngSubmit)="RegisterStore(registerStoreForm)">
+			<div class="formItem" [class.invalid]="registerStoreForm.controls.name.invalid && registerStoreForm.controls.name.touched">
+				<ion-label class="formTitle" position="stacked">Nome</ion-label>
+				<ion-input class="formPlaceholder" formControlName="name" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: PetLove"></ion-input>
+			</div>
+			<div class="formItem" [class.invalid]="registerStoreForm.controls.email.invalid && registerStoreForm.controls.email.touched">
+				<ion-label class="formTitle" position="stacked">E-mail</ion-label>
+				<ion-input class="formPlaceholder" formControlName="email" type="email" inputmode="email" required=true clear-input=true placeholder="ex.: petlove@dominio.com"></ion-input>
+			</div>
+			<div class="formItem" [class.invalid]="registerStoreForm.controls.cnpj.invalid && registerStoreForm.controls.cnpj.touched">
+				<ion-label class="formTitle" position="stacked">CNPJ</ion-label>
+				<ion-input class="formPlaceholder" formControlName="cnpj" type="text" inputmode="numeric" required=true clear-input=true placeholder="ex.: 28.268.157/0001-11" [brmasker]="{person: true}"></ion-input>
+			</div>
+			<div class="formItem" [class.invalid]="registerStoreForm.controls.phone.invalid && registerStoreForm.controls.phone.touched">
+				<ion-label class="formTitle" position="stacked">Telefone</ion-label>
+				<ion-input class="formPlaceholder" formControlName="phone" type="text" inputmode="tel" required=true clear-input=true placeholder="ex.: (21) 999-919-495" [brmasker]="{phone: true}"></ion-input>
+			</div>
+
+			<div class="formItem" [class.invalid]="registerStoreForm.controls.address.invalid && registerStoreForm.controls.address.touched">
+				<ion-label class="formTitle" position="stacked">Endereço</ion-label>
+				<ion-input class="formPlaceholder" formControlName="address" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Av. Dogville, 450"></ion-input>
+			</div>
+
+			<div class="formItem" [class.invalid]="registerStoreForm.controls.password.invalid && registerStoreForm.controls.password.touched || password!=passwordVerify">
+				<ion-label class="formTitle" position="stacked">Senha</ion-label>
+				<ion-input class="formPlaceholder" formControlName="password" type="password" (keyup)="passwordVerification(registerStoreForm)" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
+			  </div>
+
+			  <div class="formItem" [class.invalid]="registerStoreForm.controls.passwordVerify.invalid && registerStoreForm.controls.passwordVerify.touched || password!=passwordVerify">
+				<ion-label class="formTitle" position="stacked">Confirme a senha</ion-label>
+				<ion-input class="formPlaceholder" formControlName="passwordVerify" type="password" (keyup)="passwordVerification(registerStoreForm)" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
+			  </div>
+
+			  <div class="radioText">
+				<ion-label>Sua loja fará entregas?</ion-label>
+				<ion-radio-group formControlName="delivery">
+
+				  <div class="delivery">
+				  <div class="radioMargin">
+					<ion-label>Sim</ion-label>
+					<ion-radio mode="md" slot="start" value="sim" checked></ion-radio>
+				  </div>
+
+				  <div class="radioMargin">
+					<ion-label>Não</ion-label>
+					<ion-radio mode="md" slot="start" value="não"></ion-radio>
+				  </div>
+				</div>
+				</ion-radio-group>
+			</div>
+
+			<div class="buttonCentralizer">
+				<ion-button class="button" type="submit" [disabled]="verificationError || registerStoreForm.invalid" slot="bottom">
+					<ion-label class="buttonText">Cadastrar-se</ion-label>
+				</ion-button>
+			</div>
+
+		</form>
+
+	</ion-content>
+
+
+</html>

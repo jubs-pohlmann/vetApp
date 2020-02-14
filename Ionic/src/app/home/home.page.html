@@ -1,0 +1,46 @@
+<html>
+
+<ion-nav [root]="rootPage"></ion-nav>
+<ion-header>
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+</ion-header>
+
+<ion-content>
+
+  <img  class="logoHome" src ="../../assets/images/PetApp.png">
+  <ion-fab *ngIf="check('status')" vertical="start" horizontal="end" slot="fixed" (click)="irParaAnunciarProduto()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-label class="title">Categorias</ion-label>
+  <ion-slides class="slide" pager="true" [options] = "slideOpts">
+    <ion-slide *ngFor ="let categoria of categorias">
+      <ion-card class="categoriaCard" (click)="categoriaClick( categoria.name )">
+        <img src={{categoria.imagem}}/>
+        <div class="categoriaText">{{ categoria.nome }}</div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
+  <ion-label class="title">Para o seu animal</ion-label>
+  <ion-slides class="slide" pager="true" [options]="slideOpts">
+    <ion-slide *ngFor ="let animal of animais">
+      <ion-card class="categoriaCard" (click)="categoriaClick( animal.name )">
+        <img src={{animal.imagem}} />
+        <div class="categoriaText">{{ animal.nome }}</div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-label class="title" id="titleMargin">Adicionados recentemente</ion-label>
+  <app-produto *ngFor="let produto of produtos" [prodObj]="produto" ></app-produto>
+
+
+</ion-content>
+
+</html>

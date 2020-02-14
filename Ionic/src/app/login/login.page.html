@@ -1,0 +1,63 @@
+<html>
+  <ion-header>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  	<ion-toolbar class="corTopo">
+      <ion-row>
+        <ion-col size="2">
+           <ion-icon class="button" size="large" name='arrow-back' (click)='backButton()' ></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-title>Login</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-header>
+  <!-- FORMULÁRIO PARA LOGIN -->
+  <ion-content scroll-y="false">
+    <div *ngIf="check('token')">
+      <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm)">
+        <ion-list>
+          <div class="formInput" [class.invalid]="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+            <ion-label class="formTitle" position='stacked'>Email</ion-label>
+            <ion-input  class="formPlaceholder" required=true clear-input=true placeholder="ex.:joao@gmail.com"
+            type="email" formControlName="email"></ion-input>
+          </div>
+
+          <div class="formInput" [class.invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+            <ion-label  class="formTitle" position='stacked'>Senha</ion-label>
+            <ion-input  class="formPlaceholder" required=true clear-input=true placeholder="ex.:********"
+            type="password" formControlName="password"></ion-input>
+          </div>
+        </ion-list>
+
+      <!-- BOTÃO PARA LOGIN -->
+        <ion-row class="ion-justify-content-center">
+          <ion-button class=formButton type='submit' shape='default'  [disabled]="loginForm.invalid">Login</ion-button>
+        </ion-row>
+    </form>
+
+    <p class='formText'>OU</p>
+    <!-- BOTÕES PARA CADASTRO DE CLIENTE E LOJA -->
+    <ion-row class='ion-justify-content-center'>
+     <ion-button class="formButton" type='button' shape='default' (click)='navegarCadastroUsuario()'>Cadastro Para Cliente</ion-button>
+    </ion-row>
+
+    <ion-row class='ion-justify-content-center'>
+  	 <ion-button class='formButton' type='button' shape='default' (click)='navegarCadastroLoja()'>Cadastro Para Loja</ion-button>
+    </ion-row>
+
+    
+  </div>
+
+  <div *ngIf="!check('token')">
+    <ion-label class="logoutTitle">Vamos sentir saudade!</ion-label>
+
+    <ion-row class='ion-justify-content-center'>
+      <ion-button class="logoutButton" type='button' shape='default' (click)='logout()'>Logout</ion-button>
+     </ion-row>
+  </div>
+  <img class="image" src='../../assets/imagens/ondas.png'>
+
+ </ion-content>
+</html>

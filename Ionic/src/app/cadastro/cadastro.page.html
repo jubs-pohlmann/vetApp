@@ -1,0 +1,70 @@
+<html>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<ion-header>
+		<ion-toolbar class="corTopo">
+			<ion-row>
+				<ion-col size="2">
+					<ion-icon size="large" class="backButton" size="large" name='arrow-back' (click)='backButton()' ></ion-icon>
+				</ion-col>
+				<ion-col>
+					<ion-title>Cadastro</ion-title>
+				</ion-col>
+			</ion-row>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<img class="backgroundImg" src="../../assets/images/aquarela+cao.jpg" alt="cachorro correndo" no-repeat/>
+
+		<form class="form" [formGroup]="registerForm" (ngSubmit)="RegisterUser(registerForm)">
+			<div class="formItem" [class.invalid]="registerForm.controls.name.invalid && registerForm.controls.name.touched">
+				<ion-label class="formTitle" position="stacked">Nome</ion-label>
+				<ion-input class="formPlaceholder" formControlName="name" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: João Silva"></ion-input>
+			</div>
+
+			<div class="formItem" [class.invalid]="registerForm.controls.email.invalid && registerForm.controls.email.touched">
+				<ion-label class="formTitle" position="stacked">E-mail</ion-label>
+				<ion-input class="formPlaceholder" formControlName="email" type="email" inputmode="email" required=true clear-input=true placeholder="ex.: joao@dominio.com"></ion-input>
+			</div>
+
+			<div class="formItem" [class.invalid]="registerForm.controls.birthdate.invalid && registerForm.controls.birthdate.touched">
+				<ion-label class="formTitle" position="stacked">Nascimento</ion-label>
+				<ion-input class="formPlaceholder" formControlName="birthdate" type="date" inputmode="numeric" required=true clear-input=true placeholder="ex.: 31/12/1999"></ion-input>
+			</div>
+			<!-- formato de retorno birthdate AAAA-MM-DD -->
+			<div class="formItem" [class.invalid]="registerForm.controls.phone.invalid && registerForm.controls.phone.touched">
+				<ion-label class="formTitle" position="stacked">Telefone</ion-label>
+				<ion-input class="formPlaceholder" formControlName="phone" minLength="15" [brmasker]="{phone: true}" type="text" inputmode="numeric" required=true clear-input=true placeholder="ex.: (21) 999-919-495"></ion-input>
+			</div>
+			<!-- formato de retorno phone (DD) XXXXX-XXXX/(DD) XXXX-XXXX -->
+
+			<div class="formItem" [class.invalid]="registerForm.controls.address.invalid && registerForm.controls.address.touched">
+				<ion-label class="formTitle" position="stacked">Endereço</ion-label>
+				<ion-input class="formPlaceholder" formControlName="address" type="text" inputmode="text" required=true clear-input=true placeholder="ex.: Rua Totó Feliz, 520"></ion-input>
+			</div>
+			<!-- <div class="formItem">
+				<ion-label class="formTitle" position="stacked">Bloco e Apartamento</ion-label>
+				<ion-input class="formPlaceholder" type="text" inputmode="text" required=false clear-input=true placeholder="ex.: Bloco 1, Apt 202"></ion-input>
+			</div> -->
+			<div class="formItem" [class.invalid]="registerForm.controls.cpf.invalid && registerForm.controls.cpf.touched">
+				<ion-label class="formTitle" position="stacked">CPF</ion-label>
+				<ion-input class="formPlaceholder" maxLength="14" minLength="11" formControlName="cpf" type="text" inputmode="numeric" required=true clear-input=true placeholder="ex.: 123.456.789-01" [brmasker]="{person: true}"></ion-input>
+			</div>
+			<div class="formItem" [class.invalid]="registerForm.controls.password.invalid && registerForm.controls.password.touched">
+				<ion-label class="formTitle" position="stacked">Senha</ion-label>
+				<ion-input class="formPlaceholder" formControlName="password" (keyup)="passwordVerification(registerForm)" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
+      		</div>
+      		<div class="formItem">
+				<ion-label class="formTitle" [class.invalid]="verificationError || registerForm.controls.passwordVerify.touched" position="stacked">Confirme a senha</ion-label>
+				<ion-input class="formPlaceholder" formControlName="passwordVerify" (keyup)="passwordVerification(registerForm)" type="password" inputmode="text" required=true clear-input=true placeholder="ex.: •••••••••"></ion-input>
+			</div>
+			<!-- os forms n devolvem mensagem esclarecedora do erro nem o passwordVerify deixa a linha vermelha, mexer no class.invalid dele -->
+
+			<div class="buttonCentralizer">
+				<ion-button class="button" type="submit" [disabled]="registerForm.invalid || verificationError" slot=bottom>
+					<ion-label class="buttonText">Cadastrar-se</ion-label>
+				</ion-button>
+			</div>
+
+		</form>
+	</ion-content>
+</html>
